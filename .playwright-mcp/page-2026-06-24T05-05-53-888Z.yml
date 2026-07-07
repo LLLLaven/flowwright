@@ -1,0 +1,553 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e3]:
+      - link "Skip to content" [ref=e4] [cursor=pointer]:
+        - /url: "#start-of-content"
+      - banner [ref=e6]:
+        - heading "Navigation Menu" [level=2] [ref=e7]
+        - generic [ref=e9]:
+          - button "Toggle navigation" [ref=e11] [cursor=pointer]
+          - link "Homepage" [ref=e17] [cursor=pointer]:
+            - /url: /
+            - img [ref=e18]
+          - generic [ref=e20]:
+            - link "Sign in" [ref=e21] [cursor=pointer]:
+              - /url: /login?return_to=https%3A%2F%2Fgithub.com%2Flangchain-ai%2Fdocs%2Fblob%2Fmain%2Fsrc%2Foss%2Flanggraph%2Fquickstart.mdx
+            - button "Appearance settings" [disabled] [ref=e24]:
+              - img
+    - main [ref=e28]:
+      - generic [ref=e29]:
+        - generic [ref=e30]:
+          - generic [ref=e32]:
+            - img [ref=e33]
+            - link "langchain-ai" [ref=e36] [cursor=pointer]:
+              - /url: /langchain-ai
+            - generic [ref=e37]: /
+            - strong [ref=e38]:
+              - link "docs" [ref=e39] [cursor=pointer]:
+                - /url: /langchain-ai/docs
+            - generic [ref=e40]: Public
+          - generic [ref=e41]:
+            - list:
+              - listitem [ref=e42]:
+                - link "You must be signed in to change notification settings" [ref=e43] [cursor=pointer]:
+                  - /url: /login?return_to=%2Flangchain-ai%2Fdocs
+                  - img [ref=e44]
+                  - text: Notifications
+              - listitem [ref=e46]:
+                - link "Fork 2.4k" [ref=e47] [cursor=pointer]:
+                  - /url: /login?return_to=%2Flangchain-ai%2Fdocs
+                  - img [ref=e48]
+                  - text: Fork
+                  - generic "2,429" [ref=e50]: 2.4k
+              - listitem [ref=e51]:
+                - link "You must be signed in to star a repository" [ref=e53] [cursor=pointer]:
+                  - /url: /login?return_to=%2Flangchain-ai%2Fdocs
+                  - img [ref=e54]
+                  - text: Star
+                  - generic "365 users starred this repository" [ref=e56]: "365"
+        - navigation "Repository" [ref=e57]:
+          - list [ref=e58]:
+            - listitem [ref=e59]:
+              - link "Code" [ref=e60] [cursor=pointer]:
+                - /url: /langchain-ai/docs
+                - img [ref=e61]
+                - generic [ref=e63]: Code
+            - listitem [ref=e64]:
+              - link "Issues 236" [ref=e65] [cursor=pointer]:
+                - /url: /langchain-ai/docs/issues
+                - img [ref=e66]
+                - generic [ref=e69]: Issues
+                - generic "236" [ref=e70]
+            - listitem [ref=e71]:
+              - link "Pull requests 303" [ref=e72] [cursor=pointer]:
+                - /url: /langchain-ai/docs/pulls
+                - img [ref=e73]
+                - generic [ref=e75]: Pull requests
+                - generic "303" [ref=e76]
+            - listitem [ref=e77]:
+              - link "Actions" [ref=e78] [cursor=pointer]:
+                - /url: /langchain-ai/docs/actions
+                - img [ref=e79]
+                - generic [ref=e81]: Actions
+            - listitem [ref=e82]:
+              - link "Security and quality" [ref=e83] [cursor=pointer]:
+                - /url: /langchain-ai/docs/security
+                - img [ref=e84]
+                - generic [ref=e86]: Security and quality
+            - listitem [ref=e87]:
+              - link "Insights" [ref=e88] [cursor=pointer]:
+                - /url: /langchain-ai/docs/pulse
+                - img [ref=e89]
+                - generic [ref=e91]: Insights
+      - generic [ref=e102]:
+        - generic [ref=e106]:
+          - generic [ref=e107]:
+            - heading "Expand file tree" [level=2] [ref=e109]:
+              - button "Expand file tree" [ref=e110] [cursor=pointer]:
+                - img [ref=e111]
+            - button "main branch" [ref=e115] [cursor=pointer]:
+              - generic [ref=e116]:
+                - generic [ref=e118]:
+                  - img [ref=e120]
+                  - generic [ref=e123]: main
+                - generic:
+                  - img
+            - generic [ref=e125]:
+              - navigation "Breadcrumbs" [ref=e126]:
+                - heading "Breadcrumbs" [level=2] [ref=e127]
+                - list [ref=e128]:
+                  - listitem [ref=e129]:
+                    - link "docs" [ref=e130] [cursor=pointer]:
+                      - /url: /langchain-ai/docs/tree/main
+                  - listitem [ref=e131]:
+                    - text: /
+                    - link "src" [ref=e132] [cursor=pointer]:
+                      - /url: /langchain-ai/docs/tree/main/src
+                  - listitem [ref=e133]:
+                    - text: /
+                    - link "oss" [ref=e134] [cursor=pointer]:
+                      - /url: /langchain-ai/docs/tree/main/src/oss
+                  - listitem [ref=e135]:
+                    - text: /
+                    - link "langgraph" [ref=e136] [cursor=pointer]:
+                      - /url: /langchain-ai/docs/tree/main/src/oss/langgraph
+              - generic [ref=e137]:
+                - text: /
+                - heading "quickstart.mdx" [level=1] [ref=e138]
+              - button "Copy path" [ref=e139] [cursor=pointer]:
+                - img [ref=e140]
+          - generic [ref=e145]:
+            - generic [ref=e148]:
+              - img [ref=e150]
+              - combobox "Go to file" [ref=e152]
+            - button "More file actions" [ref=e153] [cursor=pointer]:
+              - img [ref=e154]
+        - generic [ref=e156]:
+          - generic [ref=e158]:
+            - heading "Latest commit" [level=2] [ref=e159]
+            - generic [ref=e162]:
+              - heading "History" [level=2] [ref=e163]
+              - link "View commit history for this file." [ref=e165] [cursor=pointer]:
+                - /url: /langchain-ai/docs/commits/main/src/oss/langgraph/quickstart.mdx
+                - generic [ref=e166]:
+                  - generic:
+                    - img
+          - generic [ref=e168]:
+            - generic "27.7 KB" [ref=e172]: 1226 lines (947 loc) · 27.7 KB
+            - generic [ref=e174]:
+              - heading "File metadata and controls" [level=2] [ref=e175]
+              - list "File view" [ref=e177]:
+                - listitem [ref=e178]:
+                  - button "Preview" [ref=e179] [cursor=pointer]:
+                    - generic [ref=e181]: Preview
+                - listitem [ref=e182]:
+                  - button "Code" [ref=e183] [cursor=pointer]:
+                    - generic [ref=e185]: Code
+                - listitem [ref=e186]:
+                  - button "Blame" [ref=e187] [cursor=pointer]:
+                    - generic [ref=e189]: Blame
+              - generic [ref=e190]:
+                - generic [ref=e191]:
+                  - generic [ref=e192]:
+                    - link "Raw" [ref=e194] [cursor=pointer]:
+                      - /url: https://github.com/langchain-ai/docs/raw/refs/heads/main/src/oss/langgraph/quickstart.mdx
+                      - generic [ref=e196]: Raw
+                    - button "Copy raw file" [ref=e198] [cursor=pointer]:
+                      - img [ref=e199]
+                    - button "Download raw file" [ref=e203] [cursor=pointer]:
+                      - img [ref=e204]
+                  - generic [ref=e207]:
+                    - button "You must be signed in to make or propose changes" [disabled] [ref=e209]:
+                      - img [ref=e210]
+                    - button "More edit options" [ref=e213] [cursor=pointer]:
+                      - img [ref=e214]
+                - button "Outline" [ref=e216] [cursor=pointer]:
+                  - img [ref=e217]
+            - region [ref=e220]:
+              - article [ref=e222]:
+                - table [ref=e224]:
+                  - rowgroup [ref=e225]:
+                    - row "title Quickstart" [ref=e226]:
+                      - rowheader "title" [ref=e227]
+                      - cell "Quickstart" [ref=e228]
+                - paragraph [ref=e229]: This quickstart demonstrates how to build a calculator agent using the LangGraph Graph API or the Functional API.
+                - text: "**Using an AI coding assistant?**"
+                - generic [ref=e230]:
+                  - code [ref=e232]: "- Install the [LangChain Docs MCP server](/use-these-docs) to give your agent access to up-to-date LangChain documentation and examples. - Install [LangChain Skills](https://github.com/langchain-ai/langchain-skills) to improve your agent's performance on LangChain ecosystem tasks."
+                  - button "Copy code to clipboard" [ref=e234] [cursor=pointer]:
+                    - img [ref=e235]
+                - list [ref=e238]:
+                  - listitem [ref=e239]:
+                    - link "Use the Graph API" [ref=e240] [cursor=pointer]:
+                      - /url: "#use-the-graph-api"
+                    - text: if you prefer to define your agent as a graph of nodes and edges.
+                  - listitem [ref=e241]:
+                    - link "Use the Functional API" [ref=e242] [cursor=pointer]:
+                      - /url: "#use-the-functional-api"
+                    - text: if you prefer to define your agent as a single function.
+                - paragraph [ref=e243]:
+                  - text: For conceptual information, see
+                  - link "Graph API overview" [ref=e244] [cursor=pointer]:
+                    - /url: /langchain-ai/docs/blob/main/oss/langgraph/graph-api
+                  - text: and
+                  - link "Functional API overview" [ref=e245] [cursor=pointer]:
+                    - /url: /langchain-ai/docs/blob/main/oss/langgraph/functional-api
+                  - text: .
+                - text: For this example, you will need to set up a [Claude (Anthropic)](
+                - link "https://www.anthropic.com/" [ref=e246] [cursor=pointer]:
+                  - /url: https://www.anthropic.com/
+                - text: ") account and get an API key. Then, set the `ANTHROPIC_API_KEY` environment variable in your terminal."
+                - generic [ref=e247]:
+                  - heading "1. Define tools and model" [level=2] [ref=e248]
+                  - 'link "Permalink: 1. Define tools and model" [ref=e249] [cursor=pointer]':
+                    - /url: "#1-define-tools-and-model"
+                    - img [ref=e250]
+                - paragraph [ref=e252]: In this example, we'll use the Claude Sonnet 4.5 model and define tools for addition, multiplication, and division.
+                - paragraph [ref=e253]: :::python
+                - generic [ref=e254]:
+                  - generic [ref=e255]:
+                    - text: "from langchain.tools import tool from langchain.chat_models import init_chat_model model = init_chat_model( \"claude-sonnet-4-6\", temperature=0 ) # Define tools"
+                    - generic [ref=e256]: "@tool"
+                    - text: "def multiply(a: int, b: int) -> int: \"\"\"Multiply `a` and `b`."
+                    - text: "Args: a: First int b: Second int \"\"\" return a * b"
+                    - generic [ref=e257]: "@tool"
+                    - text: "def add(a: int, b: int) -> int: \"\"\"Adds `a` and `b`."
+                    - text: "Args: a: First int b: Second int \"\"\" return a + b"
+                    - generic [ref=e258]: "@tool"
+                    - text: "def divide(a: int, b: int) -> float: \"\"\"Divide `a` and `b`."
+                    - text: "Args: a: First int b: Second int \"\"\" return a / b # Augment the LLM with tools tools = [add, multiply, divide] tools_by_name = {tool.name: tool for tool in tools} model_with_tools = model.bind_tools(tools)"
+                  - button "Copy code to clipboard" [ref=e260] [cursor=pointer]:
+                    - img [ref=e261]
+                - paragraph [ref=e264]: ":::"
+                - paragraph [ref=e265]: :::js
+                - generic [ref=e266]:
+                  - generic [ref=e267]: "import { ChatAnthropic } from \"@langchain/anthropic\"; import { tool } from \"@langchain/core/tools\"; import * as z from \"zod\"; const model = new ChatAnthropic({ model: \"claude-sonnet-4-6\", temperature: 0, }); // Define tools const add = tool(({ a, b }) => a + b, { name: \"add\", description: \"Add two numbers\", schema: z.object({ a: z.number().describe(\"First number\"), b: z.number().describe(\"Second number\"), }), }); const multiply = tool(({ a, b }) => a * b, { name: \"multiply\", description: \"Multiply two numbers\", schema: z.object({ a: z.number().describe(\"First number\"), b: z.number().describe(\"Second number\"), }), }); const divide = tool(({ a, b }) => a / b, { name: \"divide\", description: \"Divide two numbers\", schema: z.object({ a: z.number().describe(\"First number\"), b: z.number().describe(\"Second number\"), }), }); // Augment the LLM with tools const toolsByName = { [add.name]: add, [multiply.name]: multiply, [divide.name]: divide, }; const tools = Object.values(toolsByName); const modelWithTools = model.bindTools(tools);"
+                  - button "Copy code to clipboard" [ref=e269] [cursor=pointer]:
+                    - img [ref=e270]
+                - paragraph [ref=e273]: ":::"
+                - generic [ref=e274]:
+                  - heading "2. Define state" [level=2] [ref=e275]
+                  - 'link "Permalink: 2. Define state" [ref=e276] [cursor=pointer]':
+                    - /url: "#2-define-state"
+                    - img [ref=e277]
+                - paragraph [ref=e279]: The graph's state is used to store the messages and the number of LLM calls.
+                - paragraph [ref=e280]: :::python
+                - text: State in LangGraph persists throughout the agent's execution.
+                - generic [ref=e281]:
+                  - code [ref=e283]: "The `Annotated` type with `operator.add` ensures that new messages are appended to the existing list rather than replacing it."
+                  - button "Copy code to clipboard" [ref=e285] [cursor=pointer]:
+                    - img [ref=e286]
+                - paragraph [ref=e289]: ":::"
+                - paragraph [ref=e290]: :::js
+                - text: State in LangGraph persists throughout the agent's execution.
+                - generic [ref=e291]:
+                  - code [ref=e293]: "The `MessagesValue` provides a built-in reducer for appending messages. The `llmCalls` field uses a `ReducedValue` with `(x, y) => x + y` to accumulate the count."
+                  - button "Copy code to clipboard" [ref=e295] [cursor=pointer]:
+                    - img [ref=e296]
+                - paragraph [ref=e299]: ":::"
+                - paragraph [ref=e300]: :::python
+                - generic [ref=e301]:
+                  - generic [ref=e302]: "from langchain.messages import AnyMessage from typing_extensions import TypedDict, Annotated import operator class MessagesState(TypedDict): messages: Annotated[list[AnyMessage], operator.add] llm_calls: int"
+                  - button "Copy code to clipboard" [ref=e304] [cursor=pointer]:
+                    - img [ref=e305]
+                - paragraph [ref=e308]: ":::"
+                - paragraph [ref=e309]: :::js
+                - generic [ref=e310]:
+                  - generic [ref=e311]: "import { StateGraph, StateSchema, MessagesValue, ReducedValue, GraphNode, ConditionalEdgeRouter, START, END, } from \"@langchain/langgraph\"; import { z } from \"zod/v4\"; const MessagesState = new StateSchema({ messages: MessagesValue, llmCalls: new ReducedValue( z.number().default(0), { reducer: (x, y) => x + y } ), });"
+                  - button "Copy code to clipboard" [ref=e313] [cursor=pointer]:
+                    - img [ref=e314]
+                - paragraph [ref=e317]: ":::"
+                - generic [ref=e318]:
+                  - heading "3. Define model node" [level=2] [ref=e319]
+                  - 'link "Permalink: 3. Define model node" [ref=e320] [cursor=pointer]':
+                    - /url: "#3-define-model-node"
+                    - img [ref=e321]
+                - paragraph [ref=e323]: The model node is used to call the LLM and decide whether to call a tool or not.
+                - paragraph [ref=e324]: :::python
+                - generic [ref=e325]:
+                  - generic [ref=e326]: "from langchain.messages import SystemMessage def llm_call(state: dict): \"\"\"LLM decides whether to call a tool or not\"\"\" return { \"messages\": [ model_with_tools.invoke( [ SystemMessage( content=\"You are a helpful assistant tasked with performing arithmetic on a set of inputs.\" ) ] + state[\"messages\"] ) ], \"llm_calls\": state.get('llm_calls', 0) + 1 }"
+                  - button "Copy code to clipboard" [ref=e328] [cursor=pointer]:
+                    - img [ref=e329]
+                - paragraph [ref=e332]: ":::"
+                - paragraph [ref=e333]: :::js
+                - generic [ref=e334]:
+                  - generic [ref=e335]: "import { SystemMessage } from \"@langchain/core/messages\"; const llmCall: GraphNode<typeof MessagesState> = async (state) => { const response = await modelWithTools.invoke([ new SystemMessage( \"You are a helpful assistant tasked with performing arithmetic on a set of inputs.\" ), ...state.messages, ]); return { messages: [response], llmCalls: 1, }; };"
+                  - button "Copy code to clipboard" [ref=e337] [cursor=pointer]:
+                    - img [ref=e338]
+                - paragraph [ref=e341]: ":::"
+                - generic [ref=e342]:
+                  - heading "4. Define tool node" [level=2] [ref=e343]
+                  - 'link "Permalink: 4. Define tool node" [ref=e344] [cursor=pointer]':
+                    - /url: "#4-define-tool-node"
+                    - img [ref=e345]
+                - paragraph [ref=e347]: The tool node is used to call the tools and return the results.
+                - paragraph [ref=e348]: :::python
+                - generic [ref=e349]:
+                  - generic [ref=e350]: "from langchain.messages import ToolMessage def tool_node(state: dict): \"\"\"Performs the tool call\"\"\" result = [] for tool_call in state[\"messages\"][-1].tool_calls: tool = tools_by_name[tool_call[\"name\"]] observation = tool.invoke(tool_call[\"args\"]) result.append(ToolMessage(content=observation, tool_call_id=tool_call[\"id\"])) return {\"messages\": result}"
+                  - button "Copy code to clipboard" [ref=e352] [cursor=pointer]:
+                    - img [ref=e353]
+                - paragraph [ref=e356]: ":::"
+                - paragraph [ref=e357]: :::js
+                - generic [ref=e358]:
+                  - generic [ref=e359]: "import { AIMessage, ToolMessage } from \"@langchain/core/messages\"; const toolNode: GraphNode<typeof MessagesState> = async (state) => { const lastMessage = state.messages.at(-1); if (lastMessage == null || !AIMessage.isInstance(lastMessage)) { return { messages: [] }; } const result: ToolMessage[] = []; for (const toolCall of lastMessage.tool_calls ?? []) { const tool = toolsByName[toolCall.name]; const observation = await tool.invoke(toolCall); result.push(observation); } return { messages: result }; };"
+                  - button "Copy code to clipboard" [ref=e361] [cursor=pointer]:
+                    - img [ref=e362]
+                - paragraph [ref=e365]: ":::"
+                - generic [ref=e366]:
+                  - heading "5. Define end logic" [level=2] [ref=e367]
+                  - 'link "Permalink: 5. Define end logic" [ref=e368] [cursor=pointer]':
+                    - /url: "#5-define-end-logic"
+                    - img [ref=e369]
+                - paragraph [ref=e371]: The conditional edge function is used to route to the tool node or end based upon whether the LLM made a tool call.
+                - paragraph [ref=e372]: :::python
+                - generic [ref=e373]:
+                  - generic [ref=e374]: "from typing import Literal from langgraph.graph import StateGraph, START, END def should_continue(state: MessagesState) -> Literal[\"tool_node\", END]: \"\"\"Decide if we should continue the loop or stop based upon whether the LLM made a tool call\"\"\" messages = state[\"messages\"] last_message = messages[-1] # If the LLM makes a tool call, then perform an action if last_message.tool_calls: return \"tool_node\" # Otherwise, we stop (reply to the user) return END"
+                  - button "Copy code to clipboard" [ref=e376] [cursor=pointer]:
+                    - img [ref=e377]
+                - paragraph [ref=e380]: ":::"
+                - paragraph [ref=e381]: :::js
+                - generic [ref=e382]:
+                  - generic [ref=e383]: "const shouldContinue: ConditionalEdgeRouter<typeof MessagesState, \"toolNode\"> = (state) => { const lastMessage = state.messages.at(-1); // Check if it's an AIMessage before accessing tool_calls if (!lastMessage || !AIMessage.isInstance(lastMessage)) { return END; } // If the LLM makes a tool call, then perform an action if (lastMessage.tool_calls?.length) { return \"toolNode\"; } // Otherwise, we stop (reply to the user) return END; };"
+                  - button "Copy code to clipboard" [ref=e385] [cursor=pointer]:
+                    - img [ref=e386]
+                - paragraph [ref=e389]: ":::"
+                - generic [ref=e390]:
+                  - heading "6. Build and compile the agent" [level=2] [ref=e391]
+                  - 'link "Permalink: 6. Build and compile the agent" [ref=e392] [cursor=pointer]':
+                    - /url: "#6-build-and-compile-the-agent"
+                    - img [ref=e393]
+                - paragraph [ref=e395]:
+                  - text: The agent is built using the @[
+                  - code [ref=e396]: StateGraph
+                  - text: "] class and compiled using the @["
+                  - code [ref=e397]: compile
+                  - text: "][StateGraph.compile] method."
+                - paragraph [ref=e398]: :::python
+                - generic [ref=e399]:
+                  - generic [ref=e400]: "# Build workflow agent_builder = StateGraph(MessagesState) # Add nodes agent_builder.add_node(\"llm_call\", llm_call) agent_builder.add_node(\"tool_node\", tool_node) # Add edges to connect nodes agent_builder.add_edge(START, \"llm_call\") agent_builder.add_conditional_edges( \"llm_call\", should_continue, [\"tool_node\", END] ) agent_builder.add_edge(\"tool_node\", \"llm_call\") # Compile the agent agent = agent_builder.compile() # Show the agent from IPython.display import Image, display display(Image(agent.get_graph(xray=True).draw_mermaid_png())) # Invoke from langchain.messages import HumanMessage messages = [HumanMessage(content=\"Add 3 and 4.\")] messages = agent.invoke({\"messages\": messages}) for m in messages[\"messages\"]: m.pretty_print()"
+                  - button "Copy code to clipboard" [ref=e402] [cursor=pointer]:
+                    - img [ref=e403]
+                - paragraph [ref=e406]: ":::"
+                - paragraph [ref=e407]: :::js
+                - generic [ref=e408]:
+                  - generic [ref=e409]:
+                    - text: "const agent = new StateGraph(MessagesState) .addNode(\"llmCall\", llmCall) .addNode(\"toolNode\", toolNode) .addEdge(START, \"llmCall\") .addConditionalEdges(\"llmCall\", shouldContinue, [\"toolNode\", END]) .addEdge(\"toolNode\", \"llmCall\") .compile(); // Invoke import { HumanMessage } from \"@langchain/core/messages\"; const result = await agent.invoke({ messages: [new HumanMessage(\"Add 3 and 4.\")], }); for (const message of result.messages) { console.log("
+                    - generic [ref=e410]:
+                      - text: "`["
+                      - generic [ref=e411]: "${message.type}"
+                      - text: "]:"
+                      - generic [ref=e412]: "${message.text}"
+                      - text: "`"
+                    - text: "); }"
+                  - button "Copy code to clipboard" [ref=e414] [cursor=pointer]:
+                    - img [ref=e415]
+                - paragraph [ref=e418]: ":::"
+                - text: Trace and debug your agent with [LangSmith](
+                - link "https://smith.langchain.com" [ref=e419] [cursor=pointer]:
+                  - /url: https://smith.langchain.com
+                - text: ). Follow the [tracing quickstart](/langsmith/trace-with-langgraph) to get set up. When ready for production, see [Deploy](/langsmith/deployment) for hosting options.
+                - paragraph [ref=e420]:
+                  - text: We recommend you also set up
+                  - link "LangSmith Engine" [ref=e421] [cursor=pointer]:
+                    - /url: /langchain-ai/docs/blob/main/langsmith/engine
+                  - text: which monitors your traces, detects issues, and proposes fixes.
+                - paragraph [ref=e422]: Congratulations! You've built your first agent using the LangGraph Graph API.
+                - text: :::python
+                - generic [ref=e423]:
+                  - generic [ref=e424]:
+                    - text: "# Step 1: Define tools and model from langchain.tools import tool from langchain.chat_models import init_chat_model model = init_chat_model( \"claude-sonnet-4-6\", temperature=0 ) # Define tools"
+                    - generic [ref=e425]: "@tool"
+                    - text: "def multiply(a: int, b: int) -> int: \"\"\"Multiply `a` and `b`."
+                    - text: "Args: a: First int b: Second int \"\"\" return a * b"
+                    - generic [ref=e426]: "@tool"
+                    - text: "def add(a: int, b: int) -> int: \"\"\"Adds `a` and `b`."
+                    - text: "Args: a: First int b: Second int \"\"\" return a + b"
+                    - generic [ref=e427]: "@tool"
+                    - text: "def divide(a: int, b: int) -> float: \"\"\"Divide `a` and `b`."
+                    - text: "Args: a: First int b: Second int \"\"\" return a / b # Augment the LLM with tools tools = [add, multiply, divide] tools_by_name = {tool.name: tool for tool in tools} model_with_tools = model.bind_tools(tools) # Step 2: Define state from langchain.messages import AnyMessage from typing_extensions import TypedDict, Annotated import operator class MessagesState(TypedDict): messages: Annotated[list[AnyMessage], operator.add] llm_calls: int # Step 3: Define model node from langchain.messages import SystemMessage def llm_call(state: MessagesState): \"\"\"LLM decides whether to call a tool or not\"\"\" return { \"messages\": [ model_with_tools.invoke( [ SystemMessage( content=\"You are a helpful assistant tasked with performing arithmetic on a set of inputs.\" ) ] + state[\"messages\"] ) ], \"llm_calls\": state.get('llm_calls', 0) + 1 } # Step 4: Define tool node from langchain.messages import ToolMessage def tool_node(state: MessagesState): \"\"\"Performs the tool call\"\"\" result = [] for tool_call in state[\"messages\"][-1].tool_calls: tool = tools_by_name[tool_call[\"name\"]] observation = tool.invoke(tool_call[\"args\"]) result.append(ToolMessage(content=observation, tool_call_id=tool_call[\"id\"])) return {\"messages\": result} # Step 5: Define logic to determine whether to end from typing import Literal from langgraph.graph import StateGraph, START, END # Conditional edge function to route to the tool node or end based upon whether the LLM made a tool call def should_continue(state: MessagesState) -> Literal[\"tool_node\", END]: \"\"\"Decide if we should continue the loop or stop based upon whether the LLM made a tool call\"\"\" messages = state[\"messages\"] last_message = messages[-1] # If the LLM makes a tool call, then perform an action if last_message.tool_calls: return \"tool_node\" # Otherwise, we stop (reply to the user) return END # Step 6: Build agent # Build workflow agent_builder = StateGraph(MessagesState) # Add nodes agent_builder.add_node(\"llm_call\", llm_call) agent_builder.add_node(\"tool_node\", tool_node) # Add edges to connect nodes agent_builder.add_edge(START, \"llm_call\") agent_builder.add_conditional_edges( \"llm_call\", should_continue, [\"tool_node\", END] ) agent_builder.add_edge(\"tool_node\", \"llm_call\") # Compile the agent agent = agent_builder.compile() from IPython.display import Image, display # Show the agent display(Image(agent.get_graph(xray=True).draw_mermaid_png())) # Invoke from langchain.messages import HumanMessage messages = [HumanMessage(content=\"Add 3 and 4.\")] messages = agent.invoke({\"messages\": messages}) for m in messages[\"messages\"]: m.pretty_print()"
+                  - button "Copy code to clipboard" [ref=e429] [cursor=pointer]:
+                    - img [ref=e430]
+                - paragraph [ref=e433]: ":::"
+                - paragraph [ref=e434]: :::js
+                - generic [ref=e435]:
+                  - generic [ref=e436]: "// Step 1: Define tools and model import { ChatAnthropic } from \"@langchain/anthropic\"; import { tool } from \"@langchain/core/tools\"; import * as z from \"zod\"; const model = new ChatAnthropic({ model: \"claude-sonnet-4-6\", temperature: 0, }); // Define tools const add = tool(({ a, b }) => a + b, { name: \"add\", description: \"Add two numbers\", schema: z.object({ a: z.number().describe(\"First number\"), b: z.number().describe(\"Second number\"), }), }); const multiply = tool(({ a, b }) => a * b, { name: \"multiply\", description: \"Multiply two numbers\", schema: z.object({ a: z.number().describe(\"First number\"), b: z.number().describe(\"Second number\"), }), }); const divide = tool(({ a, b }) => a / b, { name: \"divide\", description: \"Divide two numbers\", schema: z.object({ a: z.number().describe(\"First number\"), b: z.number().describe(\"Second number\"), }), }); // Augment the LLM with tools const toolsByName = { [add.name]: add, [multiply.name]: multiply, [divide.name]: divide, }; const tools = Object.values(toolsByName); const modelWithTools = model.bindTools(tools);"
+                  - button "Copy code to clipboard" [ref=e438] [cursor=pointer]:
+                    - img [ref=e439]
+                - generic [ref=e442]:
+                  - generic [ref=e443]: "// Step 2: Define state import { StateGraph, StateSchema, MessagesValue, ReducedValue, GraphNode, ConditionalEdgeRouter, START, END, } from \"@langchain/langgraph\"; import * as z from \"zod\"; const MessagesState = new StateSchema({ messages: MessagesValue, llmCalls: new ReducedValue( z.number().default(0), { reducer: (x, y) => x + y } ), });"
+                  - button "Copy code to clipboard" [ref=e445] [cursor=pointer]:
+                    - img [ref=e446]
+                - generic [ref=e449]:
+                  - generic [ref=e450]: "// Step 3: Define model node import { SystemMessage, AIMessage, ToolMessage } from \"@langchain/core/messages\"; const llmCall: GraphNode<typeof MessagesState> = async (state) => { return { messages: [await modelWithTools.invoke([ new SystemMessage( \"You are a helpful assistant tasked with performing arithmetic on a set of inputs.\" ), ...state.messages, ])], llmCalls: 1, }; }; // Step 4: Define tool node const toolNode: GraphNode<typeof MessagesState> = async (state) => { const lastMessage = state.messages.at(-1); if (lastMessage == null || !AIMessage.isInstance(lastMessage)) { return { messages: [] }; } const result: ToolMessage[] = []; for (const toolCall of lastMessage.tool_calls ?? []) { const tool = toolsByName[toolCall.name]; const observation = await tool.invoke(toolCall); result.push(observation); } return { messages: result }; };"
+                  - button "Copy code to clipboard" [ref=e452] [cursor=pointer]:
+                    - img [ref=e453]
+                - generic [ref=e456]:
+                  - generic [ref=e457]: "// Step 5: Define logic to determine whether to end import { ConditionalEdgeRouter, END } from \"@langchain/langgraph\"; const shouldContinue: ConditionalEdgeRouter<typeof MessagesState, \"toolNode\"> = (state) => { const lastMessage = state.messages.at(-1); // Check if it's an AIMessage before accessing tool_calls if (!lastMessage || !AIMessage.isInstance(lastMessage)) { return END; } // If the LLM makes a tool call, then perform an action if (lastMessage.tool_calls?.length) { return \"toolNode\"; } // Otherwise, we stop (reply to the user) return END; };"
+                  - button "Copy code to clipboard" [ref=e459] [cursor=pointer]:
+                    - img [ref=e460]
+                - generic [ref=e463]:
+                  - generic [ref=e464]:
+                    - text: "// Step 6: Build and compile the agent import { HumanMessage } from \"@langchain/core/messages\"; import { StateGraph, START, END } from \"@langchain/langgraph\"; const agent = new StateGraph(MessagesState) .addNode(\"llmCall\", llmCall) .addNode(\"toolNode\", toolNode) .addEdge(START, \"llmCall\") .addConditionalEdges(\"llmCall\", shouldContinue, [\"toolNode\", END]) .addEdge(\"toolNode\", \"llmCall\") .compile(); // Invoke const result = await agent.invoke({ messages: [new HumanMessage(\"Add 3 and 4.\")], }); for (const message of result.messages) { console.log("
+                    - generic [ref=e465]:
+                      - text: "`["
+                      - generic [ref=e466]: "${message.type}"
+                      - text: "]:"
+                      - generic [ref=e467]: "${message.text}"
+                      - text: "`"
+                    - text: "); }"
+                  - button "Copy code to clipboard" [ref=e469] [cursor=pointer]:
+                    - img [ref=e470]
+                - paragraph [ref=e473]: ":::"
+                - generic [ref=e474]:
+                  - heading "1. Define tools and model" [level=2] [ref=e475]
+                  - 'link "Permalink: 1. Define tools and model" [ref=e476] [cursor=pointer]':
+                    - /url: "#1-define-tools-and-model-1"
+                    - img [ref=e477]
+                - paragraph [ref=e479]: In this example, we'll use the Claude Sonnet 4.5 model and define tools for addition, multiplication, and division.
+                - paragraph [ref=e480]: :::python
+                - generic [ref=e481]:
+                  - generic [ref=e482]:
+                    - text: "from langchain.tools import tool from langchain.chat_models import init_chat_model model = init_chat_model( \"claude-sonnet-4-6\", temperature=0 ) # Define tools"
+                    - generic [ref=e483]: "@tool"
+                    - text: "def multiply(a: int, b: int) -> int: \"\"\"Multiply `a` and `b`."
+                    - text: "Args: a: First int b: Second int \"\"\" return a * b"
+                    - generic [ref=e484]: "@tool"
+                    - text: "def add(a: int, b: int) -> int: \"\"\"Adds `a` and `b`."
+                    - text: "Args: a: First int b: Second int \"\"\" return a + b"
+                    - generic [ref=e485]: "@tool"
+                    - text: "def divide(a: int, b: int) -> float: \"\"\"Divide `a` and `b`."
+                    - text: "Args: a: First int b: Second int \"\"\" return a / b # Augment the LLM with tools tools = [add, multiply, divide] tools_by_name = {tool.name: tool for tool in tools} model_with_tools = model.bind_tools(tools) from langgraph.graph import add_messages from langchain.messages import ( SystemMessage, HumanMessage, ToolCall, ) from langchain_core.messages import BaseMessage from langgraph.func import entrypoint, task"
+                  - button "Copy code to clipboard" [ref=e487] [cursor=pointer]:
+                    - img [ref=e488]
+                - paragraph [ref=e491]: ":::"
+                - paragraph [ref=e492]: :::js
+                - generic [ref=e493]:
+                  - generic [ref=e494]: "import { ChatAnthropic } from \"@langchain/anthropic\"; import { tool } from \"@langchain/core/tools\"; import * as z from \"zod\"; const model = new ChatAnthropic({ model: \"claude-sonnet-4-6\", temperature: 0, }); // Define tools const add = tool(({ a, b }) => a + b, { name: \"add\", description: \"Add two numbers\", schema: z.object({ a: z.number().describe(\"First number\"), b: z.number().describe(\"Second number\"), }), }); const multiply = tool(({ a, b }) => a * b, { name: \"multiply\", description: \"Multiply two numbers\", schema: z.object({ a: z.number().describe(\"First number\"), b: z.number().describe(\"Second number\"), }), }); const divide = tool(({ a, b }) => a / b, { name: \"divide\", description: \"Divide two numbers\", schema: z.object({ a: z.number().describe(\"First number\"), b: z.number().describe(\"Second number\"), }), }); // Augment the LLM with tools const toolsByName = { [add.name]: add, [multiply.name]: multiply, [divide.name]: divide, }; const tools = Object.values(toolsByName); const modelWithTools = model.bindTools(tools);"
+                  - button "Copy code to clipboard" [ref=e496] [cursor=pointer]:
+                    - img [ref=e497]
+                - paragraph [ref=e500]: ":::"
+                - generic [ref=e501]:
+                  - heading "2. Define model node" [level=2] [ref=e502]
+                  - 'link "Permalink: 2. Define model node" [ref=e503] [cursor=pointer]':
+                    - /url: "#2-define-model-node"
+                    - img [ref=e504]
+                - paragraph [ref=e506]: The model node is used to call the LLM and decide whether to call a tool or not.
+                - paragraph [ref=e507]: :::python
+                - text: "The @[`@task`] decorator marks a function as a task that can be executed as part of the agent. Tasks can be called synchronously or asynchronously within your entrypoint function."
+                - generic [ref=e508]:
+                  - generic [ref=e509]:
+                    - generic [ref=e510]: "@task"
+                    - text: "def call_llm(messages: list[BaseMessage]): \"\"\"LLM decides whether to call a tool or not\"\"\" return model_with_tools.invoke( [ SystemMessage( content=\"You are a helpful assistant tasked with performing arithmetic on a set of inputs.\" ) ] + messages )"
+                  - button "Copy code to clipboard" [ref=e512] [cursor=pointer]:
+                    - img [ref=e513]
+                - paragraph [ref=e516]: ":::"
+                - paragraph [ref=e517]: :::js
+                - generic [ref=e518]:
+                  - generic [ref=e519]: "import { task, entrypoint } from \"@langchain/langgraph\"; import { SystemMessage } from \"@langchain/core/messages\"; const callLlm = task({ name: \"callLlm\" }, async (messages: BaseMessage[]) => { return modelWithTools.invoke([ new SystemMessage( \"You are a helpful assistant tasked with performing arithmetic on a set of inputs.\" ), ...messages, ]); });"
+                  - button "Copy code to clipboard" [ref=e521] [cursor=pointer]:
+                    - img [ref=e522]
+                - paragraph [ref=e525]: ":::"
+                - generic [ref=e526]:
+                  - heading "3. Define tool node" [level=2] [ref=e527]
+                  - 'link "Permalink: 3. Define tool node" [ref=e528] [cursor=pointer]':
+                    - /url: "#3-define-tool-node"
+                    - img [ref=e529]
+                - paragraph [ref=e531]: The tool node is used to call the tools and return the results.
+                - paragraph [ref=e532]: :::python
+                - generic [ref=e533]:
+                  - generic [ref=e534]:
+                    - generic [ref=e535]: "@task"
+                    - text: "def call_tool(tool_call: ToolCall): \"\"\"Performs the tool call\"\"\" tool = tools_by_name[tool_call[\"name\"]] return tool.invoke(tool_call)"
+                  - button "Copy code to clipboard" [ref=e537] [cursor=pointer]:
+                    - img [ref=e538]
+                - paragraph [ref=e541]: ":::"
+                - paragraph [ref=e542]: :::js
+                - generic [ref=e543]:
+                  - generic [ref=e544]: "import type { ToolCall } from \"@langchain/core/messages/tool\"; const callTool = task({ name: \"callTool\" }, async (toolCall: ToolCall) => { const tool = toolsByName[toolCall.name]; return tool.invoke(toolCall); });"
+                  - button "Copy code to clipboard" [ref=e546] [cursor=pointer]:
+                    - img [ref=e547]
+                - paragraph [ref=e550]: ":::"
+                - generic [ref=e551]:
+                  - heading "4. Define agent" [level=2] [ref=e552]
+                  - 'link "Permalink: 4. Define agent" [ref=e553] [cursor=pointer]':
+                    - /url: "#4-define-agent"
+                    - img [ref=e554]
+                - paragraph [ref=e556]: :::python
+                - paragraph [ref=e557]:
+                  - text: The agent is built using the @[
+                  - code [ref=e558]: "@entrypoint"
+                  - text: "] function."
+                - text: In the Functional API, instead of defining nodes and edges explicitly, you write standard control flow logic (loops, conditionals) within a single function.
+                - generic [ref=e559]:
+                  - generic [ref=e560]:
+                    - generic [ref=e561]: "@entrypoint()"
+                    - text: "def agent(messages: list[BaseMessage]): model_response = call_llm(messages).result() while True: if not model_response.tool_calls: break # Execute tools tool_result_futures = [ call_tool(tool_call) for tool_call in model_response.tool_calls ] tool_results = [fut.result() for fut in tool_result_futures] messages = add_messages(messages, [model_response, *tool_results]) model_response = call_llm(messages).result() messages = add_messages(messages, model_response) return messages # Invoke messages = [HumanMessage(content=\"Add 3 and 4.\")] stream = agent.stream_events(messages, version=\"v3\") for snapshot in stream.values: print(snapshot) print("
+                    - generic [ref=e562]: "\"\\n\""
+                    - text: )
+                  - button "Copy code to clipboard" [ref=e564] [cursor=pointer]:
+                    - img [ref=e565]
+                - paragraph [ref=e568]: ":::"
+                - paragraph [ref=e569]: :::js
+                - generic [ref=e570]:
+                  - generic [ref=e571]:
+                    - text: "import { addMessages } from \"@langchain/langgraph\"; import { type BaseMessage } from \"@langchain/core/messages\"; const agent = entrypoint({ name: \"agent\" }, async (messages: BaseMessage[]) => { let modelResponse = await callLlm(messages); while (true) { if (!modelResponse.tool_calls?.length) { break; } // Execute tools const toolResults = await Promise.all( modelResponse.tool_calls.map((toolCall) => callTool(toolCall)) ); messages = addMessages(messages, [modelResponse, ...toolResults]); modelResponse = await callLlm(messages); } return messages; }); // Invoke import { HumanMessage } from \"@langchain/core/messages\"; const result = await agent.invoke([new HumanMessage(\"Add 3 and 4.\")]); for (const message of result) { console.log("
+                    - generic [ref=e572]:
+                      - text: "`["
+                      - generic [ref=e573]: "${message.getType()}"
+                      - text: "]:"
+                      - generic [ref=e574]: "${message.text}"
+                      - text: "`"
+                    - text: "); }"
+                  - button "Copy code to clipboard" [ref=e576] [cursor=pointer]:
+                    - img [ref=e577]
+                - paragraph [ref=e580]: ":::"
+                - text: Trace and debug your agent with [LangSmith](
+                - link "https://smith.langchain.com" [ref=e581] [cursor=pointer]:
+                  - /url: https://smith.langchain.com
+                - text: ). Follow the [tracing quickstart](/langsmith/trace-with-langgraph) to get set up. When ready for production, see [Deploy](/langsmith/deployment) for hosting options.
+                - paragraph [ref=e582]:
+                  - text: We recommend you also set up
+                  - link "LangSmith Engine" [ref=e583] [cursor=pointer]:
+                    - /url: /langchain-ai/docs/blob/main/langsmith/engine
+                  - text: which monitors your traces, detects issues, and proposes fixes.
+                - paragraph [ref=e584]: Congratulations! You've built your first agent using the LangGraph Functional API.
+                - text: :::python
+                - generic [ref=e585]:
+                  - generic [ref=e586]:
+                    - text: "# Step 1: Define tools and model from langchain.tools import tool from langchain.chat_models import init_chat_model model = init_chat_model( \"claude-sonnet-4-6\", temperature=0 ) # Define tools"
+                    - generic [ref=e587]: "@tool"
+                    - text: "def multiply(a: int, b: int) -> int: \"\"\"Multiply `a` and `b`."
+                    - text: "Args: a: First int b: Second int \"\"\" return a * b"
+                    - generic [ref=e588]: "@tool"
+                    - text: "def add(a: int, b: int) -> int: \"\"\"Adds `a` and `b`."
+                    - text: "Args: a: First int b: Second int \"\"\" return a + b"
+                    - generic [ref=e589]: "@tool"
+                    - text: "def divide(a: int, b: int) -> float: \"\"\"Divide `a` and `b`."
+                    - text: "Args: a: First int b: Second int \"\"\" return a / b # Augment the LLM with tools tools = [add, multiply, divide] tools_by_name = {tool.name: tool for tool in tools} model_with_tools = model.bind_tools(tools) from langgraph.graph import add_messages from langchain.messages import ( SystemMessage, HumanMessage, ToolCall, ) from langchain_core.messages import BaseMessage from langgraph.func import entrypoint, task # Step 2: Define model node"
+                    - generic [ref=e590]: "@task"
+                    - text: "def call_llm(messages: list[BaseMessage]): \"\"\"LLM decides whether to call a tool or not\"\"\" return model_with_tools.invoke( [ SystemMessage( content=\"You are a helpful assistant tasked with performing arithmetic on a set of inputs.\" ) ] + messages ) # Step 3: Define tool node"
+                    - generic [ref=e591]: "@task"
+                    - text: "def call_tool(tool_call: ToolCall): \"\"\"Performs the tool call\"\"\" tool = tools_by_name[tool_call[\"name\"]] return tool.invoke(tool_call) # Step 4: Define agent"
+                    - generic [ref=e592]: "@entrypoint()"
+                    - text: "def agent(messages: list[BaseMessage]): model_response = call_llm(messages).result() while True: if not model_response.tool_calls: break # Execute tools tool_result_futures = [ call_tool(tool_call) for tool_call in model_response.tool_calls ] tool_results = [fut.result() for fut in tool_result_futures] messages = add_messages(messages, [model_response, *tool_results]) model_response = call_llm(messages).result() messages = add_messages(messages, model_response) return messages # Invoke messages = [HumanMessage(content=\"Add 3 and 4.\")] stream = agent.stream_events(messages, version=\"v3\") for snapshot in stream.values: print(snapshot) print("
+                    - generic [ref=e593]: "\"\\n\""
+                    - text: )
+                  - button "Copy code to clipboard" [ref=e595] [cursor=pointer]:
+                    - img [ref=e596]
+                - paragraph [ref=e599]: ":::"
+                - paragraph [ref=e600]: :::js
+                - generic [ref=e601]:
+                  - generic [ref=e602]:
+                    - text: "import { ChatAnthropic } from \"@langchain/anthropic\"; import { tool } from \"@langchain/core/tools\"; import { task, entrypoint, addMessages, } from \"@langchain/langgraph\"; import { SystemMessage, HumanMessage, type BaseMessage, } from \"@langchain/core/messages\"; import type { ToolCall } from \"@langchain/core/messages/tool\"; import * as z from \"zod\"; // Step 1: Define tools and model const model = new ChatAnthropic({ model: \"claude-sonnet-4-6\", temperature: 0, }); // Define tools const add = tool(({ a, b }) => a + b, { name: \"add\", description: \"Add two numbers\", schema: z.object({ a: z.number().describe(\"First number\"), b: z.number().describe(\"Second number\"), }), }); const multiply = tool(({ a, b }) => a * b, { name: \"multiply\", description: \"Multiply two numbers\", schema: z.object({ a: z.number().describe(\"First number\"), b: z.number().describe(\"Second number\"), }), }); const divide = tool(({ a, b }) => a / b, { name: \"divide\", description: \"Divide two numbers\", schema: z.object({ a: z.number().describe(\"First number\"), b: z.number().describe(\"Second number\"), }), }); // Augment the LLM with tools const toolsByName = { [add.name]: add, [multiply.name]: multiply, [divide.name]: divide, }; const tools = Object.values(toolsByName); const modelWithTools = model.bindTools(tools); // Step 2: Define model node const callLlm = task({ name: \"callLlm\" }, async (messages: BaseMessage[]) => { return modelWithTools.invoke([ new SystemMessage( \"You are a helpful assistant tasked with performing arithmetic on a set of inputs.\" ), ...messages, ]); }); // Step 3: Define tool node const callTool = task({ name: \"callTool\" }, async (toolCall: ToolCall) => { const tool = toolsByName[toolCall.name]; return tool.invoke(toolCall); }); // Step 4: Define agent const agent = entrypoint({ name: \"agent\" }, async (messages: BaseMessage[]) => { let modelResponse = await callLlm(messages); while (true) { if (!modelResponse.tool_calls?.length) { break; } // Execute tools const toolResults = await Promise.all( modelResponse.tool_calls.map((toolCall) => callTool(toolCall)) ); messages = addMessages(messages, [modelResponse, ...toolResults]); modelResponse = await callLlm(messages); } return messages; }); // Invoke const result = await agent.invoke([new HumanMessage(\"Add 3 and 4.\")]); for (const message of result) { console.log("
+                    - generic [ref=e603]:
+                      - text: "`["
+                      - generic [ref=e604]: "${message.type}"
+                      - text: "]:"
+                      - generic [ref=e605]: "${message.text}"
+                      - text: "`"
+                    - text: "); }"
+                  - button "Copy code to clipboard" [ref=e607] [cursor=pointer]:
+                    - img [ref=e608]
+                - paragraph [ref=e611]: ":::"
+  - alert [ref=e615]

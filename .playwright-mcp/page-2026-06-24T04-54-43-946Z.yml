@@ -1,0 +1,512 @@
+- generic [ref=e2]:
+  - generic [ref=e3]:
+    - link "Skip to content" [ref=e4] [cursor=pointer]:
+      - /url: "#start-of-content"
+    - banner [ref=e6]:
+      - heading "Navigation Menu" [level=2] [ref=e7]
+      - generic [ref=e9]:
+        - button "Toggle navigation" [ref=e11] [cursor=pointer]
+        - link "Homepage" [ref=e17] [cursor=pointer]:
+          - /url: /
+          - img [ref=e18]
+        - generic [ref=e20]:
+          - link "Sign in" [ref=e21] [cursor=pointer]:
+            - /url: /login?return_to=https%3A%2F%2Fgithub.com%2Flangchain-ai%2Fdocs%2Ftree%2Fmain%2Fsrc%2Foss%2Flanggraph
+          - button "Appearance settings" [ref=e24] [cursor=pointer]:
+            - img
+  - main [ref=e28]:
+    - generic [ref=e29]:
+      - generic [ref=e30]:
+        - generic [ref=e32]:
+          - img [ref=e33]
+          - link "langchain-ai" [ref=e36] [cursor=pointer]:
+            - /url: /langchain-ai
+          - generic [ref=e37]: /
+          - strong [ref=e38]:
+            - link "docs" [ref=e39] [cursor=pointer]:
+              - /url: /langchain-ai/docs
+          - generic [ref=e40]: Public
+        - generic [ref=e41]:
+          - list:
+            - listitem [ref=e42]:
+              - link "You must be signed in to change notification settings" [ref=e43] [cursor=pointer]:
+                - /url: /login?return_to=%2Flangchain-ai%2Fdocs
+                - img [ref=e44]
+                - text: Notifications
+            - listitem [ref=e46]:
+              - link "Fork 2.4k" [ref=e47] [cursor=pointer]:
+                - /url: /login?return_to=%2Flangchain-ai%2Fdocs
+                - img [ref=e48]
+                - text: Fork
+                - generic "2,429" [ref=e50]: 2.4k
+            - listitem [ref=e51]:
+              - link "You must be signed in to star a repository" [ref=e53] [cursor=pointer]:
+                - /url: /login?return_to=%2Flangchain-ai%2Fdocs
+                - img [ref=e54]
+                - text: Star
+                - generic "365 users starred this repository" [ref=e56]: "365"
+      - navigation "Repository" [ref=e57]:
+        - list [ref=e58]:
+          - listitem [ref=e59]:
+            - link "Code" [ref=e60] [cursor=pointer]:
+              - /url: /langchain-ai/docs
+              - img [ref=e61]
+              - generic [ref=e63]: Code
+          - listitem [ref=e64]:
+            - link "Issues 236" [ref=e65] [cursor=pointer]:
+              - /url: /langchain-ai/docs/issues
+              - img [ref=e66]
+              - generic [ref=e69]: Issues
+              - generic "236" [ref=e70]
+          - listitem [ref=e71]:
+            - link "Pull requests 303" [ref=e72] [cursor=pointer]:
+              - /url: /langchain-ai/docs/pulls
+              - img [ref=e73]
+              - generic [ref=e75]: Pull requests
+              - generic "303" [ref=e76]
+          - listitem [ref=e77]:
+            - link "Actions" [ref=e78] [cursor=pointer]:
+              - /url: /langchain-ai/docs/actions
+              - img [ref=e79]
+              - generic [ref=e81]: Actions
+          - listitem [ref=e82]:
+            - link "Security and quality" [ref=e83] [cursor=pointer]:
+              - /url: /langchain-ai/docs/security
+              - img [ref=e84]
+              - generic [ref=e86]: Security and quality
+          - listitem [ref=e87]:
+            - link "Insights" [ref=e88] [cursor=pointer]:
+              - /url: /langchain-ai/docs/pulse
+              - img [ref=e89]
+              - generic [ref=e91]: Insights
+    - generic [ref=e102]:
+      - generic [ref=e106]:
+        - generic [ref=e107]:
+          - heading "Expand file tree" [level=2] [ref=e109]:
+            - button "Expand file tree" [ref=e110] [cursor=pointer]:
+              - img [ref=e111]
+          - button "main branch" [ref=e115] [cursor=pointer]:
+            - generic [ref=e116]:
+              - generic [ref=e118]:
+                - img [ref=e120]
+                - generic [ref=e123]: main
+              - generic:
+                - img
+          - generic [ref=e125]:
+            - navigation "Breadcrumbs" [ref=e126]:
+              - heading "Breadcrumbs" [level=2] [ref=e127]
+              - list [ref=e128]:
+                - listitem [ref=e129]:
+                  - link "docs" [ref=e130] [cursor=pointer]:
+                    - /url: /langchain-ai/docs/tree/main
+                - listitem [ref=e131]:
+                  - text: /
+                  - link "src" [ref=e132] [cursor=pointer]:
+                    - /url: /langchain-ai/docs/tree/main/src
+                - listitem [ref=e133]:
+                  - text: /
+                  - link "oss" [ref=e134] [cursor=pointer]:
+                    - /url: /langchain-ai/docs/tree/main/src/oss
+            - generic [ref=e135]:
+              - text: /
+              - heading "langgraph" [level=1] [ref=e136]
+              - text: /
+            - button "Copy path" [ref=e137] [cursor=pointer]:
+              - img [ref=e138]
+        - generic [ref=e143]:
+          - heading "Directory actions" [level=2] [ref=e144]
+          - generic [ref=e147]:
+            - img [ref=e149]
+            - combobox "Go to file" [ref=e151]
+          - heading "More options" [level=2] [ref=e152]
+          - button "More options" [ref=e153] [cursor=pointer]:
+            - img [ref=e154]
+      - generic [ref=e156]:
+        - generic [ref=e158]:
+          - heading "Latest commit" [level=2] [ref=e159]
+          - generic [ref=e162]:
+            - heading "History" [level=2] [ref=e163]
+            - link "View commit history for this file." [ref=e165] [cursor=pointer]:
+              - /url: /langchain-ai/docs/commits/main/src/oss/langgraph
+              - generic [ref=e166]:
+                - generic:
+                  - img
+        - generic [ref=e168]:
+          - heading "Folders and files" [level=2] [ref=e169]
+          - table "Folders and files" [ref=e170]:
+            - rowgroup [ref=e171]:
+              - row "Name Last commit message Last commit date" [ref=e172]:
+                - columnheader "Name" [ref=e173]
+                - columnheader "Last commit message" [ref=e174]:
+                  - generic "Last commit message" [ref=e175]
+                - columnheader "Last commit date" [ref=e176]:
+                  - generic "Last commit date" [ref=e177]
+            - rowgroup [ref=e178]:
+              - row "parent directory Parent directory" [ref=e179]:
+                - cell "parent directory Parent directory" [ref=e180]:
+                  - heading "parent directory" [level=3] [ref=e181]
+                  - link "Parent directory" [ref=e182] [cursor=pointer]:
+                    - /url: /langchain-ai/docs/tree/main/src/oss
+                    - generic [ref=e183]:
+                      - img [ref=e184]
+                      - text: ..
+              - row "errors, (Directory)" [ref=e186]:
+                - cell "errors, (Directory)" [ref=e187]:
+                  - generic [ref=e188]:
+                    - img [ref=e189]
+                    - link "errors, (Directory)" [ref=e194] [cursor=pointer]:
+                      - /url: /langchain-ai/docs/tree/main/src/oss/langgraph/errors
+                      - text: errors
+                - cell [ref=e195]
+                - cell [ref=e197]
+              - row "frontend, (Directory)" [ref=e200]:
+                - cell "frontend, (Directory)" [ref=e201]:
+                  - generic [ref=e202]:
+                    - img [ref=e203]
+                    - link "frontend, (Directory)" [ref=e208] [cursor=pointer]:
+                      - /url: /langchain-ai/docs/tree/main/src/oss/langgraph/frontend
+                      - text: frontend
+                - cell [ref=e209]
+                - cell [ref=e211]
+              - row "add-memory.mdx, (File)" [ref=e214]:
+                - cell "add-memory.mdx, (File)" [ref=e215]:
+                  - generic [ref=e216]:
+                    - img [ref=e217]
+                    - link "add-memory.mdx, (File)" [ref=e222] [cursor=pointer]:
+                      - /url: /langchain-ai/docs/blob/main/src/oss/langgraph/add-memory.mdx
+                      - text: add-memory.mdx
+                - cell [ref=e223]
+                - cell [ref=e225]
+              - row "agentic-rag.mdx, (File)" [ref=e228]:
+                - cell "agentic-rag.mdx, (File)" [ref=e229]:
+                  - generic [ref=e230]:
+                    - img [ref=e231]
+                    - link "agentic-rag.mdx, (File)" [ref=e236] [cursor=pointer]:
+                      - /url: /langchain-ai/docs/blob/main/src/oss/langgraph/agentic-rag.mdx
+                      - text: agentic-rag.mdx
+                - cell [ref=e237]
+                - cell [ref=e239]
+              - row "application-structure.mdx, (File)" [ref=e242]:
+                - cell "application-structure.mdx, (File)" [ref=e243]:
+                  - generic [ref=e244]:
+                    - img [ref=e245]
+                    - link "application-structure.mdx, (File)" [ref=e250] [cursor=pointer]:
+                      - /url: /langchain-ai/docs/blob/main/src/oss/langgraph/application-structure.mdx
+                      - text: application-structure.mdx
+                - cell [ref=e251]
+                - cell [ref=e253]
+              - row "backward-compatibility.mdx, (File)" [ref=e256]:
+                - cell "backward-compatibility.mdx, (File)" [ref=e257]:
+                  - generic [ref=e258]:
+                    - img [ref=e259]
+                    - link "backward-compatibility.mdx, (File)" [ref=e264] [cursor=pointer]:
+                      - /url: /langchain-ai/docs/blob/main/src/oss/langgraph/backward-compatibility.mdx
+                      - text: backward-compatibility.mdx
+                - cell [ref=e265]
+                - cell [ref=e267]
+              - row "case-studies.mdx, (File)" [ref=e270]:
+                - cell "case-studies.mdx, (File)" [ref=e271]:
+                  - generic [ref=e272]:
+                    - img [ref=e273]
+                    - link "case-studies.mdx, (File)" [ref=e278] [cursor=pointer]:
+                      - /url: /langchain-ai/docs/blob/main/src/oss/langgraph/case-studies.mdx
+                      - text: case-studies.mdx
+                - cell [ref=e279]
+                - cell [ref=e281]
+              - row "changelog-js.mdx, (File)" [ref=e284]:
+                - cell "changelog-js.mdx, (File)" [ref=e285]:
+                  - generic [ref=e286]:
+                    - img [ref=e287]
+                    - link "changelog-js.mdx, (File)" [ref=e292] [cursor=pointer]:
+                      - /url: /langchain-ai/docs/blob/main/src/oss/langgraph/changelog-js.mdx
+                      - text: changelog-js.mdx
+                - cell [ref=e293]
+                - cell [ref=e295]
+              - row "changelog-py.mdx, (File)" [ref=e298]:
+                - cell "changelog-py.mdx, (File)" [ref=e299]:
+                  - generic [ref=e300]:
+                    - img [ref=e301]
+                    - link "changelog-py.mdx, (File)" [ref=e306] [cursor=pointer]:
+                      - /url: /langchain-ai/docs/blob/main/src/oss/langgraph/changelog-py.mdx
+                      - text: changelog-py.mdx
+                - cell [ref=e307]
+                - cell [ref=e309]
+              - row "checkpointers.mdx, (File)" [ref=e312]:
+                - cell "checkpointers.mdx, (File)" [ref=e313]:
+                  - generic [ref=e314]:
+                    - img [ref=e315]
+                    - link "checkpointers.mdx, (File)" [ref=e320] [cursor=pointer]:
+                      - /url: /langchain-ai/docs/blob/main/src/oss/langgraph/checkpointers.mdx
+                      - text: checkpointers.mdx
+                - cell [ref=e321]
+                - cell [ref=e323]
+              - row "choosing-apis.mdx, (File)" [ref=e326]:
+                - cell "choosing-apis.mdx, (File)" [ref=e327]:
+                  - generic [ref=e328]:
+                    - img [ref=e329]
+                    - link "choosing-apis.mdx, (File)" [ref=e334] [cursor=pointer]:
+                      - /url: /langchain-ai/docs/blob/main/src/oss/langgraph/choosing-apis.mdx
+                      - text: choosing-apis.mdx
+                - cell [ref=e335]
+                - cell [ref=e337]
+              - row "deploy.mdx, (File)" [ref=e340]:
+                - cell "deploy.mdx, (File)" [ref=e341]:
+                  - generic [ref=e342]:
+                    - img [ref=e343]
+                    - link "deploy.mdx, (File)" [ref=e348] [cursor=pointer]:
+                      - /url: /langchain-ai/docs/blob/main/src/oss/langgraph/deploy.mdx
+                      - text: deploy.mdx
+                - cell [ref=e349]
+                - cell [ref=e351]
+              - row "event-streaming.mdx, (File)" [ref=e354]:
+                - cell "event-streaming.mdx, (File)" [ref=e355]:
+                  - generic [ref=e356]:
+                    - img [ref=e357]
+                    - link "event-streaming.mdx, (File)" [ref=e362] [cursor=pointer]:
+                      - /url: /langchain-ai/docs/blob/main/src/oss/langgraph/event-streaming.mdx
+                      - text: event-streaming.mdx
+                - cell [ref=e363]
+                - cell [ref=e365]
+              - row "fault-tolerance.mdx, (File)" [ref=e368]:
+                - cell "fault-tolerance.mdx, (File)" [ref=e369]:
+                  - generic [ref=e370]:
+                    - img [ref=e371]
+                    - link "fault-tolerance.mdx, (File)" [ref=e376] [cursor=pointer]:
+                      - /url: /langchain-ai/docs/blob/main/src/oss/langgraph/fault-tolerance.mdx
+                      - text: fault-tolerance.mdx
+                - cell [ref=e377]
+                - cell [ref=e379]
+              - row "functional-api.mdx, (File)" [ref=e382]:
+                - cell "functional-api.mdx, (File)" [ref=e383]:
+                  - generic [ref=e384]:
+                    - img [ref=e385]
+                    - link "functional-api.mdx, (File)" [ref=e390] [cursor=pointer]:
+                      - /url: /langchain-ai/docs/blob/main/src/oss/langgraph/functional-api.mdx
+                      - text: functional-api.mdx
+                - cell [ref=e391]
+                - cell [ref=e393]
+              - row "graph-api.mdx, (File)" [ref=e396]:
+                - cell "graph-api.mdx, (File)" [ref=e397]:
+                  - generic [ref=e398]:
+                    - img [ref=e399]
+                    - link "graph-api.mdx, (File)" [ref=e404] [cursor=pointer]:
+                      - /url: /langchain-ai/docs/blob/main/src/oss/langgraph/graph-api.mdx
+                      - text: graph-api.mdx
+                - cell [ref=e405]
+                - cell [ref=e407]
+              - row "install.mdx, (File)" [ref=e410]:
+                - cell "install.mdx, (File)" [ref=e411]:
+                  - generic [ref=e412]:
+                    - img [ref=e413]
+                    - link "install.mdx, (File)" [ref=e418] [cursor=pointer]:
+                      - /url: /langchain-ai/docs/blob/main/src/oss/langgraph/install.mdx
+                      - text: install.mdx
+                - cell [ref=e419]
+                - cell [ref=e421]
+              - row "interrupts.mdx, (File)" [ref=e424]:
+                - cell "interrupts.mdx, (File)" [ref=e425]:
+                  - generic [ref=e426]:
+                    - img [ref=e427]
+                    - link "interrupts.mdx, (File)" [ref=e432] [cursor=pointer]:
+                      - /url: /langchain-ai/docs/blob/main/src/oss/langgraph/interrupts.mdx
+                      - text: interrupts.mdx
+                - cell [ref=e433]
+                - cell [ref=e435]
+              - row "local-server.mdx, (File)" [ref=e438]:
+                - cell "local-server.mdx, (File)" [ref=e439]:
+                  - generic [ref=e440]:
+                    - img [ref=e441]
+                    - link "local-server.mdx, (File)" [ref=e446] [cursor=pointer]:
+                      - /url: /langchain-ai/docs/blob/main/src/oss/langgraph/local-server.mdx
+                      - text: local-server.mdx
+                - cell [ref=e447]
+                - cell [ref=e449]
+              - row "observability.mdx, (File)" [ref=e452]:
+                - cell "observability.mdx, (File)" [ref=e453]:
+                  - generic [ref=e454]:
+                    - img [ref=e455]
+                    - link "observability.mdx, (File)" [ref=e460] [cursor=pointer]:
+                      - /url: /langchain-ai/docs/blob/main/src/oss/langgraph/observability.mdx
+                      - text: observability.mdx
+                - cell [ref=e461]
+                - cell [ref=e463]
+              - row "overview.mdx, (File)" [ref=e466]:
+                - cell "overview.mdx, (File)" [ref=e467]:
+                  - generic [ref=e468]:
+                    - img [ref=e469]
+                    - link "overview.mdx, (File)" [ref=e474] [cursor=pointer]:
+                      - /url: /langchain-ai/docs/blob/main/src/oss/langgraph/overview.mdx
+                      - text: overview.mdx
+                - cell [ref=e475]
+                - cell [ref=e477]
+              - row "persistence.mdx, (File)" [ref=e480]:
+                - cell "persistence.mdx, (File)" [ref=e481]:
+                  - generic [ref=e482]:
+                    - img [ref=e483]
+                    - link "persistence.mdx, (File)" [ref=e488] [cursor=pointer]:
+                      - /url: /langchain-ai/docs/blob/main/src/oss/langgraph/persistence.mdx
+                      - text: persistence.mdx
+                - cell [ref=e489]
+                - cell [ref=e491]
+              - row "pregel.mdx, (File)" [ref=e494]:
+                - cell "pregel.mdx, (File)" [ref=e495]:
+                  - generic [ref=e496]:
+                    - img [ref=e497]
+                    - link "pregel.mdx, (File)" [ref=e502] [cursor=pointer]:
+                      - /url: /langchain-ai/docs/blob/main/src/oss/langgraph/pregel.mdx
+                      - text: pregel.mdx
+                - cell [ref=e503]
+                - cell [ref=e505]
+              - row "quickstart.mdx, (File)" [ref=e508]:
+                - cell "quickstart.mdx, (File)" [ref=e509]:
+                  - generic [ref=e510]:
+                    - img [ref=e511]
+                    - link "quickstart.mdx, (File)" [ref=e516] [cursor=pointer]:
+                      - /url: /langchain-ai/docs/blob/main/src/oss/langgraph/quickstart.mdx
+                      - text: quickstart.mdx
+                - cell [ref=e517]
+                - cell [ref=e519]
+              - row "sql-agent.mdx, (File)" [ref=e522]:
+                - cell "sql-agent.mdx, (File)" [ref=e523]:
+                  - generic [ref=e524]:
+                    - img [ref=e525]
+                    - link "sql-agent.mdx, (File)" [ref=e530] [cursor=pointer]:
+                      - /url: /langchain-ai/docs/blob/main/src/oss/langgraph/sql-agent.mdx
+                      - text: sql-agent.mdx
+                - cell [ref=e531]
+                - cell [ref=e533]
+              - row "stores.mdx, (File)" [ref=e536]:
+                - cell "stores.mdx, (File)" [ref=e537]:
+                  - generic [ref=e538]:
+                    - img [ref=e539]
+                    - link "stores.mdx, (File)" [ref=e544] [cursor=pointer]:
+                      - /url: /langchain-ai/docs/blob/main/src/oss/langgraph/stores.mdx
+                      - text: stores.mdx
+                - cell [ref=e545]
+                - cell [ref=e547]
+              - row "streaming.mdx, (File)" [ref=e550]:
+                - cell "streaming.mdx, (File)" [ref=e551]:
+                  - generic [ref=e552]:
+                    - img [ref=e553]
+                    - link "streaming.mdx, (File)" [ref=e558] [cursor=pointer]:
+                      - /url: /langchain-ai/docs/blob/main/src/oss/langgraph/streaming.mdx
+                      - text: streaming.mdx
+                - cell [ref=e559]
+                - cell [ref=e561]
+              - row "studio.mdx, (File)" [ref=e564]:
+                - cell "studio.mdx, (File)" [ref=e565]:
+                  - generic [ref=e566]:
+                    - img [ref=e567]
+                    - link "studio.mdx, (File)" [ref=e572] [cursor=pointer]:
+                      - /url: /langchain-ai/docs/blob/main/src/oss/langgraph/studio.mdx
+                      - text: studio.mdx
+                - cell [ref=e573]
+                - cell [ref=e575]
+              - row "test.mdx, (File)" [ref=e578]:
+                - cell "test.mdx, (File)" [ref=e579]:
+                  - generic [ref=e580]:
+                    - img [ref=e581]
+                    - link "test.mdx, (File)" [ref=e586] [cursor=pointer]:
+                      - /url: /langchain-ai/docs/blob/main/src/oss/langgraph/test.mdx
+                      - text: test.mdx
+                - cell [ref=e587]
+                - cell [ref=e589]
+              - row "thinking-in-langgraph.mdx, (File)" [ref=e592]:
+                - cell "thinking-in-langgraph.mdx, (File)" [ref=e593]:
+                  - generic [ref=e594]:
+                    - img [ref=e595]
+                    - link "thinking-in-langgraph.mdx, (File)" [ref=e600] [cursor=pointer]:
+                      - /url: /langchain-ai/docs/blob/main/src/oss/langgraph/thinking-in-langgraph.mdx
+                      - text: thinking-in-langgraph.mdx
+                - cell [ref=e601]
+                - cell [ref=e603]
+              - row "ui.mdx, (File)" [ref=e606]:
+                - cell "ui.mdx, (File)" [ref=e607]:
+                  - generic [ref=e608]:
+                    - img [ref=e609]
+                    - link "ui.mdx, (File)" [ref=e614] [cursor=pointer]:
+                      - /url: /langchain-ai/docs/blob/main/src/oss/langgraph/ui.mdx
+                      - text: ui.mdx
+                - cell [ref=e615]
+                - cell [ref=e617]
+              - row "use-functional-api.mdx, (File)" [ref=e620]:
+                - cell "use-functional-api.mdx, (File)" [ref=e621]:
+                  - generic [ref=e622]:
+                    - img [ref=e623]
+                    - link "use-functional-api.mdx, (File)" [ref=e628] [cursor=pointer]:
+                      - /url: /langchain-ai/docs/blob/main/src/oss/langgraph/use-functional-api.mdx
+                      - text: use-functional-api.mdx
+                - cell [ref=e629]
+                - cell [ref=e631]
+              - row "use-graph-api.mdx, (File)" [ref=e634]:
+                - cell "use-graph-api.mdx, (File)" [ref=e635]:
+                  - generic [ref=e636]:
+                    - img [ref=e637]
+                    - link "use-graph-api.mdx, (File)" [ref=e642] [cursor=pointer]:
+                      - /url: /langchain-ai/docs/blob/main/src/oss/langgraph/use-graph-api.mdx
+                      - text: use-graph-api.mdx
+                - cell [ref=e643]
+                - cell [ref=e645]
+              - row "use-subgraphs.mdx, (File)" [ref=e648]:
+                - cell "use-subgraphs.mdx, (File)" [ref=e649]:
+                  - generic [ref=e650]:
+                    - img [ref=e651]
+                    - link "use-subgraphs.mdx, (File)" [ref=e656] [cursor=pointer]:
+                      - /url: /langchain-ai/docs/blob/main/src/oss/langgraph/use-subgraphs.mdx
+                      - text: use-subgraphs.mdx
+                - cell [ref=e657]
+                - cell [ref=e659]
+              - row "use-time-travel.mdx, (File)" [ref=e662]:
+                - cell "use-time-travel.mdx, (File)" [ref=e663]:
+                  - generic [ref=e664]:
+                    - img [ref=e665]
+                    - link "use-time-travel.mdx, (File)" [ref=e670] [cursor=pointer]:
+                      - /url: /langchain-ai/docs/blob/main/src/oss/langgraph/use-time-travel.mdx
+                      - text: use-time-travel.mdx
+                - cell [ref=e671]
+                - cell [ref=e673]
+              - row "workflows-agents.mdx, (File)" [ref=e676]:
+                - cell "workflows-agents.mdx, (File)" [ref=e677]:
+                  - generic [ref=e678]:
+                    - img [ref=e679]
+                    - link "workflows-agents.mdx, (File)" [ref=e684] [cursor=pointer]:
+                      - /url: /langchain-ai/docs/blob/main/src/oss/langgraph/workflows-agents.mdx
+                      - text: workflows-agents.mdx
+                - cell [ref=e685]
+                - cell [ref=e687]
+  - contentinfo [ref=e691]:
+    - heading "Footer" [level=2] [ref=e692]
+    - generic [ref=e693]:
+      - generic [ref=e694]:
+        - link "GitHub Homepage" [ref=e695] [cursor=pointer]:
+          - /url: https://github.com
+          - img [ref=e696]
+        - generic [ref=e698]: © 2026 GitHub, Inc.
+      - navigation "Footer" [ref=e699]:
+        - heading "Footer navigation" [level=3] [ref=e700]
+        - list "Footer navigation" [ref=e701]:
+          - listitem [ref=e702]:
+            - link "Terms" [ref=e703] [cursor=pointer]:
+              - /url: https://docs.github.com/site-policy/github-terms/github-terms-of-service
+          - listitem [ref=e704]:
+            - link "Privacy" [ref=e705] [cursor=pointer]:
+              - /url: https://docs.github.com/site-policy/privacy-policies/github-privacy-statement
+          - listitem [ref=e706]:
+            - link "Security" [ref=e707] [cursor=pointer]:
+              - /url: https://github.com/security
+          - listitem [ref=e708]:
+            - link "Status" [ref=e709] [cursor=pointer]:
+              - /url: https://www.githubstatus.com/
+          - listitem [ref=e710]:
+            - link "Community" [ref=e711] [cursor=pointer]:
+              - /url: https://github.community/
+          - listitem [ref=e712]:
+            - link "Docs" [ref=e713] [cursor=pointer]:
+              - /url: https://docs.github.com/
+          - listitem [ref=e714]:
+            - link "Contact" [ref=e715] [cursor=pointer]:
+              - /url: https://support.github.com?tags=dotcom-footer
+          - listitem [ref=e716]:
+            - button "Manage cookies" [ref=e718] [cursor=pointer]
+          - listitem [ref=e719]:
+            - button "Do not share my personal information" [ref=e721] [cursor=pointer]

@@ -1,0 +1,248 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e3]:
+      - link "Skip to content" [ref=e4] [cursor=pointer]:
+        - /url: "#start-of-content"
+      - banner [ref=e6]:
+        - heading "Navigation Menu" [level=2] [ref=e7]
+        - generic [ref=e9]:
+          - button "Toggle navigation" [ref=e11] [cursor=pointer]
+          - link "Homepage" [ref=e17] [cursor=pointer]:
+            - /url: /
+            - img [ref=e18]
+          - generic [ref=e20]:
+            - link "Sign in" [ref=e21] [cursor=pointer]:
+              - /url: /login?return_to=https%3A%2F%2Fgithub.com%2Flangchain-ai%2Fdocs%2Fblob%2Fmain%2Fsrc%2Foss%2Flanggraph%2Finstall.mdx
+            - button "Appearance settings" [ref=e24] [cursor=pointer]:
+              - img
+    - main [ref=e28]:
+      - generic [ref=e29]:
+        - generic [ref=e30]:
+          - generic [ref=e32]:
+            - img [ref=e33]
+            - link "langchain-ai" [ref=e36] [cursor=pointer]:
+              - /url: /langchain-ai
+            - generic [ref=e37]: /
+            - strong [ref=e38]:
+              - link "docs" [ref=e39] [cursor=pointer]:
+                - /url: /langchain-ai/docs
+            - generic [ref=e40]: Public
+          - generic [ref=e41]:
+            - list:
+              - listitem [ref=e42]:
+                - link "You must be signed in to change notification settings" [ref=e43] [cursor=pointer]:
+                  - /url: /login?return_to=%2Flangchain-ai%2Fdocs
+                  - img [ref=e44]
+                  - text: Notifications
+              - listitem [ref=e46]:
+                - link "Fork 2.4k" [ref=e47] [cursor=pointer]:
+                  - /url: /login?return_to=%2Flangchain-ai%2Fdocs
+                  - img [ref=e48]
+                  - text: Fork
+                  - generic "2,429" [ref=e50]: 2.4k
+              - listitem [ref=e51]:
+                - link "You must be signed in to star a repository" [ref=e53] [cursor=pointer]:
+                  - /url: /login?return_to=%2Flangchain-ai%2Fdocs
+                  - img [ref=e54]
+                  - text: Star
+                  - generic "365 users starred this repository" [ref=e56]: "365"
+        - navigation "Repository" [ref=e57]:
+          - list [ref=e58]:
+            - listitem [ref=e59]:
+              - link "Code" [ref=e60] [cursor=pointer]:
+                - /url: /langchain-ai/docs
+                - img [ref=e61]
+                - generic [ref=e63]: Code
+            - listitem [ref=e64]:
+              - link "Issues 236" [ref=e65] [cursor=pointer]:
+                - /url: /langchain-ai/docs/issues
+                - img [ref=e66]
+                - generic [ref=e69]: Issues
+                - generic "236" [ref=e70]
+            - listitem [ref=e71]:
+              - link "Pull requests 303" [ref=e72] [cursor=pointer]:
+                - /url: /langchain-ai/docs/pulls
+                - img [ref=e73]
+                - generic [ref=e75]: Pull requests
+                - generic "303" [ref=e76]
+            - listitem [ref=e77]:
+              - link "Actions" [ref=e78] [cursor=pointer]:
+                - /url: /langchain-ai/docs/actions
+                - img [ref=e79]
+                - generic [ref=e81]: Actions
+            - listitem [ref=e82]:
+              - link "Security and quality" [ref=e83] [cursor=pointer]:
+                - /url: /langchain-ai/docs/security
+                - img [ref=e84]
+                - generic [ref=e86]: Security and quality
+            - listitem [ref=e87]:
+              - link "Insights" [ref=e88] [cursor=pointer]:
+                - /url: /langchain-ai/docs/pulse
+                - img [ref=e89]
+                - generic [ref=e91]: Insights
+      - generic [ref=e102]:
+        - generic [ref=e106]:
+          - generic [ref=e107]:
+            - heading "Expand file tree" [level=2] [ref=e109]:
+              - button "Expand file tree" [ref=e110] [cursor=pointer]:
+                - img [ref=e111]
+            - button "main branch" [ref=e115] [cursor=pointer]:
+              - generic [ref=e116]:
+                - generic [ref=e118]:
+                  - img [ref=e120]
+                  - generic [ref=e123]: main
+                - generic:
+                  - img
+            - generic [ref=e125]:
+              - navigation "Breadcrumbs" [ref=e126]:
+                - heading "Breadcrumbs" [level=2] [ref=e127]
+                - list [ref=e128]:
+                  - listitem [ref=e129]:
+                    - link "docs" [ref=e130] [cursor=pointer]:
+                      - /url: /langchain-ai/docs/tree/main
+                  - listitem [ref=e131]:
+                    - text: /
+                    - link "src" [ref=e132] [cursor=pointer]:
+                      - /url: /langchain-ai/docs/tree/main/src
+                  - listitem [ref=e133]:
+                    - text: /
+                    - link "oss" [ref=e134] [cursor=pointer]:
+                      - /url: /langchain-ai/docs/tree/main/src/oss
+                  - listitem [ref=e135]:
+                    - text: /
+                    - link "langgraph" [ref=e136] [cursor=pointer]:
+                      - /url: /langchain-ai/docs/tree/main/src/oss/langgraph
+              - generic [ref=e137]:
+                - text: /
+                - heading "install.mdx" [level=1] [ref=e138]
+              - button "Copy path" [ref=e139] [cursor=pointer]:
+                - img [ref=e140]
+          - generic [ref=e145]:
+            - generic [ref=e148]:
+              - img [ref=e150]
+              - combobox "Go to file" [ref=e152]
+            - button "More file actions" [ref=e153] [cursor=pointer]:
+              - img [ref=e154]
+        - generic [ref=e156]:
+          - generic [ref=e158]:
+            - heading "Latest commit" [level=2] [ref=e159]
+            - generic [ref=e162]:
+              - heading "History" [level=2] [ref=e163]
+              - link "View commit history for this file." [ref=e165] [cursor=pointer]:
+                - /url: /langchain-ai/docs/commits/main/src/oss/langgraph/install.mdx
+                - generic [ref=e166]:
+                  - generic:
+                    - img
+          - generic [ref=e168]:
+            - generic "1.26 KB" [ref=e172]: 84 lines (65 loc) · 1.26 KB
+            - generic [ref=e174]:
+              - heading "File metadata and controls" [level=2] [ref=e175]
+              - list "File view" [ref=e177]:
+                - listitem [ref=e178]:
+                  - button "Preview" [ref=e179] [cursor=pointer]:
+                    - generic [ref=e181]: Preview
+                - listitem [ref=e182]:
+                  - button "Code" [ref=e183] [cursor=pointer]:
+                    - generic [ref=e185]: Code
+                - listitem [ref=e186]:
+                  - button "Blame" [ref=e187] [cursor=pointer]:
+                    - generic [ref=e189]: Blame
+              - generic [ref=e191]:
+                - generic [ref=e192]:
+                  - link "Raw" [ref=e194] [cursor=pointer]:
+                    - /url: https://github.com/langchain-ai/docs/raw/refs/heads/main/src/oss/langgraph/install.mdx
+                    - generic [ref=e196]: Raw
+                  - button "Copy raw file" [ref=e198] [cursor=pointer]:
+                    - img [ref=e199]
+                  - button "Download raw file" [ref=e203] [cursor=pointer]:
+                    - img [ref=e204]
+                - generic [ref=e207]:
+                  - button "You must be signed in to make or propose changes" [disabled] [ref=e209]:
+                    - img [ref=e210]
+                  - button "More edit options" [ref=e213] [cursor=pointer]:
+                    - img [ref=e214]
+            - region [ref=e217]:
+              - article [ref=e219]:
+                - table [ref=e221]:
+                  - rowgroup [ref=e222]:
+                    - row "title Install LangGraph" [ref=e223]:
+                      - rowheader "title" [ref=e224]
+                      - cell "Install LangGraph" [ref=e225]
+                    - row "sidebarTitle Install" [ref=e226]:
+                      - rowheader "sidebarTitle" [ref=e227]
+                      - cell "Install" [ref=e228]
+                - paragraph [ref=e229]: "To install the base LangGraph package:"
+                - paragraph [ref=e230]: :::python
+                - generic [ref=e231]:
+                  - generic [ref=e232]: pip install -U langgraph
+                  - button "Copy code to clipboard" [ref=e234] [cursor=pointer]:
+                    - img [ref=e235]
+                - generic [ref=e238]:
+                  - generic [ref=e239]: uv add langgraph
+                  - button "Copy code to clipboard" [ref=e241] [cursor=pointer]:
+                    - img [ref=e242]
+                - text: ":::"
+                - paragraph [ref=e245]: :::js
+                - generic [ref=e246]:
+                  - generic [ref=e247]: npm install @langchain/langgraph @langchain/core
+                  - button "Copy code to clipboard" [ref=e249] [cursor=pointer]:
+                    - img [ref=e250]
+                - generic [ref=e253]:
+                  - generic [ref=e254]: pnpm add @langchain/langgraph @langchain/core
+                  - button "Copy code to clipboard" [ref=e256] [cursor=pointer]:
+                    - img [ref=e257]
+                - generic [ref=e260]:
+                  - generic [ref=e261]: yarn add @langchain/langgraph @langchain/core
+                  - button "Copy code to clipboard" [ref=e263] [cursor=pointer]:
+                    - img [ref=e264]
+                - generic [ref=e267]:
+                  - generic [ref=e268]: bun add @langchain/langgraph @langchain/core
+                  - button "Copy code to clipboard" [ref=e270] [cursor=pointer]:
+                    - img [ref=e271]
+                - text: ":::"
+                - paragraph [ref=e274]: To use LangGraph you will usually want to access LLMs and define tools. You can do this however you see fit.
+                - paragraph [ref=e275]:
+                  - text: One way to do this (which we will use in the docs) is to use
+                  - link "LangChain" [ref=e276] [cursor=pointer]:
+                    - /url: /langchain-ai/docs/blob/main/oss/langchain/overview
+                  - text: .
+                - paragraph [ref=e277]: "Install LangChain with:"
+                - paragraph [ref=e278]: :::python
+                - generic [ref=e279]:
+                  - generic [ref=e280]:
+                    - text: pip install -U langchain
+                    - generic [ref=e281]: "# Requires Python 3.10+"
+                  - button "Copy code to clipboard" [ref=e283] [cursor=pointer]:
+                    - img [ref=e284]
+                - generic [ref=e287]:
+                  - generic [ref=e288]:
+                    - text: uv add langchain
+                    - generic [ref=e289]: "# Requires Python 3.10+"
+                  - button "Copy code to clipboard" [ref=e291] [cursor=pointer]:
+                    - img [ref=e292]
+                - text: ":::"
+                - paragraph [ref=e295]: :::js
+                - generic [ref=e296]:
+                  - generic [ref=e297]: npm install langchain
+                  - button "Copy code to clipboard" [ref=e299] [cursor=pointer]:
+                    - img [ref=e300]
+                - generic [ref=e303]:
+                  - generic [ref=e304]: pnpm add langchain
+                  - button "Copy code to clipboard" [ref=e306] [cursor=pointer]:
+                    - img [ref=e307]
+                - generic [ref=e310]:
+                  - generic [ref=e311]: yarn add langchain
+                  - button "Copy code to clipboard" [ref=e313] [cursor=pointer]:
+                    - img [ref=e314]
+                - generic [ref=e317]:
+                  - generic [ref=e318]: bun add langchain
+                  - button "Copy code to clipboard" [ref=e320] [cursor=pointer]:
+                    - img [ref=e321]
+                - text: ":::"
+                - paragraph [ref=e324]: To work with specific LLM provider packages, you will need install them separately.
+                - paragraph [ref=e325]:
+                  - text: Refer to the
+                  - link "integrations" [ref=e326] [cursor=pointer]:
+                    - /url: /langchain-ai/docs/blob/main/oss/integrations/providers/overview
+                  - text: page for provider-specific installation instructions.
+  - alert [ref=e330]

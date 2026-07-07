@@ -1,0 +1,290 @@
+- generic [active] [ref=e1]:
+  - blockquote [ref=e2]:
+    - heading [level=2] [ref=e3]: Documentation Index
+    - paragraph [ref=e4]:
+      - text: "Fetch the complete documentation index at:"
+      - link [ref=e5] [cursor=pointer]:
+        - /url: /llms.txt
+        - text: /llms.txt
+    - paragraph [ref=e6]: Use this file to discover all available pages before exploring further.
+  - generic [ref=e7]:
+    - link "Skip to main content" [ref=e8] [cursor=pointer]:
+      - /url: "#content-area"
+    - generic [ref=e10]:
+      - banner [ref=e11]:
+        - generic [ref=e15]:
+          - generic [ref=e17]:
+            - link "Docs by LangChain home page light logo" [ref=e19] [cursor=pointer]:
+              - /url: /
+              - generic [ref=e20]: Docs by LangChain home page
+              - img "light logo" [ref=e21]
+            - generic [ref=e22]:
+              - button "Open search" [ref=e23] [cursor=pointer]:
+                - generic [ref=e24]: Search...
+                - img [ref=e25]
+              - button "More actions" [ref=e26] [cursor=pointer]:
+                - img [ref=e27]
+          - button "Navigation LangGraph overview" [ref=e28] [cursor=pointer]:
+            - generic [ref=e29]:
+              - generic [ref=e30]: Navigation
+              - img [ref=e31]
+            - generic [ref=e34]: LangGraph overview
+      - generic [ref=e36]:
+        - main [ref=e37]:
+          - generic [ref=e38]:
+            - generic [ref=e41]:
+              - heading "LangGraph overview" [level=1] [ref=e42]
+              - generic [ref=e43]:
+                - button "Copy page" [ref=e44] [cursor=pointer]:
+                  - generic [ref=e45]:
+                    - img [ref=e46]
+                    - generic [ref=e49]: Copy page
+                - button "More actions" [ref=e50] [cursor=pointer]:
+                  - img [ref=e51]
+            - generic [ref=e53]:
+              - generic [ref=e54]: Trusted by companies shaping the future of agents— including Klarna, Uber, J.P. Morgan, and more— LangGraph is a low-level orchestration framework and runtime for building, managing, and deploying long-running, stateful agents.
+              - generic [ref=e55]:
+                - text: LangGraph is very low-level, and focused entirely on agent
+                - strong [ref=e56]: orchestration
+                - text: . Before using LangGraph, we recommend you familiarize yourself with some of the components used to build agents, starting with
+                - link "models" [ref=e57] [cursor=pointer]:
+                  - /url: /oss/javascript/langchain/models
+                - text: and
+                - link "tools" [ref=e58] [cursor=pointer]:
+                  - /url: /oss/javascript/langchain/tools
+                - text: .
+              - generic [ref=e59]:
+                - text: We will commonly use
+                - link "LangChain" [ref=e60] [cursor=pointer]:
+                  - /url: /oss/javascript/langchain/overview
+                - text: components throughout the documentation to integrate models and tools, but you don’t need to use LangChain to use LangGraph. If you are just getting started with agents or want a higher-level abstraction, we recommend you use LangChain’s
+                - link "agents" [ref=e61] [cursor=pointer]:
+                  - /url: /oss/javascript/langchain/agents
+                - text: that provide prebuilt architectures for common LLM and tool-calling loops.
+              - generic [ref=e62]: "LangGraph is focused on the underlying capabilities important for agent orchestration: durable execution, streaming, human-in-the-loop, and more."
+              - group [ref=e63]:
+                - generic "Show how LangChain products fit together" [ref=e64] [cursor=pointer]:
+                  - img [ref=e65]
+                  - paragraph [ref=e67]: Show how LangChain products fit together
+              - heading "Navigate to header Install" [level=2] [ref=e68]:
+                - link "Navigate to header" [ref=e69] [cursor=pointer]:
+                  - /url: "#install"
+                  - img [ref=e71]
+                - generic [ref=e73] [cursor=pointer]:
+                  - img [ref=e74]
+                  - text: Install
+              - generic [ref=e75]:
+                - generic [ref=e76]:
+                  - tablist [ref=e77]:
+                    - tab "npm" [selected] [ref=e78] [cursor=pointer]:
+                      - generic [ref=e79]: npm
+                    - tab "pnpm" [ref=e81] [cursor=pointer]:
+                      - generic [ref=e82]: pnpm
+                    - tab "yarn" [ref=e83] [cursor=pointer]:
+                      - generic [ref=e84]: yarn
+                    - tab "bun" [ref=e85] [cursor=pointer]:
+                      - generic [ref=e86]: bun
+                  - button "Copy the contents from the code block" [ref=e89] [cursor=pointer]:
+                    - img [ref=e90]
+                - tabpanel "npm" [ref=e94]:
+                  - code [ref=e98]:
+                    - generic [ref=e99]: npm install @langchain/langgraph @langchain/core
+              - generic [ref=e100]: "Then, create a simple hello world example:"
+              - generic [ref=e101]:
+                - button "Copy the contents from the code block" [ref=e104] [cursor=pointer]:
+                  - img [ref=e105]
+                - code [ref=e111]:
+                  - generic [ref=e112]: "import { StateSchema, MessagesValue, type GraphNode, StateGraph, START, END } from \"@langchain/langgraph\";"
+                  - generic [ref=e113]: "const State = new StateSchema({"
+                  - generic [ref=e114]: "messages: MessagesValue,"
+                  - generic [ref=e115]: "});"
+                  - generic [ref=e116]: "const mockLlm: GraphNode<typeof State> = (state) => {"
+                  - generic [ref=e117]: "return { messages: [{ role: \"ai\", content: \"hello world\" }] };"
+                  - generic [ref=e118]: "};"
+                  - generic [ref=e119]: const graph = new StateGraph(State)
+                  - generic [ref=e120]: .addNode("mock_llm", mockLlm)
+                  - generic [ref=e121]: .addEdge(START, "mock_llm")
+                  - generic [ref=e122]: .addEdge("mock_llm", END)
+                  - generic [ref=e123]: .compile();
+                  - generic [ref=e124]: "await graph.invoke({ messages: [{ role: \"user\", content: \"hi!\" }] });"
+              - generic [ref=e125]:
+                - img "Tip" [ref=e127]
+                - generic [ref=e130]:
+                  - text: Use
+                  - link "LangSmith" [ref=e131] [cursor=pointer]:
+                    - /url: /langsmith/observability
+                  - text: to trace requests, debug agent behavior, and evaluate outputs. Set
+                  - code [ref=e132]: LANGSMITH_TRACING=true
+                  - text: and your API key to get started. Follow the
+                  - link "tracing quickstart" [ref=e133] [cursor=pointer]:
+                    - /url: /langsmith/trace-with-langchain
+                  - text: to get set up. We recommend you also set up
+                  - link "LangSmith Engine" [ref=e134] [cursor=pointer]:
+                    - /url: /langsmith/engine
+                  - text: which monitors your traces, detects issues, and proposes fixes.
+              - heading "Navigate to header Core benefits" [level=2] [ref=e135]:
+                - link "Navigate to header" [ref=e136] [cursor=pointer]:
+                  - /url: "#core-benefits"
+                  - img [ref=e138]
+                - generic [ref=e140] [cursor=pointer]: Core benefits
+              - generic [ref=e141]:
+                - text: LangGraph provides low-level supporting infrastructure for
+                - emphasis [ref=e142]: any
+                - text: "long-running, stateful workflow or agent. LangGraph does not abstract prompts or architecture, and provides the following central benefits:"
+              - list [ref=e143]:
+                - listitem [ref=e144]:
+                  - link "Persistence" [ref=e145] [cursor=pointer]:
+                    - /url: /oss/javascript/langgraph/persistence
+                  - text: ": Build agents that persist through failures and can run for extended periods, resuming from where they left off."
+                - listitem [ref=e146]:
+                  - link "Human-in-the-loop" [ref=e147] [cursor=pointer]:
+                    - /url: /oss/javascript/langgraph/interrupts
+                  - text: ": Incorporate human oversight by inspecting and modifying agent state at any point."
+                - listitem [ref=e148]:
+                  - link "Comprehensive memory" [ref=e149] [cursor=pointer]:
+                    - /url: /oss/javascript/concepts/memory
+                  - text: ": Create stateful agents with both short-term working memory for ongoing reasoning and long-term memory across sessions."
+                - listitem [ref=e150]:
+                  - link "Debugging with LangSmith" [ref=e151] [cursor=pointer]:
+                    - /url: /langsmith/observability
+                  - text: ": Gain deep visibility into complex agent behavior with visualization tools that trace execution paths, capture state transitions, and provide detailed runtime metrics."
+                - listitem [ref=e152]:
+                  - link "Production-ready deployment" [ref=e153] [cursor=pointer]:
+                    - /url: /langsmith/deployment
+                  - text: ": Deploy sophisticated agent systems confidently with scalable infrastructure designed to handle the unique challenges of stateful, long-running workflows."
+              - heading "Navigate to header LangGraph ecosystem" [level=2] [ref=e154]:
+                - link "Navigate to header" [ref=e155] [cursor=pointer]:
+                  - /url: "#langgraph-ecosystem"
+                  - img [ref=e157]
+                - generic [ref=e159] [cursor=pointer]: LangGraph ecosystem
+              - generic [ref=e160]: "While LangGraph can be used standalone, it also integrates seamlessly with any LangChain product, giving developers a full suite of tools for building agents. To improve your LLM application development, pair LangGraph with:"
+              - generic [ref=e161]:
+                - link [ref=e162] [cursor=pointer]:
+                  - link [ref=e164]:
+                    - /url: /langsmith/observability
+                    - img [ref=e166]
+                    - img [ref=e170]
+                    - generic [ref=e171]:
+                      - heading [level=2] [ref=e172]: LangSmith Observability
+                      - generic [ref=e174]: Trace requests, evaluate outputs, and monitor deployments in one place. Prototype locally with LangGraph, then move to production with integrated observability and evaluation to build more reliable agent systems.
+                      - button [ref=e176]:
+                        - text: Learn more
+                        - img [ref=e177]
+                - link [ref=e179] [cursor=pointer]:
+                  - link [ref=e181]:
+                    - /url: /langsmith/deployment
+                    - img [ref=e183]
+                    - img [ref=e187]
+                    - generic [ref=e188]:
+                      - heading [level=2] [ref=e189]: LangSmith Deployment
+                      - generic [ref=e191]: Deploy and scale agents effortlessly with a purpose-built deployment platform for long running, stateful workflows. Discover, reuse, configure, and share agents across teams — and iterate quickly with visual prototyping in Studio.
+                      - button [ref=e193]:
+                        - text: Learn more
+                        - img [ref=e194]
+                - link [ref=e196] [cursor=pointer]:
+                  - link [ref=e198]:
+                    - /url: /oss/javascript/langchain/overview
+                    - img [ref=e200]
+                    - img [ref=e204]
+                    - generic [ref=e205]:
+                      - heading [level=2] [ref=e206]: LangChain
+                      - generic [ref=e208]: Provides integrations and composable components to streamline LLM application development. Contains agent abstractions built on top of LangGraph.
+                      - button [ref=e210]:
+                        - text: Learn more
+                        - img [ref=e211]
+              - heading "Navigate to header Acknowledgements" [level=2] [ref=e213]:
+                - link "Navigate to header" [ref=e214] [cursor=pointer]:
+                  - /url: "#acknowledgements"
+                  - img [ref=e216]
+                - generic [ref=e218] [cursor=pointer]: Acknowledgements
+              - generic [ref=e219]:
+                - text: LangGraph is inspired by
+                - link "Pregel" [ref=e220] [cursor=pointer]:
+                  - /url: https://research.google/pubs/pub37252/
+                - text: and
+                - link "Apache Beam" [ref=e221] [cursor=pointer]:
+                  - /url: https://beam.apache.org/
+                - text: . The public interface draws inspiration from
+                - link "NetworkX" [ref=e222] [cursor=pointer]:
+                  - /url: https://networkx.org/documentation/latest/
+                - text: . LangGraph is built by LangChain Inc, the creators of LangChain, but can be used without LangChain.
+              - separator [ref=e223]
+              - generic [ref=e224]:
+                - generic [ref=e225]:
+                  - img [ref=e227]
+                  - generic [ref=e229]:
+                    - link "Connect these docs" [ref=e230] [cursor=pointer]:
+                      - /url: /use-these-docs
+                    - text: to Claude, VSCode, and more via MCP for real-time answers.
+                - generic [ref=e231]:
+                  - img [ref=e233]
+                  - generic [ref=e235]:
+                    - link "Edit this page on GitHub" [ref=e236] [cursor=pointer]:
+                      - /url: https://github.com/langchain-ai/docs/edit/main/src/oss/langgraph/overview.mdx
+                    - text: or
+                    - link "file an issue" [ref=e237] [cursor=pointer]:
+                      - /url: https://github.com/langchain-ai/docs/issues/new/choose
+                    - text: .
+            - generic [ref=e239]:
+              - paragraph [ref=e240]: Was this page helpful?
+              - generic [ref=e242]:
+                - button "Yes" [ref=e243] [cursor=pointer]:
+                  - img [ref=e244]
+                  - generic [ref=e246]: "Yes"
+                - button "No" [ref=e247] [cursor=pointer]:
+                  - img [ref=e248]
+                  - generic [ref=e250]: "No"
+        - contentinfo [ref=e251]:
+          - generic [ref=e253]:
+            - link "Docs by LangChain home page light logo" [ref=e255] [cursor=pointer]:
+              - /url: /
+              - generic [ref=e256]: Docs by LangChain home page
+              - img "light logo" [ref=e257]
+            - generic [ref=e258]:
+              - generic [ref=e260]:
+                - paragraph [ref=e261]: Resources
+                - link "Forum" [ref=e262] [cursor=pointer]:
+                  - /url: https://forum.langchain.com/
+                - link "Changelog" [ref=e263] [cursor=pointer]:
+                  - /url: https://changelog.langchain.com/
+                - link "LangChain Academy" [ref=e264] [cursor=pointer]:
+                  - /url: https://academy.langchain.com/
+                - link "Contact Sales" [ref=e265] [cursor=pointer]:
+                  - /url: https://www.langchain.com/contact-sales
+              - generic [ref=e267]:
+                - paragraph [ref=e268]: Company
+                - link "Home" [ref=e269] [cursor=pointer]:
+                  - /url: https://langchain.com/
+                - link "Trust Center" [ref=e270] [cursor=pointer]:
+                  - /url: https://trust.langchain.com/
+                - link "Careers" [ref=e271] [cursor=pointer]:
+                  - /url: https://langchain.com/careers
+                - link "Blog" [ref=e272] [cursor=pointer]:
+                  - /url: https://blog.langchain.com/
+            - generic [ref=e273]:
+              - link "github" [ref=e274] [cursor=pointer]:
+                - /url: https://github.com/langchain-ai
+                - generic [ref=e275]: github
+                - img [ref=e276]
+              - link "x" [ref=e277] [cursor=pointer]:
+                - /url: https://x.com/LangChain
+                - generic [ref=e278]: x
+                - img [ref=e279]
+              - link "linkedin" [ref=e280] [cursor=pointer]:
+                - /url: https://www.linkedin.com/company/langchain
+                - generic [ref=e281]: linkedin
+                - img [ref=e282]
+              - link "youtube" [ref=e283] [cursor=pointer]:
+                - /url: https://www.youtube.com/@LangChain
+                - generic [ref=e284]: youtube
+                - img [ref=e285]
+  - complementary "Chat LangChain" [ref=e286]:
+    - generic [ref=e288]:
+      - heading "Chat LangChain" [level=2] [ref=e289]
+      - generic [ref=e290]:
+        - link "Open Chat LangChain in a new tab" [ref=e291] [cursor=pointer]:
+          - /url: https://chat.langchain.com/
+          - img [ref=e292]
+        - button "Close Chat LangChain" [ref=e296] [cursor=pointer]:
+          - img [ref=e297]
+  - alert [ref=e302]

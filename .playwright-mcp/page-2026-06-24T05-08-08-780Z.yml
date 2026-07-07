@@ -1,0 +1,332 @@
+- generic [active] [ref=e1]:
+  - blockquote [ref=e2]:
+    - heading [level=2] [ref=e3]: Documentation Index
+    - paragraph [ref=e4]:
+      - text: "Fetch the complete documentation index at:"
+      - link [ref=e5] [cursor=pointer]:
+        - /url: /llms.txt
+        - text: /llms.txt
+    - paragraph [ref=e6]: Use this file to discover all available pages before exploring further.
+  - generic [ref=e7]:
+    - link "Skip to main content" [ref=e8] [cursor=pointer]:
+      - /url: "#content-area"
+    - generic [ref=e10]:
+      - banner [ref=e11]:
+        - generic [ref=e15]:
+          - generic [ref=e17]:
+            - link "Docs by LangChain home page light logo" [ref=e19] [cursor=pointer]:
+              - /url: /
+              - generic [ref=e20]: Docs by LangChain home page
+              - img "light logo" [ref=e21]
+            - generic [ref=e22]:
+              - button "Open search" [ref=e23] [cursor=pointer]:
+                - generic [ref=e24]: Search...
+                - img [ref=e25]
+              - button "More actions" [ref=e26] [cursor=pointer]:
+                - img [ref=e27]
+          - button "Navigation Get started Run a local server" [ref=e28] [cursor=pointer]:
+            - generic [ref=e29]:
+              - generic [ref=e30]: Navigation
+              - img [ref=e31]
+            - generic [ref=e33]:
+              - generic [ref=e34]:
+                - generic [ref=e35]: Get started
+                - img [ref=e36]
+              - generic [ref=e38]: Run a local server
+      - generic [ref=e40]:
+        - main [ref=e41]:
+          - generic [ref=e42]:
+            - generic [ref=e44]:
+              - link "Get started" [ref=e47] [cursor=pointer]:
+                - /url: /oss/javascript/langgraph/install
+              - generic [ref=e48]:
+                - heading "Run a local server" [level=1] [ref=e49]
+                - generic [ref=e50]:
+                  - button "Copy page" [ref=e51] [cursor=pointer]:
+                    - generic [ref=e52]:
+                      - img [ref=e53]
+                      - generic [ref=e56]: Copy page
+                  - button "More actions" [ref=e57] [cursor=pointer]:
+                    - img [ref=e58]
+            - generic [ref=e60]:
+              - generic [ref=e61]: This guide shows you how to run a LangGraph application locally.
+              - heading "Navigate to header Prerequisites" [level=2] [ref=e62]:
+                - link "Navigate to header" [ref=e63] [cursor=pointer]:
+                  - /url: "#prerequisites"
+                  - img [ref=e65]
+                - generic [ref=e67] [cursor=pointer]: Prerequisites
+              - generic [ref=e68]: "Before you begin, ensure you have the following:"
+              - list [ref=e69]:
+                - listitem [ref=e70]:
+                  - text: An API key for
+                  - link "LangSmith" [ref=e71] [cursor=pointer]:
+                    - /url: https://smith.langchain.com/settings
+                  - text: "- free to sign up"
+              - heading "Navigate to header 1. Install the LangGraph CLI" [level=2] [ref=e72]:
+                - link "Navigate to header" [ref=e73] [cursor=pointer]:
+                  - /url: "#1-install-the-langgraph-cli"
+                  - img [ref=e75]
+                - generic [ref=e77] [cursor=pointer]: 1. Install the LangGraph CLI
+              - generic [ref=e78]:
+                - button "Copy the contents from the code block" [ref=e81] [cursor=pointer]:
+                  - img [ref=e82]
+                - code [ref=e88]:
+                  - generic [ref=e89]: npm install --save-dev @langchain/langgraph-cli
+              - heading "Navigate to header 2. Create a LangGraph app" [level=2] [ref=e90]:
+                - link "Navigate to header" [ref=e91] [cursor=pointer]:
+                  - /url: "#2-create-a-langgraph-app"
+                  - img [ref=e93]
+                - generic [ref=e95] [cursor=pointer]: 2. Create a LangGraph app
+              - generic [ref=e96]:
+                - text: Create a new app from the
+                - link "new-langgraph-project-js template" [ref=e97] [cursor=pointer]:
+                  - /url: https://github.com/langchain-ai/new-langgraphjs-project
+                  - code [ref=e98]: new-langgraph-project-js
+                  - text: template
+                - text: . This template demonstrates a single-node application you can extend with your own logic.
+              - generic [ref=e99]:
+                - button "Copy the contents from the code block" [ref=e102] [cursor=pointer]:
+                  - img [ref=e103]
+                - code [ref=e109]:
+                  - generic [ref=e110]: npm create langgraph
+              - group [ref=e111]:
+                - generic "Adding LangGraph to an existing project" [ref=e112] [cursor=pointer]:
+                  - img [ref=e114]
+                  - paragraph [ref=e116]: Adding LangGraph to an existing project
+              - heading "Navigate to header 3. Install dependencies" [level=2] [ref=e117]:
+                - link "Navigate to header" [ref=e118] [cursor=pointer]:
+                  - /url: "#3-install-dependencies"
+                  - img [ref=e120]
+                - generic [ref=e122] [cursor=pointer]: 3. Install dependencies
+              - generic [ref=e123]:
+                - text: In the root of your new LangGraph app, install the dependencies in
+                - code [ref=e124]: edit
+                - text: "mode so your local changes are used by the server:"
+              - generic [ref=e125]:
+                - button "Copy the contents from the code block" [ref=e128] [cursor=pointer]:
+                  - img [ref=e129]
+                - code [ref=e135]:
+                  - generic [ref=e136]: cd path/to/your/app
+                  - generic [ref=e137]: npm install
+              - heading "Navigate to header 4. Create a .env file" [level=2] [ref=e138]:
+                - link "Navigate to header" [ref=e139] [cursor=pointer]:
+                  - /url: "#4-create-a-env-file"
+                  - img [ref=e141]
+                - generic [ref=e143] [cursor=pointer]:
+                  - text: 4. Create a
+                  - code [ref=e144]: .env
+                  - text: file
+              - generic [ref=e145]:
+                - text: You will find a
+                - code [ref=e146]: .env.example
+                - text: in the root of your new LangGraph app. Create a
+                - code [ref=e147]: .env
+                - text: file in the root of your new LangGraph app and copy the contents of the
+                - code [ref=e148]: .env.example
+                - text: "file into it, filling in the necessary API keys:"
+              - generic [ref=e149]:
+                - button "Copy the contents from the code block" [ref=e152] [cursor=pointer]:
+                  - img [ref=e153]
+                - code [ref=e159]:
+                  - generic [ref=e160]: LANGSMITH_API_KEY=lsv2...
+              - heading "Navigate to header 5. Launch Agent server" [level=2] [ref=e161]:
+                - link "Navigate to header" [ref=e162] [cursor=pointer]:
+                  - /url: "#5-launch-agent-server"
+                  - img [ref=e164]
+                - generic [ref=e166] [cursor=pointer]: 5. Launch Agent server
+              - generic [ref=e167]: "Start the LangGraph API server locally:"
+              - generic [ref=e168]:
+                - button "Copy the contents from the code block" [ref=e171] [cursor=pointer]:
+                  - img [ref=e172]
+                - code [ref=e178]:
+                  - generic [ref=e179]: npx @langchain/langgraph-cli dev
+              - generic [ref=e180]: "Sample output:"
+              - generic [ref=e181]:
+                - button "Copy the contents from the code block" [ref=e184] [cursor=pointer]:
+                  - img [ref=e185]
+                - code [ref=e191]:
+                  - generic [ref=e192]: "INFO:langgraph_api.cli:"
+                  - generic [ref=e193]: Welcome to
+                  - generic [ref=e194]: ╦ ┌─┐┌┐┌┌─┐╔═╗┬─┐┌─┐┌─┐┬ ┬
+                  - generic [ref=e195]: ║ ├─┤││││ ┬║ ╦├┬┘├─┤├─┘├─┤
+                  - generic [ref=e196]: ╩═╝┴ ┴┘└┘└─┘╚═╝┴└─┴ ┴┴ ┴ ┴
+                  - generic [ref=e197]: "- 🚀 API: http://127.0.0.1:2024"
+                  - generic [ref=e198]: "- 🎨 Studio UI: https://smith.langchain.com/studio/?baseUrl=http://127.0.0.1:2024"
+                  - generic [ref=e199]: "- 📚 API Docs: http://127.0.0.1:2024/docs"
+                  - generic [ref=e200]: This in-memory server is designed for development and testing.
+                  - generic [ref=e201]: For production use, please use LangSmith Deployment.
+              - generic [ref=e202]:
+                - text: The
+                - code [ref=e203]: langgraph dev
+                - text: command starts Agent Server in an in-memory mode. This mode is suitable for development and testing purposes. For production use, deploy Agent Server with access to a persistent storage backend. For more information, see the
+                - link "Platform setup overview" [ref=e204] [cursor=pointer]:
+                  - /url: /langsmith/platform-setup
+                - text: .
+              - heading "Navigate to header 6. Test your application in Studio" [level=2] [ref=e205]:
+                - link "Navigate to header" [ref=e206] [cursor=pointer]:
+                  - /url: "#6-test-your-application-in-studio"
+                  - img [ref=e208]
+                - generic [ref=e210] [cursor=pointer]: 6. Test your application in Studio
+              - generic [ref=e211]:
+                - link "Studio" [ref=e212] [cursor=pointer]:
+                  - /url: /langsmith/studio
+                - text: is a specialized UI that you can connect to LangGraph API server to visualize, interact with, and debug your application locally. Test your graph in Studio by visiting the URL provided in the output of the
+                - code [ref=e213]: langgraph dev
+                - text: "command:"
+              - generic [ref=e214]:
+                - button "Copy the contents from the code block" [ref=e217] [cursor=pointer]:
+                  - img [ref=e218]
+                - code [ref=e224]:
+                  - generic [ref=e225]: "> - LangGraph Studio Web UI: https://smith.langchain.com/studio/?baseUrl=http://127.0.0.1:2024"
+              - generic [ref=e226]:
+                - text: For an Agent Server running on a custom host/port, update the
+                - code [ref=e227]: baseUrl
+                - text: query parameter in the URL. For example, if your server is running on
+                - code [ref=e228]: http://myhost:3000
+                - text: ":"
+              - generic [ref=e229]:
+                - button "Copy the contents from the code block" [ref=e232] [cursor=pointer]:
+                  - img [ref=e233]
+                - code [ref=e239]:
+                  - generic [ref=e240]: https://smith.langchain.com/studio/?baseUrl=http://myhost:3000
+              - group [ref=e241]:
+                - generic "Safari compatibility" [ref=e242] [cursor=pointer]:
+                  - img [ref=e244]
+                  - paragraph [ref=e246]: Safari compatibility
+              - heading "Navigate to header 7. Test the API" [level=2] [ref=e247]:
+                - link "Navigate to header" [ref=e248] [cursor=pointer]:
+                  - /url: "#7-test-the-api"
+                  - img [ref=e250]
+                - generic [ref=e252] [cursor=pointer]: 7. Test the API
+              - generic [ref=e253]:
+                - tablist [ref=e254]:
+                  - tab "Javascript SDK" [selected] [ref=e255] [cursor=pointer]:
+                    - generic [ref=e256]: Javascript SDK
+                  - tab "Rest API" [ref=e257] [cursor=pointer]:
+                    - generic [ref=e258]: Rest API
+                - 'tabpanel "Javascript SDK Rest API Install the LangGraph JS SDK: Copy the contents from the code block npm install @langchain/langgraph-sdk Send a message to the assistant (threadless run): Copy the contents from the code block import { Client } from \"@langchain/langgraph-sdk\"; // only set the apiUrl if you changed the default port when calling langgraph dev const client = new Client({ apiUrl: \"http://localhost:2024\"}); const streamResponse = client.runs.stream( null, // Threadless run \"agent\", // Assistant ID { input: { \"messages\": [ { \"role\": \"user\", \"content\": \"What is LangGraph?\"} ] }, streamMode: \"messages-tuple\", } ); for await (const chunk of streamResponse) { console.log(`Receiving new event of type: ${chunk.event}...`); console.log(JSON.stringify(chunk.data)); console.log(\"\\n\\n\"); }" [ref=e260]':
+                  - list [ref=e261]:
+                    - listitem [ref=e262]:
+                      - text: "Install the LangGraph JS SDK:"
+                      - generic [ref=e263]:
+                        - button "Copy the contents from the code block" [ref=e266] [cursor=pointer]:
+                          - img [ref=e267]
+                        - code [ref=e273]:
+                          - generic [ref=e274]: npm install @langchain/langgraph-sdk
+                    - listitem [ref=e275]: "Send a message to the assistant (threadless run):"
+                  - generic [ref=e276]:
+                    - button "Copy the contents from the code block" [ref=e279] [cursor=pointer]:
+                      - img [ref=e280]
+                    - code [ref=e286]:
+                      - generic [ref=e287]: "import { Client } from \"@langchain/langgraph-sdk\";"
+                      - generic [ref=e288]: // only set the apiUrl if you changed the default port when calling langgraph dev
+                      - generic [ref=e289]: "const client = new Client({ apiUrl: \"http://localhost:2024\"});"
+                      - generic [ref=e290]: const streamResponse = client.runs.stream(
+                      - generic [ref=e291]: null, // Threadless run
+                      - generic [ref=e292]: "\"agent\", // Assistant ID"
+                      - generic [ref=e293]: "{"
+                      - generic [ref=e294]: "input: {"
+                      - generic [ref=e295]: "\"messages\": ["
+                      - generic [ref=e296]: "{ \"role\": \"user\", \"content\": \"What is LangGraph?\"}"
+                      - generic [ref=e297]: "]"
+                      - generic [ref=e298]: "},"
+                      - generic [ref=e299]: "streamMode: \"messages-tuple\","
+                      - generic [ref=e300]: "}"
+                      - generic [ref=e301]: );
+                      - generic [ref=e302]: "for await (const chunk of streamResponse) {"
+                      - generic [ref=e303]: "console.log(`Receiving new event of type: ${chunk.event}...`);"
+                      - generic [ref=e304]: console.log(JSON.stringify(chunk.data));
+                      - generic [ref=e305]: console.log("\n\n");
+                      - generic [ref=e306]: "}"
+              - heading "Navigate to header Next steps" [level=2] [ref=e307]:
+                - link "Navigate to header" [ref=e308] [cursor=pointer]:
+                  - /url: "#next-steps"
+                  - img [ref=e310]
+                - generic [ref=e312] [cursor=pointer]: Next steps
+              - generic [ref=e313]: "Now that you have a LangGraph app running locally, take your journey further by exploring deployment and advanced features:"
+              - list [ref=e314]:
+                - listitem [ref=e315]:
+                  - generic [ref=e316]:
+                    - link "Deployment quickstart" [ref=e317] [cursor=pointer]:
+                      - /url: /langsmith/deployment-quickstart
+                    - text: ": Deploy your LangGraph app using LangSmith."
+                - listitem [ref=e318]:
+                  - generic [ref=e319]:
+                    - link "LangSmith" [ref=e320] [cursor=pointer]:
+                      - /url: /langsmith/observability
+                    - text: ": Learn about foundational LangSmith concepts."
+                - listitem [ref=e321]:
+                  - generic [ref=e322]:
+                    - link "SDK Reference" [ref=e323] [cursor=pointer]:
+                      - /url: https://reference.langchain.com/javascript/modules/_langchain_langgraph-sdk.html
+                    - text: ": Explore the SDK API Reference."
+              - separator [ref=e324]
+              - generic [ref=e325]:
+                - generic [ref=e326]:
+                  - img [ref=e328]
+                  - generic [ref=e330]:
+                    - link "Connect these docs" [ref=e331] [cursor=pointer]:
+                      - /url: /use-these-docs
+                    - text: to Claude, VSCode, and more via MCP for real-time answers.
+                - generic [ref=e332]:
+                  - img [ref=e334]
+                  - generic [ref=e336]:
+                    - link "Edit this page on GitHub" [ref=e337] [cursor=pointer]:
+                      - /url: https://github.com/langchain-ai/docs/edit/main/src/oss/langgraph/local-server.mdx
+                    - text: or
+                    - link "file an issue" [ref=e338] [cursor=pointer]:
+                      - /url: https://github.com/langchain-ai/docs/issues/new/choose
+                    - text: .
+            - generic [ref=e340]:
+              - paragraph [ref=e341]: Was this page helpful?
+              - generic [ref=e343]:
+                - button "Yes" [ref=e344] [cursor=pointer]:
+                  - img [ref=e345]
+                  - generic [ref=e347]: "Yes"
+                - button "No" [ref=e348] [cursor=pointer]:
+                  - img [ref=e349]
+                  - generic [ref=e351]: "No"
+        - contentinfo [ref=e352]:
+          - generic [ref=e354]:
+            - link "Docs by LangChain home page light logo" [ref=e356] [cursor=pointer]:
+              - /url: /
+              - generic [ref=e357]: Docs by LangChain home page
+              - img "light logo" [ref=e358]
+            - generic [ref=e359]:
+              - generic [ref=e361]:
+                - paragraph [ref=e362]: Resources
+                - link "Forum" [ref=e363] [cursor=pointer]:
+                  - /url: https://forum.langchain.com/
+                - link "Changelog" [ref=e364] [cursor=pointer]:
+                  - /url: https://changelog.langchain.com/
+                - link "LangChain Academy" [ref=e365] [cursor=pointer]:
+                  - /url: https://academy.langchain.com/
+                - link "Contact Sales" [ref=e366] [cursor=pointer]:
+                  - /url: https://www.langchain.com/contact-sales
+              - generic [ref=e368]:
+                - paragraph [ref=e369]: Company
+                - link "Home" [ref=e370] [cursor=pointer]:
+                  - /url: https://langchain.com/
+                - link "Trust Center" [ref=e371] [cursor=pointer]:
+                  - /url: https://trust.langchain.com/
+                - link "Careers" [ref=e372] [cursor=pointer]:
+                  - /url: https://langchain.com/careers
+                - link "Blog" [ref=e373] [cursor=pointer]:
+                  - /url: https://blog.langchain.com/
+            - generic [ref=e374]:
+              - link "github" [ref=e375] [cursor=pointer]:
+                - /url: https://github.com/langchain-ai
+                - generic [ref=e376]: github
+                - img [ref=e377]
+              - link "x" [ref=e378] [cursor=pointer]:
+                - /url: https://x.com/LangChain
+                - generic [ref=e379]: x
+                - img [ref=e380]
+              - link "linkedin" [ref=e381] [cursor=pointer]:
+                - /url: https://www.linkedin.com/company/langchain
+                - generic [ref=e382]: linkedin
+                - img [ref=e383]
+              - link "youtube" [ref=e384] [cursor=pointer]:
+                - /url: https://www.youtube.com/@LangChain
+                - generic [ref=e385]: youtube
+                - img [ref=e386]

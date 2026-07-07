@@ -1,0 +1,390 @@
+- generic [active] [ref=e1]:
+  - blockquote [ref=e2]:
+    - heading [level=2] [ref=e3]: Documentation Index
+    - paragraph [ref=e4]:
+      - text: "Fetch the complete documentation index at:"
+      - link [ref=e5] [cursor=pointer]:
+        - /url: /llms.txt
+        - text: /llms.txt
+    - paragraph [ref=e6]: Use this file to discover all available pages before exploring further.
+  - generic [ref=e7]:
+    - link "Skip to main content" [ref=e8] [cursor=pointer]:
+      - /url: "#content-area"
+    - generic [ref=e10]:
+      - banner [ref=e11]:
+        - generic [ref=e15]:
+          - generic [ref=e17]:
+            - link "Docs by LangChain home page light logo" [ref=e19] [cursor=pointer]:
+              - /url: /
+              - generic [ref=e20]: Docs by LangChain home page
+              - img "light logo" [ref=e21]
+            - generic [ref=e22]:
+              - button "Open search" [ref=e23] [cursor=pointer]:
+                - generic [ref=e24]: Search...
+                - img [ref=e25]
+              - button "More actions" [ref=e26] [cursor=pointer]:
+                - img [ref=e27]
+          - button "Navigation Get started Quickstart" [ref=e28] [cursor=pointer]:
+            - generic [ref=e29]:
+              - generic [ref=e30]: Navigation
+              - img [ref=e31]
+            - generic [ref=e33]:
+              - generic [ref=e34]:
+                - generic [ref=e35]: Get started
+                - img [ref=e36]
+              - generic [ref=e38]: Quickstart
+      - generic [ref=e40]:
+        - main [ref=e41]:
+          - generic [ref=e42]:
+            - generic [ref=e44]:
+              - link "Get started" [ref=e47] [cursor=pointer]:
+                - /url: /oss/javascript/langgraph/install
+              - generic [ref=e48]:
+                - heading "Quickstart" [level=1] [ref=e49]
+                - generic [ref=e50]:
+                  - button "Copy page" [ref=e51] [cursor=pointer]:
+                    - generic [ref=e52]:
+                      - img [ref=e53]
+                      - generic [ref=e56]: Copy page
+                  - button "More actions" [ref=e57] [cursor=pointer]:
+                    - img [ref=e58]
+            - generic [ref=e60]:
+              - generic [ref=e61]: This quickstart demonstrates how to build a calculator agent using the LangGraph Graph API or the Functional API.
+              - generic [ref=e62]:
+                - img "Tip" [ref=e64]
+                - generic [ref=e66]:
+                  - strong [ref=e68]: Using an AI coding assistant?
+                  - list [ref=e69]:
+                    - listitem [ref=e70]:
+                      - text: Install the
+                      - link "LangChain Docs MCP server" [ref=e71] [cursor=pointer]:
+                        - /url: /use-these-docs
+                      - text: to give your agent access to up-to-date LangChain documentation and examples.
+                    - listitem [ref=e72]:
+                      - text: Install
+                      - link "LangChain Skills" [ref=e73] [cursor=pointer]:
+                        - /url: https://github.com/langchain-ai/langchain-skills
+                      - text: to improve your agent’s performance on LangChain ecosystem tasks.
+              - list [ref=e74]:
+                - listitem [ref=e75]:
+                  - link "Use the Graph API" [ref=e76] [cursor=pointer]:
+                    - /url: "#use-the-graph-api"
+                  - text: if you prefer to define your agent as a graph of nodes and edges.
+                - listitem [ref=e77]:
+                  - link "Use the Functional API" [ref=e78] [cursor=pointer]:
+                    - /url: "#use-the-functional-api"
+                  - text: if you prefer to define your agent as a single function.
+              - generic [ref=e79]:
+                - text: For conceptual information, see
+                - link "Graph API overview" [ref=e80] [cursor=pointer]:
+                  - /url: /oss/javascript/langgraph/graph-api
+                - text: and
+                - link "Functional API overview" [ref=e81] [cursor=pointer]:
+                  - /url: /oss/javascript/langgraph/functional-api
+                - text: .
+              - generic [ref=e82]:
+                - img "Info" [ref=e84]
+                - generic [ref=e87]:
+                  - text: For this example, you will need to set up a
+                  - link "Claude (Anthropic)" [ref=e88] [cursor=pointer]:
+                    - /url: https://www.anthropic.com/
+                  - text: account and get an API key. Then, set the
+                  - code [ref=e89]: ANTHROPIC_API_KEY
+                  - text: environment variable in your terminal.
+              - generic [ref=e90]:
+                - tablist [ref=e91]:
+                  - tab "Use the Graph API" [selected] [ref=e92] [cursor=pointer]:
+                    - generic [ref=e93]: Use the Graph API
+                  - tab "Use the Functional API" [ref=e94] [cursor=pointer]:
+                    - generic [ref=e95]: Use the Functional API
+                - tabpanel [ref=e97]:
+                  - heading "Navigate to header 1. Define tools and model" [level=2] [ref=e98]:
+                    - link "Navigate to header" [ref=e99] [cursor=pointer]:
+                      - /url: "#1-define-tools-and-model"
+                      - img [ref=e101]
+                    - generic [ref=e103] [cursor=pointer]: 1. Define tools and model
+                  - generic [ref=e104]: In this example, we’ll use the Claude Sonnet 4.5 model and define tools for addition, multiplication, and division.
+                  - generic [ref=e105]:
+                    - button "Copy the contents from the code block" [ref=e108] [cursor=pointer]:
+                      - img [ref=e109]
+                    - code [ref=e115]:
+                      - generic [ref=e116]: "import { ChatAnthropic } from \"@langchain/anthropic\";"
+                      - generic [ref=e117]: "import { tool } from \"@langchain/core/tools\";"
+                      - generic [ref=e118]: import * as z from "zod";
+                      - generic [ref=e119]: "const model = new ChatAnthropic({"
+                      - generic [ref=e120]: "model: \"claude-sonnet-4-6\","
+                      - generic [ref=e121]: "temperature: 0,"
+                      - generic [ref=e122]: "});"
+                      - generic [ref=e123]: // Define tools
+                      - generic [ref=e124]: "const add = tool(({ a, b }) => a + b, {"
+                      - generic [ref=e125]: "name: \"add\","
+                      - generic [ref=e126]: "description: \"Add two numbers\","
+                      - generic [ref=e127]: "schema: z.object({"
+                      - generic [ref=e128]: "a: z.number().describe(\"First number\"),"
+                      - generic [ref=e129]: "b: z.number().describe(\"Second number\"),"
+                      - generic [ref=e130]: "}),"
+                      - generic [ref=e131]: "});"
+                      - generic [ref=e132]: "const multiply = tool(({ a, b }) => a * b, {"
+                      - generic [ref=e133]: "name: \"multiply\","
+                      - generic [ref=e134]: "description: \"Multiply two numbers\","
+                      - generic [ref=e135]: "schema: z.object({"
+                      - generic [ref=e136]: "a: z.number().describe(\"First number\"),"
+                      - generic [ref=e137]: "b: z.number().describe(\"Second number\"),"
+                      - generic [ref=e138]: "}),"
+                      - generic [ref=e139]: "});"
+                      - generic [ref=e140]: "const divide = tool(({ a, b }) => a / b, {"
+                      - generic [ref=e141]: "name: \"divide\","
+                      - generic [ref=e142]: "description: \"Divide two numbers\","
+                      - generic [ref=e143]: "schema: z.object({"
+                      - generic [ref=e144]: "a: z.number().describe(\"First number\"),"
+                      - generic [ref=e145]: "b: z.number().describe(\"Second number\"),"
+                      - generic [ref=e146]: "}),"
+                      - generic [ref=e147]: "});"
+                      - generic [ref=e148]: // Augment the LLM with tools
+                      - generic [ref=e149]: "const toolsByName = {"
+                      - generic [ref=e150]: "[add.name]: add,"
+                      - generic [ref=e151]: "[multiply.name]: multiply,"
+                      - generic [ref=e152]: "[divide.name]: divide,"
+                      - generic [ref=e153]: "};"
+                      - generic [ref=e154]: const tools = Object.values(toolsByName);
+                      - generic [ref=e155]: const modelWithTools = model.bindTools(tools);
+                  - heading "Navigate to header 2. Define state" [level=2] [ref=e156]:
+                    - link "Navigate to header" [ref=e157] [cursor=pointer]:
+                      - /url: "#2-define-state"
+                      - img [ref=e159]
+                    - generic [ref=e161] [cursor=pointer]: 2. Define state
+                  - generic [ref=e162]: The graph’s state is used to store the messages and the number of LLM calls.
+                  - generic [ref=e163]:
+                    - img "Tip" [ref=e165]
+                    - generic [ref=e167]:
+                      - generic [ref=e168]: State in LangGraph persists throughout the agent’s execution.
+                      - generic [ref=e169]:
+                        - text: The
+                        - code [ref=e170]: MessagesValue
+                        - text: provides a built-in reducer for appending messages. The
+                        - code [ref=e171]: llmCalls
+                        - text: field uses a
+                        - code [ref=e172]: ReducedValue
+                        - text: with
+                        - code [ref=e173]: (x, y) => x + y
+                        - text: to accumulate the count.
+                  - generic [ref=e174]:
+                    - button "Copy the contents from the code block" [ref=e177] [cursor=pointer]:
+                      - img [ref=e178]
+                    - code [ref=e184]:
+                      - generic [ref=e185]: "import {"
+                      - generic [ref=e186]: StateGraph,
+                      - generic [ref=e187]: StateSchema,
+                      - generic [ref=e188]: MessagesValue,
+                      - generic [ref=e189]: ReducedValue,
+                      - generic [ref=e190]: GraphNode,
+                      - generic [ref=e191]: ConditionalEdgeRouter,
+                      - generic [ref=e192]: START,
+                      - generic [ref=e193]: END,
+                      - generic [ref=e194]: "} from \"@langchain/langgraph\";"
+                      - generic [ref=e195]: "import { z } from \"zod/v4\";"
+                      - generic [ref=e196]: "const MessagesState = new StateSchema({"
+                      - generic [ref=e197]: "messages: MessagesValue,"
+                      - generic [ref=e198]: "llmCalls: new ReducedValue("
+                      - generic [ref=e199]: z.number().default(0),
+                      - generic [ref=e200]: "{ reducer: (x, y) => x + y }"
+                      - generic [ref=e201]: ),
+                      - generic [ref=e202]: "});"
+                  - heading "Navigate to header 3. Define model node" [level=2] [ref=e203]:
+                    - link "Navigate to header" [ref=e204] [cursor=pointer]:
+                      - /url: "#3-define-model-node"
+                      - img [ref=e206]
+                    - generic [ref=e208] [cursor=pointer]: 3. Define model node
+                  - generic [ref=e209]: The model node is used to call the LLM and decide whether to call a tool or not.
+                  - generic [ref=e210]:
+                    - button "Copy the contents from the code block" [ref=e213] [cursor=pointer]:
+                      - img [ref=e214]
+                    - code [ref=e220]:
+                      - generic [ref=e221]: "import { SystemMessage } from \"@langchain/core/messages\";"
+                      - generic [ref=e222]: "const llmCall: GraphNode<typeof MessagesState> = async (state) => {"
+                      - generic [ref=e223]: const response = await modelWithTools.invoke([
+                      - generic [ref=e224]: new SystemMessage(
+                      - generic [ref=e225]: "\"You are a helpful assistant tasked with performing arithmetic on a set of inputs.\""
+                      - generic [ref=e226]: ),
+                      - generic [ref=e227]: ...state.messages,
+                      - generic [ref=e228]: "]);"
+                      - generic [ref=e229]: "return {"
+                      - generic [ref=e230]: "messages: [response],"
+                      - generic [ref=e231]: "llmCalls: 1,"
+                      - generic [ref=e232]: "};"
+                      - generic [ref=e233]: "};"
+                  - heading "Navigate to header 4. Define tool node" [level=2] [ref=e234]:
+                    - link "Navigate to header" [ref=e235] [cursor=pointer]:
+                      - /url: "#4-define-tool-node"
+                      - img [ref=e237]
+                    - generic [ref=e239] [cursor=pointer]: 4. Define tool node
+                  - generic [ref=e240]: The tool node is used to call the tools and return the results.
+                  - generic [ref=e241]:
+                    - button "Copy the contents from the code block" [ref=e244] [cursor=pointer]:
+                      - img [ref=e245]
+                    - code [ref=e251]:
+                      - generic [ref=e252]: "import { AIMessage, ToolMessage } from \"@langchain/core/messages\";"
+                      - generic [ref=e253]: "const toolNode: GraphNode<typeof MessagesState> = async (state) => {"
+                      - generic [ref=e254]: const lastMessage = state.messages.at(-1);
+                      - generic [ref=e255]: "if (lastMessage == null || !AIMessage.isInstance(lastMessage)) {"
+                      - generic [ref=e256]: "return { messages: [] };"
+                      - generic [ref=e257]: "}"
+                      - generic [ref=e258]: "const result: ToolMessage[] = [];"
+                      - generic [ref=e259]: "for (const toolCall of lastMessage.tool_calls ?? []) {"
+                      - generic [ref=e260]: const tool = toolsByName[toolCall.name];
+                      - generic [ref=e261]: const observation = await tool.invoke(toolCall);
+                      - generic [ref=e262]: result.push(observation);
+                      - generic [ref=e263]: "}"
+                      - generic [ref=e264]: "return { messages: result };"
+                      - generic [ref=e265]: "};"
+                  - heading "Navigate to header 5. Define end logic" [level=2] [ref=e266]:
+                    - link "Navigate to header" [ref=e267] [cursor=pointer]:
+                      - /url: "#5-define-end-logic"
+                      - img [ref=e269]
+                    - generic [ref=e271] [cursor=pointer]: 5. Define end logic
+                  - generic [ref=e272]: The conditional edge function is used to route to the tool node or end based upon whether the LLM made a tool call.
+                  - generic [ref=e273]:
+                    - button "Copy the contents from the code block" [ref=e276] [cursor=pointer]:
+                      - img [ref=e277]
+                    - code [ref=e283]:
+                      - generic [ref=e284]: "const shouldContinue: ConditionalEdgeRouter<typeof MessagesState, \"toolNode\"> = (state) => {"
+                      - generic [ref=e285]: const lastMessage = state.messages.at(-1);
+                      - generic [ref=e286]: // Check if it's an AIMessage before accessing tool_calls
+                      - generic [ref=e287]: "if (!lastMessage || !AIMessage.isInstance(lastMessage)) {"
+                      - generic [ref=e288]: return END;
+                      - generic [ref=e289]: "}"
+                      - generic [ref=e290]: // If the LLM makes a tool call, then perform an action
+                      - generic [ref=e291]: "if (lastMessage.tool_calls?.length) {"
+                      - generic [ref=e292]: return "toolNode";
+                      - generic [ref=e293]: "}"
+                      - generic [ref=e294]: // Otherwise, we stop (reply to the user)
+                      - generic [ref=e295]: return END;
+                      - generic [ref=e296]: "};"
+                  - heading "Navigate to header 6. Build and compile the agent" [level=2] [ref=e297]:
+                    - link "Navigate to header" [ref=e298] [cursor=pointer]:
+                      - /url: "#6-build-and-compile-the-agent"
+                      - img [ref=e300]
+                    - generic [ref=e302] [cursor=pointer]: 6. Build and compile the agent
+                  - generic [ref=e303]:
+                    - text: The agent is built using the
+                    - link "StateGraph" [ref=e304] [cursor=pointer]:
+                      - /url: https://reference.langchain.com/javascript/langchain-langgraph/index/StateGraph
+                      - code [ref=e305]: StateGraph
+                    - text: class and compiled using the
+                    - link "compile" [ref=e306] [cursor=pointer]:
+                      - /url: https://reference.langchain.com/javascript/classes/_langchain_langgraph.index.StateGraph.html#compile
+                      - code [ref=e307]: compile
+                    - text: method.
+                  - generic [ref=e308]:
+                    - button "Copy the contents from the code block" [ref=e311] [cursor=pointer]:
+                      - img [ref=e312]
+                    - code [ref=e318]:
+                      - generic [ref=e319]: const agent = new StateGraph(MessagesState)
+                      - generic [ref=e320]: .addNode("llmCall", llmCall)
+                      - generic [ref=e321]: .addNode("toolNode", toolNode)
+                      - generic [ref=e322]: .addEdge(START, "llmCall")
+                      - generic [ref=e323]: .addConditionalEdges("llmCall", shouldContinue, ["toolNode", END])
+                      - generic [ref=e324]: .addEdge("toolNode", "llmCall")
+                      - generic [ref=e325]: .compile();
+                      - generic [ref=e326]: // Invoke
+                      - generic [ref=e327]: "import { HumanMessage } from \"@langchain/core/messages\";"
+                      - generic [ref=e328]: "const result = await agent.invoke({"
+                      - generic [ref=e329]: "messages: [new HumanMessage(\"Add 3 and 4.\")],"
+                      - generic [ref=e330]: "});"
+                      - generic [ref=e331]: "for (const message of result.messages) {"
+                      - generic [ref=e332]: "console.log(`[${message.type}]: ${message.text}`);"
+                      - generic [ref=e333]: "}"
+                  - generic [ref=e334]:
+                    - img "Tip" [ref=e336]
+                    - generic [ref=e338]:
+                      - generic [ref=e339]:
+                        - text: Trace and debug your agent with
+                        - link "LangSmith" [ref=e340] [cursor=pointer]:
+                          - /url: https://smith.langchain.com?utm_source=docs&utm_medium=cta&utm_campaign=langsmith-signup&utm_content=oss-langgraph-quickstart
+                        - text: . Follow the
+                        - link "tracing quickstart" [ref=e341] [cursor=pointer]:
+                          - /url: /langsmith/trace-with-langgraph
+                        - text: to get set up. When ready for production, see
+                        - link "Deploy" [ref=e342] [cursor=pointer]:
+                          - /url: /langsmith/deployment
+                        - text: for hosting options.
+                      - generic [ref=e343]:
+                        - text: We recommend you also set up
+                        - link "LangSmith Engine" [ref=e344] [cursor=pointer]:
+                          - /url: /langsmith/engine
+                        - text: which monitors your traces, detects issues, and proposes fixes.
+                  - generic [ref=e345]: Congratulations! You’ve built your first agent using the LangGraph Graph API.
+                  - group [ref=e346]:
+                    - generic "Full code example" [ref=e347] [cursor=pointer]:
+                      - img [ref=e349]
+                      - paragraph [ref=e351]: Full code example
+              - separator [ref=e352]
+              - generic [ref=e353]:
+                - generic [ref=e354]:
+                  - img [ref=e356]
+                  - generic [ref=e358]:
+                    - link "Connect these docs" [ref=e359] [cursor=pointer]:
+                      - /url: /use-these-docs
+                    - text: to Claude, VSCode, and more via MCP for real-time answers.
+                - generic [ref=e360]:
+                  - img [ref=e362]
+                  - generic [ref=e364]:
+                    - link "Edit this page on GitHub" [ref=e365] [cursor=pointer]:
+                      - /url: https://github.com/langchain-ai/docs/edit/main/src/oss/langgraph/quickstart.mdx
+                    - text: or
+                    - link "file an issue" [ref=e366] [cursor=pointer]:
+                      - /url: https://github.com/langchain-ai/docs/issues/new/choose
+                    - text: .
+            - generic [ref=e368]:
+              - paragraph [ref=e369]: Was this page helpful?
+              - generic [ref=e371]:
+                - button "Yes" [ref=e372] [cursor=pointer]:
+                  - img [ref=e373]
+                  - generic [ref=e375]: "Yes"
+                - button "No" [ref=e376] [cursor=pointer]:
+                  - img [ref=e377]
+                  - generic [ref=e379]: "No"
+        - contentinfo [ref=e380]:
+          - generic [ref=e382]:
+            - link "Docs by LangChain home page light logo" [ref=e384] [cursor=pointer]:
+              - /url: /
+              - generic [ref=e385]: Docs by LangChain home page
+              - img "light logo" [ref=e386]
+            - generic [ref=e387]:
+              - generic [ref=e389]:
+                - paragraph [ref=e390]: Resources
+                - link "Forum" [ref=e391] [cursor=pointer]:
+                  - /url: https://forum.langchain.com/
+                - link "Changelog" [ref=e392] [cursor=pointer]:
+                  - /url: https://changelog.langchain.com/
+                - link "LangChain Academy" [ref=e393] [cursor=pointer]:
+                  - /url: https://academy.langchain.com/
+                - link "Contact Sales" [ref=e394] [cursor=pointer]:
+                  - /url: https://www.langchain.com/contact-sales
+              - generic [ref=e396]:
+                - paragraph [ref=e397]: Company
+                - link "Home" [ref=e398] [cursor=pointer]:
+                  - /url: https://langchain.com/
+                - link "Trust Center" [ref=e399] [cursor=pointer]:
+                  - /url: https://trust.langchain.com/
+                - link "Careers" [ref=e400] [cursor=pointer]:
+                  - /url: https://langchain.com/careers
+                - link "Blog" [ref=e401] [cursor=pointer]:
+                  - /url: https://blog.langchain.com/
+            - generic [ref=e402]:
+              - link "github" [ref=e403] [cursor=pointer]:
+                - /url: https://github.com/langchain-ai
+                - generic [ref=e404]: github
+                - img [ref=e405]
+              - link "x" [ref=e406] [cursor=pointer]:
+                - /url: https://x.com/LangChain
+                - generic [ref=e407]: x
+                - img [ref=e408]
+              - link "linkedin" [ref=e409] [cursor=pointer]:
+                - /url: https://www.linkedin.com/company/langchain
+                - generic [ref=e410]: linkedin
+                - img [ref=e411]
+              - link "youtube" [ref=e412] [cursor=pointer]:
+                - /url: https://www.youtube.com/@LangChain
+                - generic [ref=e413]: youtube
+                - img [ref=e414]

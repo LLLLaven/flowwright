@@ -1,0 +1,1025 @@
+- generic [active] [ref=e1]:
+  - blockquote [ref=e2]:
+    - heading [level=2] [ref=e3]: Documentation Index
+    - paragraph [ref=e4]:
+      - text: "Fetch the complete documentation index at:"
+      - link [ref=e5] [cursor=pointer]:
+        - /url: /llms.txt
+        - text: /llms.txt
+    - paragraph [ref=e6]: Use this file to discover all available pages before exploring further.
+  - generic [ref=e7]:
+    - link "Skip to main content" [ref=e8] [cursor=pointer]:
+      - /url: "#content-area"
+    - generic [ref=e10]:
+      - banner [ref=e11]:
+        - generic [ref=e15]:
+          - generic [ref=e17]:
+            - link "Docs by LangChain home page light logo" [ref=e19] [cursor=pointer]:
+              - /url: /
+              - generic [ref=e20]: Docs by LangChain home page
+              - img "light logo" [ref=e21]
+            - generic [ref=e22]:
+              - button "Open search" [ref=e23] [cursor=pointer]:
+                - generic [ref=e24]: Search...
+                - img [ref=e25]
+              - button "More actions" [ref=e26] [cursor=pointer]:
+                - img [ref=e27]
+          - button "Navigation Get started Workflows and agents" [ref=e28] [cursor=pointer]:
+            - generic [ref=e29]:
+              - generic [ref=e30]: Navigation
+              - img [ref=e31]
+            - generic [ref=e33]:
+              - generic [ref=e34]:
+                - generic [ref=e35]: Get started
+                - img [ref=e36]
+              - generic [ref=e38]: Workflows and agents
+      - generic [ref=e40]:
+        - main [ref=e41]:
+          - generic [ref=e42]:
+            - generic [ref=e44]:
+              - link "Get started" [ref=e47] [cursor=pointer]:
+                - /url: /oss/javascript/langgraph/install
+              - generic [ref=e48]:
+                - heading "Workflows and agents" [level=1] [ref=e49]
+                - generic [ref=e50]:
+                  - button "Copy page" [ref=e51] [cursor=pointer]:
+                    - generic [ref=e52]:
+                      - img [ref=e53]
+                      - generic [ref=e56]: Copy page
+                  - button "More actions" [ref=e57] [cursor=pointer]:
+                    - img [ref=e58]
+            - generic [ref=e60]:
+              - generic [ref=e61]: This guide reviews common workflow and agent patterns.
+              - list [ref=e62]:
+                - listitem [ref=e63]: Workflows have predetermined code paths and are designed to operate in a certain order.
+                - listitem [ref=e64]: Agents are dynamic and define their own processes and tool usage.
+              - img "Agent Workflow" [ref=e68]
+              - generic [ref=e69]:
+                - text: LangGraph offers several benefits when building agents and workflows, including
+                - link "persistence" [ref=e70] [cursor=pointer]:
+                  - /url: /oss/javascript/langgraph/persistence
+                - text: ","
+                - link "streaming" [ref=e71] [cursor=pointer]:
+                  - /url: /oss/javascript/langgraph/streaming
+                - text: ", and support for debugging as well as"
+                - link "deployment" [ref=e72] [cursor=pointer]:
+                  - /url: /oss/javascript/langgraph/deploy
+                - text: .
+              - generic [ref=e73]:
+                - img "Tip" [ref=e75]
+                - generic [ref=e78]:
+                  - text: Trace and compare these workflow patterns with
+                  - link "LangSmith" [ref=e79] [cursor=pointer]:
+                    - /url: https://smith.langchain.com?utm_source=docs&utm_medium=cta&utm_campaign=langsmith-signup&utm_content=oss-langgraph-workflows-agents
+                  - text: . Follow the
+                  - link "tracing quickstart" [ref=e80] [cursor=pointer]:
+                    - /url: /langsmith/trace-with-langgraph
+                  - text: to see how data flows through each step. We recommend you also set up
+                  - link "LangSmith Engine" [ref=e81] [cursor=pointer]:
+                    - /url: /langsmith/engine
+                  - text: which monitors your traces, detects issues, and proposes fixes.
+              - heading "Navigate to header Setup" [level=2] [ref=e82]:
+                - link "Navigate to header" [ref=e83] [cursor=pointer]:
+                  - /url: "#setup"
+                  - img [ref=e85]
+                - generic [ref=e87] [cursor=pointer]: Setup
+              - generic [ref=e88]:
+                - text: To build a workflow or agent, you can use
+                - link "any chat model" [ref=e89] [cursor=pointer]:
+                  - /url: /oss/javascript/integrations/chat
+                - text: "that supports structured outputs and tool calling. The following example uses Anthropic:"
+              - list [ref=e90]:
+                - listitem [ref=e91]: Install dependencies
+              - generic [ref=e92]:
+                - generic [ref=e93]:
+                  - tablist [ref=e94]:
+                    - tab "npm" [selected] [ref=e95] [cursor=pointer]:
+                      - generic [ref=e96]: npm
+                    - tab "pnpm" [ref=e98] [cursor=pointer]:
+                      - generic [ref=e99]: pnpm
+                    - tab "yarn" [ref=e100] [cursor=pointer]:
+                      - generic [ref=e101]: yarn
+                    - tab "bun" [ref=e102] [cursor=pointer]:
+                      - generic [ref=e103]: bun
+                  - button "Copy the contents from the code block" [ref=e106] [cursor=pointer]:
+                    - img [ref=e107]
+                - tabpanel "npm" [ref=e111]:
+                  - code [ref=e115]:
+                    - generic [ref=e116]: npm install @langchain/langgraph @langchain/core
+              - list [ref=e117]:
+                - listitem [ref=e118]: "Initialize the LLM:"
+              - generic [ref=e119]:
+                - button "Copy the contents from the code block" [ref=e122] [cursor=pointer]:
+                  - img [ref=e123]
+                - code [ref=e129]:
+                  - generic [ref=e130]: "import { ChatAnthropic } from \"@langchain/anthropic\";"
+                  - generic [ref=e131]: "const llm = new ChatAnthropic({"
+                  - generic [ref=e132]: "model: \"claude-sonnet-4-6\","
+                  - generic [ref=e133]: "apiKey: \"<your_anthropic_key>\""
+                  - generic [ref=e134]: "});"
+              - heading "Navigate to header LLMs and augmentations" [level=2] [ref=e135]:
+                - link "Navigate to header" [ref=e136] [cursor=pointer]:
+                  - /url: "#llms-and-augmentations"
+                  - img [ref=e138]
+                - generic [ref=e140] [cursor=pointer]: LLMs and augmentations
+              - generic [ref=e141]:
+                - text: Workflows and agentic systems are based on LLMs and the various augmentations you add to them.
+                - link "Tool calling" [ref=e142] [cursor=pointer]:
+                  - /url: /oss/javascript/langchain/tools
+                - text: ","
+                - link "structured outputs" [ref=e143] [cursor=pointer]:
+                  - /url: /oss/javascript/langchain/structured-output
+                - text: ", and"
+                - link "short term memory" [ref=e144] [cursor=pointer]:
+                  - /url: /oss/javascript/langchain/short-term-memory
+                - text: are a few options for tailoring LLMs to your needs.
+              - img "LLM augmentations" [ref=e148]
+              - generic [ref=e149]:
+                - button "Copy the contents from the code block" [ref=e152] [cursor=pointer]:
+                  - img [ref=e153]
+                - code [ref=e159]:
+                  - generic [ref=e160]: import * as z from "zod";
+                  - generic [ref=e161]: "import { tool } from \"langchain\";"
+                  - generic [ref=e162]: // Schema for structured output
+                  - generic [ref=e163]: "const SearchQuery = z.object({"
+                  - generic [ref=e164]: "search_query: z.string().describe(\"Query that is optimized web search.\"),"
+                  - generic [ref=e165]: "justification: z"
+                  - generic [ref=e166]: .string()
+                  - generic [ref=e167]: .describe("Why this query is relevant to the user's request."),
+                  - generic [ref=e168]: "});"
+                  - generic [ref=e169]: // Augment the LLM with schema for structured output
+                  - generic [ref=e170]: const structuredLlm = llm.withStructuredOutput(SearchQuery);
+                  - generic [ref=e171]: // Invoke the augmented LLM
+                  - generic [ref=e172]: const output = await structuredLlm.invoke(
+                  - generic [ref=e173]: "\"How does Calcium CT score relate to high cholesterol?\""
+                  - generic [ref=e174]: );
+                  - generic [ref=e175]: // Define a tool
+                  - generic [ref=e176]: const multiply = tool(
+                  - generic [ref=e177]: "({ a, b }) => {"
+                  - generic [ref=e178]: return a * b;
+                  - generic [ref=e179]: "},"
+                  - generic [ref=e180]: "{"
+                  - generic [ref=e181]: "name: \"multiply\","
+                  - generic [ref=e182]: "description: \"Multiply two numbers\","
+                  - generic [ref=e183]: "schema: z.object({"
+                  - generic [ref=e184]: "a: z.number(),"
+                  - generic [ref=e185]: "b: z.number(),"
+                  - generic [ref=e186]: "}),"
+                  - generic [ref=e187]: "}"
+                  - generic [ref=e188]: );
+                  - generic [ref=e189]: // Augment the LLM with tools
+                  - generic [ref=e190]: const llmWithTools = llm.bindTools([multiply]);
+                  - generic [ref=e191]: // Invoke the LLM with input that triggers the tool call
+                  - generic [ref=e192]: const msg = await llmWithTools.invoke("What is 2 times 3?");
+                  - generic [ref=e193]: // Get the tool call
+                  - generic [ref=e194]: console.log(msg.tool_calls);
+              - heading "Navigate to header Prompt chaining" [level=2] [ref=e195]:
+                - link "Navigate to header" [ref=e196] [cursor=pointer]:
+                  - /url: "#prompt-chaining"
+                  - img [ref=e198]
+                - generic [ref=e200] [cursor=pointer]: Prompt chaining
+              - generic [ref=e201]: "Prompt chaining is when each LLM call processes the output of the previous call. It’s often used for performing well-defined tasks that can be broken down into smaller, verifiable steps. Some examples include:"
+              - list [ref=e202]:
+                - listitem [ref=e203]: Translating documents into different languages
+                - listitem [ref=e204]: Verifying generated content for consistency
+              - img "Prompt chaining" [ref=e208]
+              - generic [ref=e209]:
+                - generic [ref=e210]:
+                  - tablist [ref=e211]:
+                    - tab "Graph API" [selected] [ref=e212] [cursor=pointer]:
+                      - generic [ref=e213]: Graph API
+                    - tab "Functional API" [ref=e215] [cursor=pointer]:
+                      - generic [ref=e216]: Functional API
+                  - button "Copy the contents from the code block" [ref=e219] [cursor=pointer]:
+                    - img [ref=e220]
+                - tabpanel "Graph API" [ref=e224]:
+                  - code [ref=e228]:
+                    - generic [ref=e229]: "import { StateGraph, StateSchema, GraphNode, ConditionalEdgeRouter } from \"@langchain/langgraph\";"
+                    - generic [ref=e230]: "import { z } from \"zod/v4\";"
+                    - generic [ref=e231]: // Graph state
+                    - generic [ref=e232]: "const State = new StateSchema({"
+                    - generic [ref=e233]: "topic: z.string(),"
+                    - generic [ref=e234]: "joke: z.string(),"
+                    - generic [ref=e235]: "improvedJoke: z.string(),"
+                    - generic [ref=e236]: "finalJoke: z.string(),"
+                    - generic [ref=e237]: "});"
+                    - generic [ref=e238]: // Define node functions
+                    - generic [ref=e239]: // First LLM call to generate initial joke
+                    - generic [ref=e240]: "const generateJoke: GraphNode<typeof State> = async (state) => {"
+                    - generic [ref=e241]: "const msg = await llm.invoke(`Write a short joke about ${state.topic}`);"
+                    - generic [ref=e242]: "return { joke: msg.content };"
+                    - generic [ref=e243]: "};"
+                    - generic [ref=e244]: // Gate function to check if the joke has a punchline
+                    - generic [ref=e245]: "const checkPunchline: ConditionalEdgeRouter<typeof State, \"improveJoke\"> = (state) => {"
+                    - generic [ref=e246]: // Simple check - does the joke contain "?" or "!"
+                    - generic [ref=e247]: "if (state.joke?.includes(\"?\") || state.joke?.includes(\"!\")) {"
+                    - generic [ref=e248]: return "Pass";
+                    - generic [ref=e249]: "}"
+                    - generic [ref=e250]: return "Fail";
+                    - generic [ref=e251]: "};"
+                    - generic [ref=e252]: // Second LLM call to improve the joke
+                    - generic [ref=e253]: "const improveJoke: GraphNode<typeof State> = async (state) => {"
+                    - generic [ref=e254]: const msg = await llm.invoke(
+                    - generic [ref=e255]: "`Make this joke funnier by adding wordplay: ${state.joke}`"
+                    - generic [ref=e256]: );
+                    - generic [ref=e257]: "return { improvedJoke: msg.content };"
+                    - generic [ref=e258]: "};"
+                    - generic [ref=e259]: // Third LLM call for final polish
+                    - generic [ref=e260]: "const polishJoke: GraphNode<typeof State> = async (state) => {"
+                    - generic [ref=e261]: const msg = await llm.invoke(
+                    - generic [ref=e262]: "`Add a surprising twist to this joke: ${state.improvedJoke}`"
+                    - generic [ref=e263]: );
+                    - generic [ref=e264]: "return { finalJoke: msg.content };"
+                    - generic [ref=e265]: "};"
+                    - generic [ref=e266]: // Build workflow
+                    - generic [ref=e267]: const chain = new StateGraph(State)
+                    - generic [ref=e268]: .addNode("generateJoke", generateJoke)
+                    - generic [ref=e269]: .addNode("improveJoke", improveJoke)
+                    - generic [ref=e270]: .addNode("polishJoke", polishJoke)
+                    - generic [ref=e271]: .addEdge("__start__", "generateJoke")
+                    - generic [ref=e272]: ".addConditionalEdges(\"generateJoke\", checkPunchline, {"
+                    - generic [ref=e273]: "Pass: \"improveJoke\","
+                    - generic [ref=e274]: "Fail: \"__end__\""
+                    - generic [ref=e275]: "})"
+                    - generic [ref=e276]: .addEdge("improveJoke", "polishJoke")
+                    - generic [ref=e277]: .addEdge("polishJoke", "__end__")
+                    - generic [ref=e278]: .compile();
+                    - generic [ref=e279]: // Invoke
+                    - generic [ref=e280]: "const state = await chain.invoke({ topic: \"cats\" });"
+                    - generic [ref=e281]: console.log("Initial joke:");
+                    - generic [ref=e282]: console.log(state.joke);
+                    - generic [ref=e283]: console.log("\n--- --- ---\n");
+                    - generic [ref=e284]: "if (state.improvedJoke !== undefined) {"
+                    - generic [ref=e285]: console.log("Improved joke:");
+                    - generic [ref=e286]: console.log(state.improvedJoke);
+                    - generic [ref=e287]: console.log("\n--- --- ---\n");
+                    - generic [ref=e288]: console.log("Final joke:");
+                    - generic [ref=e289]: console.log(state.finalJoke);
+                    - generic [ref=e290]: "} else {"
+                    - generic [ref=e291]: console.log("Joke failed quality gate - no punchline detected!");
+                    - generic [ref=e292]: "}"
+              - heading "Navigate to header Parallelization" [level=2] [ref=e293]:
+                - link "Navigate to header" [ref=e294] [cursor=pointer]:
+                  - /url: "#parallelization"
+                  - img [ref=e296]
+                - generic [ref=e298] [cursor=pointer]: Parallelization
+              - generic [ref=e299]: "With parallelization, LLMs work simultaneously on a task. This is either done by running multiple independent subtasks at the same time, or running the same task multiple times to check for different outputs. Parallelization is commonly used to:"
+              - list [ref=e300]:
+                - listitem [ref=e301]: Split up subtasks and run them in parallel, which increases speed
+                - listitem [ref=e302]: Run tasks multiple times to check for different outputs, which increases confidence
+              - generic [ref=e303]: "Some examples include:"
+              - list [ref=e304]:
+                - listitem [ref=e305]: Running one subtask that processes a document for keywords, and a second subtask to check for formatting errors
+                - listitem [ref=e306]: Running a task multiple times that scores a document for accuracy based on different criteria, like the number of citations, the number of sources used, and the quality of the sources
+              - img "parallelization.png" [ref=e310]
+              - generic [ref=e311]:
+                - generic [ref=e312]:
+                  - tablist [ref=e313]:
+                    - tab "Graph API" [selected] [ref=e314] [cursor=pointer]:
+                      - generic [ref=e315]: Graph API
+                    - tab "Functional API" [ref=e317] [cursor=pointer]:
+                      - generic [ref=e318]: Functional API
+                  - button "Copy the contents from the code block" [ref=e321] [cursor=pointer]:
+                    - img [ref=e322]
+                - tabpanel "Graph API" [ref=e326]:
+                  - code [ref=e330]:
+                    - generic [ref=e331]: "import { StateGraph, StateSchema, GraphNode } from \"@langchain/langgraph\";"
+                    - generic [ref=e332]: import * as z from "zod";
+                    - generic [ref=e333]: // Graph state
+                    - generic [ref=e334]: "const State = new StateSchema({"
+                    - generic [ref=e335]: "topic: z.string(),"
+                    - generic [ref=e336]: "joke: z.string(),"
+                    - generic [ref=e337]: "story: z.string(),"
+                    - generic [ref=e338]: "poem: z.string(),"
+                    - generic [ref=e339]: "combinedOutput: z.string(),"
+                    - generic [ref=e340]: "});"
+                    - generic [ref=e341]: // Nodes
+                    - generic [ref=e342]: // First LLM call to generate initial joke
+                    - generic [ref=e343]: "const callLlm1: GraphNode<typeof State> = async (state) => {"
+                    - generic [ref=e344]: "const msg = await llm.invoke(`Write a joke about ${state.topic}`);"
+                    - generic [ref=e345]: "return { joke: msg.content };"
+                    - generic [ref=e346]: "};"
+                    - generic [ref=e347]: // Second LLM call to generate story
+                    - generic [ref=e348]: "const callLlm2: GraphNode<typeof State> = async (state) => {"
+                    - generic [ref=e349]: "const msg = await llm.invoke(`Write a story about ${state.topic}`);"
+                    - generic [ref=e350]: "return { story: msg.content };"
+                    - generic [ref=e351]: "};"
+                    - generic [ref=e352]: // Third LLM call to generate poem
+                    - generic [ref=e353]: "const callLlm3: GraphNode<typeof State> = async (state) => {"
+                    - generic [ref=e354]: "const msg = await llm.invoke(`Write a poem about ${state.topic}`);"
+                    - generic [ref=e355]: "return { poem: msg.content };"
+                    - generic [ref=e356]: "};"
+                    - generic [ref=e357]: // Combine the joke, story and poem into a single output
+                    - generic [ref=e358]: "const aggregator: GraphNode<typeof State> = async (state) => {"
+                    - generic [ref=e359]: "const combined = `Here's a story, joke, and poem about ${state.topic}!\\n\\n` +"
+                    - generic [ref=e360]: "`STORY:\\n${state.story}\\n\\n` +"
+                    - generic [ref=e361]: "`JOKE:\\n${state.joke}\\n\\n` +"
+                    - generic [ref=e362]: "`POEM:\\n${state.poem}`;"
+                    - generic [ref=e363]: "return { combinedOutput: combined };"
+                    - generic [ref=e364]: "};"
+                    - generic [ref=e365]: // Build workflow
+                    - generic [ref=e366]: const parallelWorkflow = new StateGraph(State)
+                    - generic [ref=e367]: .addNode("callLlm1", callLlm1)
+                    - generic [ref=e368]: .addNode("callLlm2", callLlm2)
+                    - generic [ref=e369]: .addNode("callLlm3", callLlm3)
+                    - generic [ref=e370]: .addNode("aggregator", aggregator)
+                    - generic [ref=e371]: .addEdge("__start__", "callLlm1")
+                    - generic [ref=e372]: .addEdge("__start__", "callLlm2")
+                    - generic [ref=e373]: .addEdge("__start__", "callLlm3")
+                    - generic [ref=e374]: .addEdge("callLlm1", "aggregator")
+                    - generic [ref=e375]: .addEdge("callLlm2", "aggregator")
+                    - generic [ref=e376]: .addEdge("callLlm3", "aggregator")
+                    - generic [ref=e377]: .addEdge("aggregator", "__end__")
+                    - generic [ref=e378]: .compile();
+                    - generic [ref=e379]: // Invoke
+                    - generic [ref=e380]: "const result = await parallelWorkflow.invoke({ topic: \"cats\" });"
+                    - generic [ref=e381]: console.log(result.combinedOutput);
+              - heading "Navigate to header Routing" [level=2] [ref=e382]:
+                - link "Navigate to header" [ref=e383] [cursor=pointer]:
+                  - /url: "#routing"
+                  - img [ref=e385]
+                - generic [ref=e387] [cursor=pointer]: Routing
+              - generic [ref=e388]: Routing workflows process inputs and then directs them to context-specific tasks. This allows you to define specialized flows for complex tasks. For example, a workflow built to answer product related questions might process the type of question first, and then route the request to specific processes for pricing, refunds, returns, etc.
+              - img "routing.png" [ref=e392]
+              - generic [ref=e393]:
+                - generic [ref=e394]:
+                  - tablist [ref=e395]:
+                    - tab "Graph API" [selected] [ref=e396] [cursor=pointer]:
+                      - generic [ref=e397]: Graph API
+                    - tab "Functional API" [ref=e399] [cursor=pointer]:
+                      - generic [ref=e400]: Functional API
+                  - button "Copy the contents from the code block" [ref=e403] [cursor=pointer]:
+                    - img [ref=e404]
+                - tabpanel "Graph API" [ref=e408]:
+                  - code [ref=e412]:
+                    - generic [ref=e413]: "import { StateGraph, StateSchema, GraphNode, ConditionalEdgeRouter } from \"@langchain/langgraph\";"
+                    - generic [ref=e414]: import * as z from "zod";
+                    - generic [ref=e415]: // Schema for structured output to use as routing logic
+                    - generic [ref=e416]: "const routeSchema = z.object({"
+                    - generic [ref=e417]: "step: z.enum([\"poem\", \"story\", \"joke\"]).describe("
+                    - generic [ref=e418]: "\"The next step in the routing process\""
+                    - generic [ref=e419]: ),
+                    - generic [ref=e420]: "});"
+                    - generic [ref=e421]: // Augment the LLM with schema for structured output
+                    - generic [ref=e422]: const router = llm.withStructuredOutput(routeSchema);
+                    - generic [ref=e423]: // Graph state
+                    - generic [ref=e424]: "const State = new StateSchema({"
+                    - generic [ref=e425]: "input: z.string(),"
+                    - generic [ref=e426]: "decision: z.string(),"
+                    - generic [ref=e427]: "output: z.string(),"
+                    - generic [ref=e428]: "});"
+                    - generic [ref=e429]: // Nodes
+                    - generic [ref=e430]: // Write a story
+                    - generic [ref=e431]: "const llmCall1: GraphNode<typeof State> = async (state) => {"
+                    - generic [ref=e432]: "const result = await llm.invoke([{"
+                    - generic [ref=e433]: "role: \"system\","
+                    - generic [ref=e434]: "content: \"You are an expert storyteller.\","
+                    - generic [ref=e435]: "}, {"
+                    - generic [ref=e436]: "role: \"user\","
+                    - generic [ref=e437]: "content: state.input"
+                    - generic [ref=e438]: "}]);"
+                    - generic [ref=e439]: "return { output: result.content };"
+                    - generic [ref=e440]: "};"
+                    - generic [ref=e441]: // Write a joke
+                    - generic [ref=e442]: "const llmCall2: GraphNode<typeof State> = async (state) => {"
+                    - generic [ref=e443]: "const result = await llm.invoke([{"
+                    - generic [ref=e444]: "role: \"system\","
+                    - generic [ref=e445]: "content: \"You are an expert comedian.\","
+                    - generic [ref=e446]: "}, {"
+                    - generic [ref=e447]: "role: \"user\","
+                    - generic [ref=e448]: "content: state.input"
+                    - generic [ref=e449]: "}]);"
+                    - generic [ref=e450]: "return { output: result.content };"
+                    - generic [ref=e451]: "};"
+                    - generic [ref=e452]: // Write a poem
+                    - generic [ref=e453]: "const llmCall3: GraphNode<typeof State> = async (state) => {"
+                    - generic [ref=e454]: "const result = await llm.invoke([{"
+                    - generic [ref=e455]: "role: \"system\","
+                    - generic [ref=e456]: "content: \"You are an expert poet.\","
+                    - generic [ref=e457]: "}, {"
+                    - generic [ref=e458]: "role: \"user\","
+                    - generic [ref=e459]: "content: state.input"
+                    - generic [ref=e460]: "}]);"
+                    - generic [ref=e461]: "return { output: result.content };"
+                    - generic [ref=e462]: "};"
+                    - generic [ref=e463]: "const llmCallRouter: GraphNode<typeof State> = async (state) => {"
+                    - generic [ref=e464]: // Route the input to the appropriate node
+                    - generic [ref=e465]: const decision = await router.invoke([
+                    - generic [ref=e466]: "{"
+                    - generic [ref=e467]: "role: \"system\","
+                    - generic [ref=e468]: "content: \"Route the input to story, joke, or poem based on the user's request.\""
+                    - generic [ref=e469]: "},"
+                    - generic [ref=e470]: "{"
+                    - generic [ref=e471]: "role: \"user\","
+                    - generic [ref=e472]: "content: state.input"
+                    - generic [ref=e473]: "},"
+                    - generic [ref=e474]: "]);"
+                    - generic [ref=e475]: "return { decision: decision.step };"
+                    - generic [ref=e476]: "};"
+                    - generic [ref=e477]: // Conditional edge function to route to the appropriate node
+                    - generic [ref=e478]: "const routeDecision: ConditionalEdgeRouter<typeof State, \"llmCall1\" | \"llmCall2\" | \"llmCall3\"> = (state) => {"
+                    - generic [ref=e479]: // Return the node name you want to visit next
+                    - generic [ref=e480]: "if (state.decision === \"story\") {"
+                    - generic [ref=e481]: return "llmCall1";
+                    - generic [ref=e482]: "} else if (state.decision === \"joke\") {"
+                    - generic [ref=e483]: return "llmCall2";
+                    - generic [ref=e484]: "} else {"
+                    - generic [ref=e485]: return "llmCall3";
+                    - generic [ref=e486]: "}"
+                    - generic [ref=e487]: "};"
+                    - generic [ref=e488]: // Build workflow
+                    - generic [ref=e489]: const routerWorkflow = new StateGraph(State)
+                    - generic [ref=e490]: .addNode("llmCall1", llmCall1)
+                    - generic [ref=e491]: .addNode("llmCall2", llmCall2)
+                    - generic [ref=e492]: .addNode("llmCall3", llmCall3)
+                    - generic [ref=e493]: .addNode("llmCallRouter", llmCallRouter)
+                    - generic [ref=e494]: .addEdge("__start__", "llmCallRouter")
+                    - generic [ref=e495]: .addConditionalEdges(
+                    - generic [ref=e496]: "\"llmCallRouter\","
+                    - generic [ref=e497]: routeDecision,
+                    - generic [ref=e498]: "[\"llmCall1\", \"llmCall2\", \"llmCall3\"],"
+                    - generic [ref=e499]: )
+                    - generic [ref=e500]: .addEdge("llmCall1", "__end__")
+                    - generic [ref=e501]: .addEdge("llmCall2", "__end__")
+                    - generic [ref=e502]: .addEdge("llmCall3", "__end__")
+                    - generic [ref=e503]: .compile();
+                    - generic [ref=e504]: // Invoke
+                    - generic [ref=e505]: "const state = await routerWorkflow.invoke({"
+                    - generic [ref=e506]: "input: \"Write me a joke about cats\""
+                    - generic [ref=e507]: "});"
+                    - generic [ref=e508]: console.log(state.output);
+              - heading "Navigate to header Orchestrator-worker" [level=2] [ref=e509]:
+                - link "Navigate to header" [ref=e510] [cursor=pointer]:
+                  - /url: "#orchestrator-worker"
+                  - img [ref=e512]
+                - generic [ref=e514] [cursor=pointer]: Orchestrator-worker
+              - generic [ref=e515]: "In an orchestrator-worker configuration, the orchestrator:"
+              - list [ref=e516]:
+                - listitem [ref=e517]: Breaks down tasks into subtasks
+                - listitem [ref=e518]: Delegates subtasks to workers
+                - listitem [ref=e519]: Synthesizes worker outputs into a final result
+              - img "worker.png" [ref=e523]
+              - generic [ref=e524]:
+                - text: Orchestrator-worker workflows provide more flexibility and are often used when subtasks cannot be predefined the way they can with
+                - link "parallelization" [ref=e525] [cursor=pointer]:
+                  - /url: "#parallelization"
+                - text: . This is common with workflows that write code or need to update content across multiple files. For example, a workflow that needs to update installation instructions for multiple Python libraries across an unknown number of documents might use this pattern.
+              - generic [ref=e526]:
+                - generic [ref=e527]:
+                  - tablist [ref=e528]:
+                    - tab "Graph API" [selected] [ref=e529] [cursor=pointer]:
+                      - generic [ref=e530]: Graph API
+                    - tab "Functional API" [ref=e532] [cursor=pointer]:
+                      - generic [ref=e533]: Functional API
+                  - button "Copy the contents from the code block" [ref=e536] [cursor=pointer]:
+                    - img [ref=e537]
+                - tabpanel "Graph API" [ref=e541]:
+                  - code [ref=e545]:
+                    - generic [ref=e546]: "type SectionSchema = {"
+                    - generic [ref=e547]: "name: string;"
+                    - generic [ref=e548]: "description: string;"
+                    - generic [ref=e549]: "}"
+                    - generic [ref=e550]: "type SectionsSchema = {"
+                    - generic [ref=e551]: "sections: SectionSchema[];"
+                    - generic [ref=e552]: "}"
+                    - generic [ref=e553]: // Augment the LLM with schema for structured output
+                    - generic [ref=e554]: const planner = llm.withStructuredOutput(sectionsSchema);
+              - heading "Navigate to header Creating workers in LangGraph" [level=3] [ref=e555]:
+                - link "Navigate to header" [ref=e556] [cursor=pointer]:
+                  - /url: "#creating-workers-in-langgraph"
+                  - img [ref=e558]
+                - generic [ref=e560] [cursor=pointer]: Creating workers in LangGraph
+              - generic [ref=e561]:
+                - text: Orchestrator-worker workflows are common and LangGraph has built-in support for them. The
+                - code [ref=e562]: Send
+                - text: API lets you dynamically create worker nodes and send them specific inputs. Each worker has its own state, and all worker outputs are written to a shared state key that is accessible to the orchestrator graph. This gives the orchestrator access to all worker output and allows it to synthesize them into a final output. The example below iterates over a list of sections and uses the
+                - code [ref=e563]: Send
+                - text: API to send a section to each worker.
+              - generic [ref=e564]:
+                - button "Copy the contents from the code block" [ref=e567] [cursor=pointer]:
+                  - img [ref=e568]
+                - code [ref=e574]:
+                  - generic [ref=e575]: "import { StateGraph, StateSchema, ReducedValue, GraphNode, Send } from \"@langchain/langgraph\";"
+                  - generic [ref=e576]: import * as z from "zod";
+                  - generic [ref=e577]: // Graph state
+                  - generic [ref=e578]: "const State = new StateSchema({"
+                  - generic [ref=e579]: "topic: z.string(),"
+                  - generic [ref=e580]: "sections: z.array(z.custom<SectionsSchema>()),"
+                  - generic [ref=e581]: "completedSections: new ReducedValue("
+                  - generic [ref=e582]: z.array(z.string()).default(() => []),
+                  - generic [ref=e583]: "{ reducer: (a, b) => a.concat(b) }"
+                  - generic [ref=e584]: ),
+                  - generic [ref=e585]: "finalReport: z.string(),"
+                  - generic [ref=e586]: "});"
+                  - generic [ref=e587]: // Worker state
+                  - generic [ref=e588]: "const WorkerState = new StateSchema({"
+                  - generic [ref=e589]: "section: z.custom<SectionsSchema>(),"
+                  - generic [ref=e590]: "completedSections: new ReducedValue("
+                  - generic [ref=e591]: z.array(z.string()).default(() => []),
+                  - generic [ref=e592]: "{ reducer: (a, b) => a.concat(b) }"
+                  - generic [ref=e593]: ),
+                  - generic [ref=e594]: "});"
+                  - generic [ref=e595]: // Nodes
+                  - generic [ref=e596]: "const orchestrator: GraphNode<typeof State> = async (state) => {"
+                  - generic [ref=e597]: // Generate queries
+                  - generic [ref=e598]: const reportSections = await planner.invoke([
+                  - generic [ref=e599]: "{ role: \"system\", content: \"Generate a plan for the report.\" },"
+                  - generic [ref=e600]: "{ role: \"user\", content: `Here is the report topic: ${state.topic}` },"
+                  - generic [ref=e601]: "]);"
+                  - generic [ref=e602]: "return { sections: reportSections.sections };"
+                  - generic [ref=e603]: "};"
+                  - generic [ref=e604]: "const llmCall: GraphNode<typeof WorkerState> = async (state) => {"
+                  - generic [ref=e605]: // Generate section
+                  - generic [ref=e606]: const section = await llm.invoke([
+                  - generic [ref=e607]: "{"
+                  - generic [ref=e608]: "role: \"system\","
+                  - generic [ref=e609]: "content: \"Write a report section following the provided name and description. Include no preamble for each section. Use markdown formatting.\","
+                  - generic [ref=e610]: "},"
+                  - generic [ref=e611]: "{"
+                  - generic [ref=e612]: "role: \"user\","
+                  - generic [ref=e613]: "content: `Here is the section name: ${state.section.name} and description: ${state.section.description}`,"
+                  - generic [ref=e614]: "},"
+                  - generic [ref=e615]: "]);"
+                  - generic [ref=e616]: // Write the updated section to completed sections
+                  - generic [ref=e617]: "return { completedSections: [section.content] };"
+                  - generic [ref=e618]: "};"
+                  - generic [ref=e619]: "const synthesizer: GraphNode<typeof State> = async (state) => {"
+                  - generic [ref=e620]: // List of completed sections
+                  - generic [ref=e621]: const completedSections = state.completedSections;
+                  - generic [ref=e622]: // Format completed section to str to use as context for final sections
+                  - generic [ref=e623]: const completedReportSections = completedSections.join("\n\n---\n\n");
+                  - generic [ref=e624]: "return { finalReport: completedReportSections };"
+                  - generic [ref=e625]: "};"
+                  - generic [ref=e626]: // Conditional edge function to create llm_call workers that each write a section of the report
+                  - generic [ref=e627]: "const assignWorkers: ConditionalEdgeRouter<typeof State, \"llmCall\"> = (state) => {"
+                  - generic [ref=e628]: // Kick off section writing in parallel via Send() API
+                  - generic [ref=e629]: return state.sections.map((section) =>
+                  - generic [ref=e630]: "new Send(\"llmCall\", { section })"
+                  - generic [ref=e631]: );
+                  - generic [ref=e632]: "};"
+                  - generic [ref=e633]: // Build workflow
+                  - generic [ref=e634]: const orchestratorWorker = new StateGraph(State)
+                  - generic [ref=e635]: .addNode("orchestrator", orchestrator)
+                  - generic [ref=e636]: .addNode("llmCall", llmCall)
+                  - generic [ref=e637]: .addNode("synthesizer", synthesizer)
+                  - generic [ref=e638]: .addEdge("__start__", "orchestrator")
+                  - generic [ref=e639]: .addConditionalEdges(
+                  - generic [ref=e640]: "\"orchestrator\","
+                  - generic [ref=e641]: assignWorkers,
+                  - generic [ref=e642]: "[\"llmCall\"]"
+                  - generic [ref=e643]: )
+                  - generic [ref=e644]: .addEdge("llmCall", "synthesizer")
+                  - generic [ref=e645]: .addEdge("synthesizer", "__end__")
+                  - generic [ref=e646]: .compile();
+                  - generic [ref=e647]: // Invoke
+                  - generic [ref=e648]: "const state = await orchestratorWorker.invoke({"
+                  - generic [ref=e649]: "topic: \"Create a report on LLM scaling laws\""
+                  - generic [ref=e650]: "});"
+                  - generic [ref=e651]: console.log(state.finalReport);
+              - heading "Navigate to header Evaluator-optimizer" [level=2] [ref=e652]:
+                - link "Navigate to header" [ref=e653] [cursor=pointer]:
+                  - /url: "#evaluator-optimizer"
+                  - img [ref=e655]
+                - generic [ref=e657] [cursor=pointer]: Evaluator-optimizer
+              - generic [ref=e658]:
+                - text: In evaluator-optimizer workflows, one LLM call creates a response and the other evaluates that response. If the evaluator or a
+                - link "human-in-the-loop" [ref=e659] [cursor=pointer]:
+                  - /url: /oss/javascript/langgraph/interrupts
+                - text: determines the response needs refinement, feedback is provided and the response is recreated. This loop continues until an acceptable response is generated.
+              - generic [ref=e660]: Evaluator-optimizer workflows are commonly used when there’s particular success criteria for a task, but iteration is required to meet that criteria. For example, there’s not always a perfect match when translating text between two languages. It might take a few iterations to generate a translation with the same meaning across the two languages.
+              - img "evaluator_optimizer.png" [ref=e664]
+              - generic [ref=e665]:
+                - generic [ref=e666]:
+                  - tablist [ref=e667]:
+                    - tab "Graph API" [selected] [ref=e668] [cursor=pointer]:
+                      - generic [ref=e669]: Graph API
+                    - tab "Functional API" [ref=e671] [cursor=pointer]:
+                      - generic [ref=e672]: Functional API
+                  - button "Copy the contents from the code block" [ref=e675] [cursor=pointer]:
+                    - img [ref=e676]
+                - tabpanel "Graph API" [ref=e680]:
+                  - code [ref=e684]:
+                    - generic [ref=e685]: "import { StateGraph, StateSchema, GraphNode, ConditionalEdgeRouter } from \"@langchain/langgraph\";"
+                    - generic [ref=e686]: import * as z from "zod";
+                    - generic [ref=e687]: // Graph state
+                    - generic [ref=e688]: "const State = new StateSchema({"
+                    - generic [ref=e689]: "joke: z.string(),"
+                    - generic [ref=e690]: "topic: z.string(),"
+                    - generic [ref=e691]: "feedback: z.string(),"
+                    - generic [ref=e692]: "funnyOrNot: z.string(),"
+                    - generic [ref=e693]: "});"
+                    - generic [ref=e694]: // Schema for structured output to use in evaluation
+                    - generic [ref=e695]: "const feedbackSchema = z.object({"
+                    - generic [ref=e696]: "grade: z.enum([\"funny\", \"not funny\"]).describe("
+                    - generic [ref=e697]: "\"Decide if the joke is funny or not.\""
+                    - generic [ref=e698]: ),
+                    - generic [ref=e699]: "feedback: z.string().describe("
+                    - generic [ref=e700]: "\"If the joke is not funny, provide feedback on how to improve it.\""
+                    - generic [ref=e701]: ),
+                    - generic [ref=e702]: "});"
+                    - generic [ref=e703]: // Augment the LLM with schema for structured output
+                    - generic [ref=e704]: const evaluator = llm.withStructuredOutput(feedbackSchema);
+                    - generic [ref=e705]: // Nodes
+                    - generic [ref=e706]: "const llmCallGenerator: GraphNode<typeof State> = async (state) => {"
+                    - generic [ref=e707]: // LLM generates a joke
+                    - generic [ref=e708]: let msg;
+                    - generic [ref=e709]: "if (state.feedback) {"
+                    - generic [ref=e710]: msg = await llm.invoke(
+                    - generic [ref=e711]: "`Write a joke about ${state.topic} but take into account the feedback: ${state.feedback}`"
+                    - generic [ref=e712]: );
+                    - generic [ref=e713]: "} else {"
+                    - generic [ref=e714]: "msg = await llm.invoke(`Write a joke about ${state.topic}`);"
+                    - generic [ref=e715]: "}"
+                    - generic [ref=e716]: "return { joke: msg.content };"
+                    - generic [ref=e717]: "};"
+                    - generic [ref=e718]: "const llmCallEvaluator: GraphNode<typeof State> = async (state) => {"
+                    - generic [ref=e719]: // LLM evaluates the joke
+                    - generic [ref=e720]: "const grade = await evaluator.invoke(`Grade the joke ${state.joke}`);"
+                    - generic [ref=e721]: "return { funnyOrNot: grade.grade, feedback: grade.feedback };"
+                    - generic [ref=e722]: "};"
+                    - generic [ref=e723]: // Conditional edge function to route back to joke generator or end based upon feedback from the evaluator
+                    - generic [ref=e724]: "const routeJoke: ConditionalEdgeRouter<typeof State, \"llmCallGenerator\"> = (state) => {"
+                    - generic [ref=e725]: // Route back to joke generator or end based upon feedback from the evaluator
+                    - generic [ref=e726]: "if (state.funnyOrNot === \"funny\") {"
+                    - generic [ref=e727]: return "Accepted";
+                    - generic [ref=e728]: "} else {"
+                    - generic [ref=e729]: return "Rejected + Feedback";
+                    - generic [ref=e730]: "}"
+                    - generic [ref=e731]: "};"
+                    - generic [ref=e732]: // Build workflow
+                    - generic [ref=e733]: const optimizerWorkflow = new StateGraph(State)
+                    - generic [ref=e734]: .addNode("llmCallGenerator", llmCallGenerator)
+                    - generic [ref=e735]: .addNode("llmCallEvaluator", llmCallEvaluator)
+                    - generic [ref=e736]: .addEdge("__start__", "llmCallGenerator")
+                    - generic [ref=e737]: .addEdge("llmCallGenerator", "llmCallEvaluator")
+                    - generic [ref=e738]: .addConditionalEdges(
+                    - generic [ref=e739]: "\"llmCallEvaluator\","
+                    - generic [ref=e740]: routeJoke,
+                    - generic [ref=e741]: "{"
+                    - generic [ref=e742]: "// Name returned by routeJoke : Name of next node to visit"
+                    - generic [ref=e743]: "\"Accepted\": \"__end__\","
+                    - generic [ref=e744]: "\"Rejected + Feedback\": \"llmCallGenerator\","
+                    - generic [ref=e745]: "}"
+                    - generic [ref=e746]: )
+                    - generic [ref=e747]: .compile();
+                    - generic [ref=e748]: // Invoke
+                    - generic [ref=e749]: "const state = await optimizerWorkflow.invoke({ topic: \"Cats\" });"
+                    - generic [ref=e750]: console.log(state.joke);
+              - heading "Navigate to header Agents" [level=2] [ref=e751]:
+                - link "Navigate to header" [ref=e752] [cursor=pointer]:
+                  - /url: "#agents"
+                  - img [ref=e754]
+                - generic [ref=e756] [cursor=pointer]: Agents
+              - generic [ref=e757]:
+                - text: Agents are typically implemented as an LLM performing actions using
+                - link "tools" [ref=e758] [cursor=pointer]:
+                  - /url: /oss/javascript/langchain/tools
+                - text: . They operate in continuous feedback loops, and are used in situations where problems and solutions are unpredictable. Agents have more autonomy than workflows, and can make decisions about the tools they use and how to solve problems. You can still define the available toolset and guidelines for how agents behave.
+              - img "agent.png" [ref=e762]
+              - generic [ref=e763]:
+                - img "Note" [ref=e765]
+                - generic [ref=e768]:
+                  - text: To get started with agents, see the
+                  - link "quickstart" [ref=e769] [cursor=pointer]:
+                    - /url: /oss/javascript/langchain/quickstart
+                  - text: or read more about
+                  - link "how they work" [ref=e770] [cursor=pointer]:
+                    - /url: /oss/javascript/langchain/agents
+                  - text: in LangChain.
+              - generic [ref=e771]:
+                - generic [ref=e772]:
+                  - generic "Using tools" [ref=e774]
+                  - button "Copy the contents from the code block" [ref=e777] [cursor=pointer]:
+                    - img [ref=e778]
+                - code [ref=e784]:
+                  - generic [ref=e785]: "import { tool } from \"@langchain/core/tools\";"
+                  - generic [ref=e786]: import * as z from "zod";
+                  - generic [ref=e787]: // Define tools
+                  - generic [ref=e788]: const multiply = tool(
+                  - generic [ref=e789]: "({ a, b }) => {"
+                  - generic [ref=e790]: return a * b;
+                  - generic [ref=e791]: "},"
+                  - generic [ref=e792]: "{"
+                  - generic [ref=e793]: "name: \"multiply\","
+                  - generic [ref=e794]: "description: \"Multiply two numbers together\","
+                  - generic [ref=e795]: "schema: z.object({"
+                  - generic [ref=e796]: "a: z.number().describe(\"first number\"),"
+                  - generic [ref=e797]: "b: z.number().describe(\"second number\"),"
+                  - generic [ref=e798]: "}),"
+                  - generic [ref=e799]: "}"
+                  - generic [ref=e800]: );
+                  - generic [ref=e801]: const add = tool(
+                  - generic [ref=e802]: "({ a, b }) => {"
+                  - generic [ref=e803]: return a + b;
+                  - generic [ref=e804]: "},"
+                  - generic [ref=e805]: "{"
+                  - generic [ref=e806]: "name: \"add\","
+                  - generic [ref=e807]: "description: \"Add two numbers together\","
+                  - generic [ref=e808]: "schema: z.object({"
+                  - generic [ref=e809]: "a: z.number().describe(\"first number\"),"
+                  - generic [ref=e810]: "b: z.number().describe(\"second number\"),"
+                  - generic [ref=e811]: "}),"
+                  - generic [ref=e812]: "}"
+                  - generic [ref=e813]: );
+                  - generic [ref=e814]: const divide = tool(
+                  - generic [ref=e815]: "({ a, b }) => {"
+                  - generic [ref=e816]: return a / b;
+                  - generic [ref=e817]: "},"
+                  - generic [ref=e818]: "{"
+                  - generic [ref=e819]: "name: \"divide\","
+                  - generic [ref=e820]: "description: \"Divide two numbers\","
+                  - generic [ref=e821]: "schema: z.object({"
+                  - generic [ref=e822]: "a: z.number().describe(\"first number\"),"
+                  - generic [ref=e823]: "b: z.number().describe(\"second number\"),"
+                  - generic [ref=e824]: "}),"
+                  - generic [ref=e825]: "}"
+                  - generic [ref=e826]: );
+                  - generic [ref=e827]: // Augment the LLM with tools
+                  - generic [ref=e828]: const tools = [add, multiply, divide];
+                  - generic [ref=e829]: const toolsByName = Object.fromEntries(tools.map((tool) => [tool.name, tool]));
+                  - generic [ref=e830]: const llmWithTools = llm.bindTools(tools);
+              - generic [ref=e831]:
+                - generic [ref=e832]:
+                  - tablist [ref=e833]:
+                    - tab "Graph API" [selected] [ref=e834] [cursor=pointer]:
+                      - generic [ref=e835]: Graph API
+                    - tab "Functional API" [ref=e837] [cursor=pointer]:
+                      - generic [ref=e838]: Functional API
+                  - button "Copy the contents from the code block" [ref=e841] [cursor=pointer]:
+                    - img [ref=e842]
+                - tabpanel "Graph API" [ref=e846]:
+                  - code [ref=e850]:
+                    - generic [ref=e851]: "import { StateGraph, StateSchema, MessagesValue, GraphNode, ConditionalEdgeRouter } from \"@langchain/langgraph\";"
+                    - generic [ref=e852]: "import { ToolNode } from \"@langchain/langgraph/prebuilt\";"
+                    - generic [ref=e853]: "import {"
+                    - generic [ref=e854]: SystemMessage,
+                    - generic [ref=e855]: ToolMessage
+                    - generic [ref=e856]: "} from \"@langchain/core/messages\";"
+                    - generic [ref=e857]: // Graph state
+                    - generic [ref=e858]: "const State = new StateSchema({"
+                    - generic [ref=e859]: "messages: MessagesValue,"
+                    - generic [ref=e860]: "});"
+                    - generic [ref=e861]: // Nodes
+                    - generic [ref=e862]: "const llmCall: GraphNode<typeof State> = async (state) => {"
+                    - generic [ref=e863]: // LLM decides whether to call a tool or not
+                    - generic [ref=e864]: const result = await llmWithTools.invoke([
+                    - generic [ref=e865]: "{"
+                    - generic [ref=e866]: "role: \"system\","
+                    - generic [ref=e867]: "content: \"You are a helpful assistant tasked with performing arithmetic on a set of inputs.\""
+                    - generic [ref=e868]: "},"
+                    - generic [ref=e869]: ...state.messages
+                    - generic [ref=e870]: "]);"
+                    - generic [ref=e871]: "return {"
+                    - generic [ref=e872]: "messages: [result]"
+                    - generic [ref=e873]: "};"
+                    - generic [ref=e874]: "};"
+                    - generic [ref=e875]: const toolNode = new ToolNode(tools);
+                    - generic [ref=e876]: // Conditional edge function to route to the tool node or end
+                    - generic [ref=e877]: "const shouldContinue: ConditionalEdgeRouter<typeof State, \"toolNode\"> = (state) => {"
+                    - generic [ref=e878]: const messages = state.messages;
+                    - generic [ref=e879]: const lastMessage = messages.at(-1);
+                    - generic [ref=e880]: // If the LLM makes a tool call, then perform an action
+                    - generic [ref=e881]: "if (lastMessage?.tool_calls?.length) {"
+                    - generic [ref=e882]: return "toolNode";
+                    - generic [ref=e883]: "}"
+                    - generic [ref=e884]: // Otherwise, we stop (reply to the user)
+                    - generic [ref=e885]: return "__end__";
+                    - generic [ref=e886]: "};"
+                    - generic [ref=e887]: // Build workflow
+                    - generic [ref=e888]: const agentBuilder = new StateGraph(State)
+                    - generic [ref=e889]: .addNode("llmCall", llmCall)
+                    - generic [ref=e890]: .addNode("toolNode", toolNode)
+                    - generic [ref=e891]: // Add edges to connect nodes
+                    - generic [ref=e892]: .addEdge("__start__", "llmCall")
+                    - generic [ref=e893]: .addConditionalEdges(
+                    - generic [ref=e894]: "\"llmCall\","
+                    - generic [ref=e895]: shouldContinue,
+                    - generic [ref=e896]: "[\"toolNode\", \"__end__\"]"
+                    - generic [ref=e897]: )
+                    - generic [ref=e898]: .addEdge("toolNode", "llmCall")
+                    - generic [ref=e899]: .compile();
+                    - generic [ref=e900]: // Invoke
+                    - generic [ref=e901]: "const messages = [{"
+                    - generic [ref=e902]: "role: \"user\","
+                    - generic [ref=e903]: "content: \"Add 3 and 4.\""
+                    - generic [ref=e904]: "}];"
+                    - generic [ref=e905]: "const result = await agentBuilder.invoke({ messages });"
+                    - generic [ref=e906]: console.log(result.messages);
+              - heading "Navigate to header ToolNode" [level=3] [ref=e907]:
+                - link "Navigate to header" [ref=e908] [cursor=pointer]:
+                  - /url: "#toolnode"
+                  - img [ref=e910]
+                - generic [ref=e912] [cursor=pointer]: ToolNode
+              - generic [ref=e913]:
+                - link "ToolNode" [ref=e914] [cursor=pointer]:
+                  - /url: https://reference.langchain.com/javascript/langchain-langgraph/prebuilt/ToolNode
+                  - code [ref=e915]: ToolNode
+                - text: is a prebuilt node that executes tools in LangGraph workflows. It handles parallel tool execution, error handling, and state injection automatically.
+              - generic [ref=e916]:
+                - text: Use
+                - link "ToolNode" [ref=e917] [cursor=pointer]:
+                  - /url: https://reference.langchain.com/javascript/langchain-langgraph/prebuilt/ToolNode
+                  - code [ref=e918]: ToolNode
+                - text: when you need fine-grained control over how your graph executes tools. This is the building block that powers tool execution in many LangGraph agent patterns.
+              - generic [ref=e919]:
+                - button "Copy the contents from the code block" [ref=e922] [cursor=pointer]:
+                  - img [ref=e923]
+                - code [ref=e929]:
+                  - generic [ref=e930]: "import { ToolNode } from \"@langchain/langgraph/prebuilt\";"
+                  - generic [ref=e931]: "import { tool } from \"@langchain/core/tools\";"
+                  - generic [ref=e932]: import * as z from "zod";
+                  - generic [ref=e933]: const search = tool(
+                  - generic [ref=e934]: "({ query }) => `Results for: ${query}`,"
+                  - generic [ref=e935]: "{"
+                  - generic [ref=e936]: "name: \"search\","
+                  - generic [ref=e937]: "description: \"Search for information.\","
+                  - generic [ref=e938]: "schema: z.object({ query: z.string() }),"
+                  - generic [ref=e939]: "}"
+                  - generic [ref=e940]: );
+                  - generic [ref=e941]: const calculator = tool(
+                  - generic [ref=e942]: "({ expression }) => String(eval(expression)),"
+                  - generic [ref=e943]: "{"
+                  - generic [ref=e944]: "name: \"calculator\","
+                  - generic [ref=e945]: "description: \"Evaluate a math expression.\","
+                  - generic [ref=e946]: "schema: z.object({ expression: z.string() }),"
+                  - generic [ref=e947]: "}"
+                  - generic [ref=e948]: );
+                  - generic [ref=e949]: const toolNode = new ToolNode([search, calculator]);
+              - heading "Navigate to header Access graph state and context from tools" [level=4] [ref=e950]:
+                - link "Navigate to header" [ref=e951] [cursor=pointer]:
+                  - /url: "#access-graph-state-and-context-from-tools"
+                  - img [ref=e953]
+                - generic [ref=e955] [cursor=pointer]: Access graph state and context from tools
+              - generic [ref=e956]:
+                - text: Tools executed by
+                - code [ref=e957]: ToolNode
+                - text: "receive the arguments generated by the model as their first argument. To read graph-side data that was not generated by the model, use one of these options:"
+              - list [ref=e958]:
+                - listitem [ref=e959]:
+                  - text: In Python, read state and run-scoped context from the injected
+                  - link "ToolRuntime" [ref=e960] [cursor=pointer]:
+                    - /url: https://reference.langchain.com/javascript/langchain/index/Runtime
+                    - code [ref=e961]: ToolRuntime
+                  - text: argument.
+                - listitem [ref=e962]:
+                  - text: In JavaScript, read state and run-scoped context from the tool’s second argument, typed as
+                  - link "ToolRuntime" [ref=e963] [cursor=pointer]:
+                    - /url: https://reference.langchain.com/javascript/langchain/index/Runtime
+                    - code [ref=e964]: ToolRuntime
+                  - text: .
+              - generic [ref=e965]:
+                - img "Note" [ref=e967]
+                - generic [ref=e970]:
+                  - text: Tools can only access the state values passed to the
+                  - code [ref=e971]: ToolNode
+                  - text: . When
+                  - code [ref=e972]: ToolNode
+                  - text: is added directly as a
+                  - code [ref=e973]: StateGraph
+                  - text: node, that input is the current graph state. If you invoke a
+                  - code [ref=e974]: ToolNode
+                  - text: manually from another node, pass the full state when tools need custom state fields. For example,
+                  - code [ref=e975]: tool_node.invoke(state)
+                  - text: or
+                  - code [ref=e976]: toolNode.invoke(state, config)
+                  - text: exposes the full state, while passing only
+                  - code [ref=e977]: "{\"messages\": state[\"messages\"]}"
+                  - text: or
+                  - code [ref=e978]: "{ messages: state.messages }"
+                  - text: only exposes
+                  - code [ref=e979]: messages
+                  - text: .
+              - generic [ref=e980]:
+                - button "Copy the contents from the code block" [ref=e983] [cursor=pointer]:
+                  - img [ref=e984]
+                - code [ref=e990]:
+                  - generic [ref=e991]: "import { AIMessage } from \"@langchain/core/messages\";"
+                  - generic [ref=e992]: "import { tool, type ToolRuntime } from \"@langchain/core/tools\";"
+                  - generic [ref=e993]: "import {"
+                  - generic [ref=e994]: MessagesValue,
+                  - generic [ref=e995]: START,
+                  - generic [ref=e996]: StateGraph,
+                  - generic [ref=e997]: StateSchema,
+                  - generic [ref=e998]: "} from \"@langchain/langgraph\";"
+                  - generic [ref=e999]: "import { ToolNode } from \"@langchain/langgraph/prebuilt\";"
+                  - generic [ref=e1000]: import * as z from "zod";
+                  - generic [ref=e1001]: "const State = new StateSchema({"
+                  - generic [ref=e1002]: "messages: MessagesValue,"
+                  - generic [ref=e1003]: "userId: z.string(),"
+                  - generic [ref=e1004]: "});"
+                  - generic [ref=e1005]: "const ContextSchema = z.object({"
+                  - generic [ref=e1006]: "organizationId: z.string(),"
+                  - generic [ref=e1007]: "});"
+                  - generic [ref=e1008]: const getUserInfo = tool(
+                  - generic [ref=e1009]: async (
+                  - generic [ref=e1010]: _input,
+                  - generic [ref=e1011]: "runtime: ToolRuntime<typeof State.Type, typeof ContextSchema>,"
+                  - generic [ref=e1012]: ") => {"
+                  - generic [ref=e1013]: // Read the current graph state passed to the ToolNode.
+                  - generic [ref=e1014]: const userIdFromState = runtime.state?.userId;
+                  - generic [ref=e1015]: const userIdFromTaskInput = (
+                  - generic [ref=e1016]: "runtime.configurable as {"
+                  - generic [ref=e1017]: "__pregel_scratchpad?: { currentTaskInput?: { userId?: string } };"
+                  - generic [ref=e1018]: "}"
+                  - generic [ref=e1019]: ).__pregel_scratchpad?.currentTaskInput?.userId;
+                  - generic [ref=e1020]: const userId = userIdFromState ?? userIdFromTaskInput;
+                  - generic [ref=e1021]: "if (!userId) {"
+                  - generic [ref=e1022]: throw new Error("Missing userId in ToolRuntime state.");
+                  - generic [ref=e1023]: "}"
+                  - generic [ref=e1024]: // Use runtime context for explicit per-run values that are not part
+                  - generic [ref=e1025]: // of graph state.
+                  - generic [ref=e1026]: const organizationId = runtime.context.organizationId;
+                  - generic [ref=e1027]: "return `User ${userId} in organization ${organizationId}`;"
+                  - generic [ref=e1028]: "},"
+                  - generic [ref=e1029]: "{"
+                  - generic [ref=e1030]: "name: \"get_user_info\","
+                  - generic [ref=e1031]: "description: \"Look up user information.\","
+                  - generic [ref=e1032]: "schema: z.object({}),"
+                  - generic [ref=e1033]: "},"
+                  - generic [ref=e1034]: );
+                  - generic [ref=e1035]: const graph = new StateGraph(State, ContextSchema)
+                  - generic [ref=e1036]: .addNode("tools", new ToolNode([getUserInfo]))
+                  - generic [ref=e1037]: .addEdge(START, "tools")
+                  - generic [ref=e1038]: .compile();
+                  - generic [ref=e1039]: const result = await graph.invoke(
+                  - generic [ref=e1040]: "{"
+                  - generic [ref=e1041]: "messages: ["
+                  - generic [ref=e1042]: "new AIMessage({"
+                  - generic [ref=e1043]: "content: \"\","
+                  - generic [ref=e1044]: "tool_calls: [{ name: \"get_user_info\", args: {}, id: \"call_user_info\" }],"
+                  - generic [ref=e1045]: "}),"
+                  - generic [ref=e1046]: "],"
+                  - generic [ref=e1047]: "userId: \"user_123\","
+                  - generic [ref=e1048]: "},"
+                  - generic [ref=e1049]: "{ context: { organizationId: \"org_456\" } },"
+                  - generic [ref=e1050]: );
+              - separator [ref=e1051]
+              - generic [ref=e1052]:
+                - generic [ref=e1053]:
+                  - img [ref=e1055]
+                  - generic [ref=e1057]:
+                    - link "Connect these docs" [ref=e1058] [cursor=pointer]:
+                      - /url: /use-these-docs
+                    - text: to Claude, VSCode, and more via MCP for real-time answers.
+                - generic [ref=e1059]:
+                  - img [ref=e1061]
+                  - generic [ref=e1063]:
+                    - link "Edit this page on GitHub" [ref=e1064] [cursor=pointer]:
+                      - /url: https://github.com/langchain-ai/docs/edit/main/src/oss/langgraph/workflows-agents.mdx
+                    - text: or
+                    - link "file an issue" [ref=e1065] [cursor=pointer]:
+                      - /url: https://github.com/langchain-ai/docs/issues/new/choose
+                    - text: .
+            - generic [ref=e1067]:
+              - paragraph [ref=e1068]: Was this page helpful?
+              - generic [ref=e1070]:
+                - button "Yes" [ref=e1071] [cursor=pointer]:
+                  - img [ref=e1072]
+                  - generic [ref=e1074]: "Yes"
+                - button "No" [ref=e1075] [cursor=pointer]:
+                  - img [ref=e1076]
+                  - generic [ref=e1078]: "No"
+        - contentinfo [ref=e1079]:
+          - generic [ref=e1081]:
+            - link "Docs by LangChain home page light logo" [ref=e1083] [cursor=pointer]:
+              - /url: /
+              - generic [ref=e1084]: Docs by LangChain home page
+              - img "light logo" [ref=e1085]
+            - generic [ref=e1086]:
+              - generic [ref=e1088]:
+                - paragraph [ref=e1089]: Resources
+                - link "Forum" [ref=e1090] [cursor=pointer]:
+                  - /url: https://forum.langchain.com/
+                - link "Changelog" [ref=e1091] [cursor=pointer]:
+                  - /url: https://changelog.langchain.com/
+                - link "LangChain Academy" [ref=e1092] [cursor=pointer]:
+                  - /url: https://academy.langchain.com/
+                - link "Contact Sales" [ref=e1093] [cursor=pointer]:
+                  - /url: https://www.langchain.com/contact-sales
+              - generic [ref=e1095]:
+                - paragraph [ref=e1096]: Company
+                - link "Home" [ref=e1097] [cursor=pointer]:
+                  - /url: https://langchain.com/
+                - link "Trust Center" [ref=e1098] [cursor=pointer]:
+                  - /url: https://trust.langchain.com/
+                - link "Careers" [ref=e1099] [cursor=pointer]:
+                  - /url: https://langchain.com/careers
+                - link "Blog" [ref=e1100] [cursor=pointer]:
+                  - /url: https://blog.langchain.com/
+            - generic [ref=e1101]:
+              - link "github" [ref=e1102] [cursor=pointer]:
+                - /url: https://github.com/langchain-ai
+                - generic [ref=e1103]: github
+                - img [ref=e1104]
+              - link "x" [ref=e1105] [cursor=pointer]:
+                - /url: https://x.com/LangChain
+                - generic [ref=e1106]: x
+                - img [ref=e1107]
+              - link "linkedin" [ref=e1108] [cursor=pointer]:
+                - /url: https://www.linkedin.com/company/langchain
+                - generic [ref=e1109]: linkedin
+                - img [ref=e1110]
+              - link "youtube" [ref=e1111] [cursor=pointer]:
+                - /url: https://www.youtube.com/@LangChain
+                - generic [ref=e1112]: youtube
+                - img [ref=e1113]

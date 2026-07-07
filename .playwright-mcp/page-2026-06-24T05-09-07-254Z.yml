@@ -1,0 +1,646 @@
+- generic [active] [ref=e1]:
+  - blockquote [ref=e2]:
+    - heading [level=2] [ref=e3]: Documentation Index
+    - paragraph [ref=e4]:
+      - text: "Fetch the complete documentation index at:"
+      - link [ref=e5] [cursor=pointer]:
+        - /url: /llms.txt
+        - text: /llms.txt
+    - paragraph [ref=e6]: Use this file to discover all available pages before exploring further.
+  - generic [ref=e7]:
+    - link "Skip to main content" [ref=e8] [cursor=pointer]:
+      - /url: "#content-area"
+    - generic [ref=e10]:
+      - banner [ref=e11]:
+        - generic [ref=e15]:
+          - generic [ref=e17]:
+            - link "Docs by LangChain home page light logo" [ref=e19] [cursor=pointer]:
+              - /url: /
+              - generic [ref=e20]: Docs by LangChain home page
+              - img "light logo" [ref=e21]
+            - generic [ref=e22]:
+              - button "Open search" [ref=e23] [cursor=pointer]:
+                - generic [ref=e24]: Search...
+                - img [ref=e25]
+              - button "More actions" [ref=e26] [cursor=pointer]:
+                - img [ref=e27]
+          - button "Navigation Get started Thinking in LangGraph" [ref=e28] [cursor=pointer]:
+            - generic [ref=e29]:
+              - generic [ref=e30]: Navigation
+              - img [ref=e31]
+            - generic [ref=e33]:
+              - generic [ref=e34]:
+                - generic [ref=e35]: Get started
+                - img [ref=e36]
+              - generic [ref=e38]: Thinking in LangGraph
+      - generic [ref=e40]:
+        - main [ref=e41]:
+          - generic [ref=e42]:
+            - generic [ref=e44]:
+              - link "Get started" [ref=e47] [cursor=pointer]:
+                - /url: /oss/javascript/langgraph/install
+              - generic [ref=e48]:
+                - heading "Thinking in LangGraph" [level=1] [ref=e49]
+                - generic [ref=e50]:
+                  - button "Copy page" [ref=e51] [cursor=pointer]:
+                    - generic [ref=e52]:
+                      - img [ref=e53]
+                      - generic [ref=e56]: Copy page
+                  - button "More actions" [ref=e57] [cursor=pointer]:
+                    - img [ref=e58]
+            - generic [ref=e60]:
+              - generic [ref=e61]:
+                - text: When you build an agent with LangGraph, you will first break it apart into discrete steps called
+                - strong [ref=e62]: nodes
+                - text: . Then, you will describe the different decisions and transitions from each of your nodes. Finally, you connect nodes together through a shared
+                - strong [ref=e63]: state
+                - text: that each node can read from and write to.
+              - generic [ref=e64]: In this walkthrough, we’ll guide you through the thought process of building a customer support email agent with LangGraph.
+              - heading "Navigate to header Start with the process you want to automate" [level=2] [ref=e65]:
+                - link "Navigate to header" [ref=e66] [cursor=pointer]:
+                  - /url: "#start-with-the-process-you-want-to-automate"
+                  - img [ref=e68]
+                - generic [ref=e70] [cursor=pointer]: Start with the process you want to automate
+              - generic [ref=e71]: "Imagine that you need to build an AI agent that handles customer support emails. Your product team has given you these requirements:"
+              - generic [ref=e72]:
+                - button "Copy the contents from the code block" [ref=e75] [cursor=pointer]:
+                  - img [ref=e76]
+                - code [ref=e82]:
+                  - generic [ref=e83]: "The agent should:"
+                  - generic [ref=e84]: "- Read incoming customer emails"
+                  - generic [ref=e85]: "- Classify them by urgency and topic"
+                  - generic [ref=e86]: "- Search relevant documentation to answer questions"
+                  - generic [ref=e87]: "- Draft appropriate responses"
+                  - generic [ref=e88]: "- Escalate complex issues to human agents"
+                  - generic [ref=e89]: "- Schedule follow-ups when needed"
+                  - generic [ref=e90]: "Example scenarios to handle:"
+                  - generic [ref=e91]: "1. Simple product question: \"How do I reset my password?\""
+                  - generic [ref=e92]: "2. Bug report: \"The export feature crashes when I select PDF format\""
+                  - generic [ref=e93]: "3. Urgent billing issue: \"I was charged twice for my subscription!\""
+                  - generic [ref=e94]: "4. Feature request: \"Can you add dark mode to the mobile app?\""
+                  - generic [ref=e95]: "5. Complex technical issue: \"Our API integration fails intermittently with 504 errors\""
+              - generic [ref=e96]: To implement an agent in LangGraph, you will usually follow the same five steps.
+              - 'heading "Navigate to header Step 1: Map out your workflow as discrete steps" [level=2] [ref=e97]':
+                - link "Navigate to header" [ref=e98] [cursor=pointer]:
+                  - /url: "#step-1-map-out-your-workflow-as-discrete-steps"
+                  - img [ref=e100]
+                - generic [ref=e102] [cursor=pointer]: "Step 1: Map out your workflow as discrete steps"
+              - generic [ref=e103]:
+                - text: Start by identifying the distinct steps in your process. Each step will become a
+                - strong [ref=e104]: node
+                - text: (a function that does one specific thing). Then, sketch how these steps connect to each other.
+              - generic [ref=e105]: The arrows in this diagram show possible paths, but the actual decision of which path to take happens inside each node.
+              - generic [ref=e106]: "Now that we’ve identified the components in our workflow, let’s understand what each node needs to do:"
+              - list [ref=e107]:
+                - listitem [ref=e108]:
+                  - code [ref=e109]: Read Email
+                  - text: ": Extract and parse the email content"
+                - listitem [ref=e110]:
+                  - code [ref=e111]: Classify Intent
+                  - text: ": Use an LLM to categorize urgency and topic, then route to appropriate action"
+                - listitem [ref=e112]:
+                  - code [ref=e113]: Doc Search
+                  - text: ": Query your knowledge base for relevant information"
+                - listitem [ref=e114]:
+                  - code [ref=e115]: Bug Track
+                  - text: ": Create or update issue in tracking system"
+                - listitem [ref=e116]:
+                  - code [ref=e117]: Draft Reply
+                  - text: ": Generate an appropriate response"
+                - listitem [ref=e118]:
+                  - code [ref=e119]: Human Review
+                  - text: ": Escalate to human agent for approval or handling"
+                - listitem [ref=e120]:
+                  - code [ref=e121]: Send Reply
+                  - text: ": Dispatch the email response"
+              - generic [ref=e122]:
+                - img "Tip" [ref=e124]
+                - generic [ref=e127]:
+                  - text: Notice that some nodes make decisions about where to go next (
+                  - code [ref=e128]: Classify Intent
+                  - text: ","
+                  - code [ref=e129]: Draft Reply
+                  - text: ","
+                  - code [ref=e130]: Human Review
+                  - text: ), while others always proceed to the same next step (
+                  - code [ref=e131]: Read Email
+                  - text: always goes to
+                  - code [ref=e132]: Classify Intent
+                  - text: ","
+                  - code [ref=e133]: Doc Search
+                  - text: always goes to
+                  - code [ref=e134]: Draft Reply
+                  - text: ).
+              - 'heading "Navigate to header Step 2: Identify what each step needs to do" [level=2] [ref=e135]':
+                - link "Navigate to header" [ref=e136] [cursor=pointer]:
+                  - /url: "#step-2-identify-what-each-step-needs-to-do"
+                  - img [ref=e138]
+                - generic [ref=e140] [cursor=pointer]: "Step 2: Identify what each step needs to do"
+              - generic [ref=e141]: For each node in your graph, determine what type of operation it represents and what context it needs to work properly.
+              - generic [ref=e142]:
+                - link "LLM steps Use when you need to understand, analyze, generate text, or make reasoning decisions" [ref=e143] [cursor=pointer]:
+                  - generic [ref=e144]:
+                    - img [ref=e146]
+                    - generic [ref=e147]:
+                      - heading "LLM steps" [level=2] [ref=e148]
+                      - generic [ref=e150]: Use when you need to understand, analyze, generate text, or make reasoning decisions
+                - link "Data steps Use when you need to retrieve information from external sources" [ref=e151] [cursor=pointer]:
+                  - generic [ref=e152]:
+                    - img [ref=e154]
+                    - generic [ref=e155]:
+                      - heading "Data steps" [level=2] [ref=e156]
+                      - generic [ref=e158]: Use when you need to retrieve information from external sources
+                - link "Action steps Use when you need to perform external actions" [ref=e159] [cursor=pointer]:
+                  - generic [ref=e160]:
+                    - img [ref=e162]
+                    - generic [ref=e163]:
+                      - heading "Action steps" [level=2] [ref=e164]
+                      - generic [ref=e166]: Use when you need to perform external actions
+                - link "User input steps Use when you need human intervention" [ref=e167] [cursor=pointer]:
+                  - generic [ref=e168]:
+                    - img [ref=e170]
+                    - generic [ref=e171]:
+                      - heading "User input steps" [level=2] [ref=e172]
+                      - generic [ref=e174]: Use when you need human intervention
+              - heading "Navigate to header LLM steps" [level=3] [ref=e175]:
+                - link "Navigate to header" [ref=e176] [cursor=pointer]:
+                  - /url: "#llm-steps"
+                  - img [ref=e178]
+                - generic [ref=e180] [cursor=pointer]: LLM steps
+              - generic [ref=e181]: "When a step needs to understand, analyze, generate text, or make reasoning decisions:"
+              - generic [ref=e182]:
+                - group [ref=e183]:
+                  - generic "Classify intent" [ref=e184] [cursor=pointer]:
+                    - img [ref=e186]
+                    - paragraph [ref=e188]: Classify intent
+                - group [ref=e189]:
+                  - generic "Draft reply" [ref=e190] [cursor=pointer]:
+                    - img [ref=e192]
+                    - paragraph [ref=e194]: Draft reply
+              - heading "Navigate to header Data steps" [level=3] [ref=e195]:
+                - link "Navigate to header" [ref=e196] [cursor=pointer]:
+                  - /url: "#data-steps"
+                  - img [ref=e198]
+                - generic [ref=e200] [cursor=pointer]: Data steps
+              - generic [ref=e201]: "When a step needs to retrieve information from external sources:"
+              - generic [ref=e202]:
+                - group [ref=e203]:
+                  - generic "Document search" [ref=e204] [cursor=pointer]:
+                    - img [ref=e206]
+                    - paragraph [ref=e208]: Document search
+                - group [ref=e209]:
+                  - generic "Customer history lookup" [ref=e210] [cursor=pointer]:
+                    - img [ref=e212]
+                    - paragraph [ref=e214]: Customer history lookup
+              - heading "Navigate to header Action steps" [level=3] [ref=e215]:
+                - link "Navigate to header" [ref=e216] [cursor=pointer]:
+                  - /url: "#action-steps"
+                  - img [ref=e218]
+                - generic [ref=e220] [cursor=pointer]: Action steps
+              - generic [ref=e221]: "When a step needs to perform an external action:"
+              - generic [ref=e222]:
+                - group [ref=e223]:
+                  - generic "Send reply" [ref=e224] [cursor=pointer]:
+                    - img [ref=e226]
+                    - paragraph [ref=e228]: Send reply
+                - group [ref=e229]:
+                  - generic "Bug track" [ref=e230] [cursor=pointer]:
+                    - img [ref=e232]
+                    - paragraph [ref=e234]: Bug track
+              - heading "Navigate to header User input steps" [level=3] [ref=e235]:
+                - link "Navigate to header" [ref=e236] [cursor=pointer]:
+                  - /url: "#user-input-steps"
+                  - img [ref=e238]
+                - generic [ref=e240] [cursor=pointer]: User input steps
+              - generic [ref=e241]: "When a step needs human intervention:"
+              - group [ref=e243]:
+                - generic "Human review node" [ref=e244] [cursor=pointer]:
+                  - img [ref=e246]
+                  - paragraph [ref=e248]: Human review node
+              - 'heading "Navigate to header Step 3: Design your state" [level=2] [ref=e249]':
+                - link "Navigate to header" [ref=e250] [cursor=pointer]:
+                  - /url: "#step-3-design-your-state"
+                  - img [ref=e252]
+                - generic [ref=e254] [cursor=pointer]: "Step 3: Design your state"
+              - generic [ref=e255]:
+                - text: State is the shared
+                - link "memory" [ref=e256] [cursor=pointer]:
+                  - /url: /oss/javascript/concepts/memory
+                - text: accessible to all nodes in your agent. Think of it as the notebook your agent uses to keep track of everything it learns and decides as it works through the process.
+              - heading "Navigate to header What belongs in state?" [level=3] [ref=e257]:
+                - link "Navigate to header" [ref=e258] [cursor=pointer]:
+                  - /url: "#what-belongs-in-state"
+                  - img [ref=e260]
+                - generic [ref=e262] [cursor=pointer]: What belongs in state?
+              - generic [ref=e263]: "Ask yourself these questions about each piece of data:"
+              - generic [ref=e264]:
+                - generic [ref=e266]:
+                  - img [ref=e268]
+                  - generic [ref=e269]:
+                    - heading "Include in state" [level=2] [ref=e270]
+                    - generic [ref=e272]: Does it need to persist across steps? If yes, it goes in state.
+                - generic [ref=e274]:
+                  - img [ref=e276]
+                  - generic [ref=e277]:
+                    - heading "Don't store" [level=2] [ref=e278]
+                    - generic [ref=e280]: Can you derive it from other data? If yes, compute it when needed instead of storing it in state.
+              - generic [ref=e281]: "For our email agent, we need to track:"
+              - list [ref=e282]:
+                - listitem [ref=e283]: The original email and sender info (can’t reconstruct these later)
+                - listitem [ref=e284]: Classification results (needed by multiple later/downstream nodes)
+                - listitem [ref=e285]: Search results and customer data (expensive to re-fetch)
+                - listitem [ref=e286]: The draft response (needs to persist through review)
+                - listitem [ref=e287]: Execution metadata (for debugging and recovery)
+              - heading "Navigate to header Keep state raw, format prompts on-demand" [level=3] [ref=e288]:
+                - link "Navigate to header" [ref=e289] [cursor=pointer]:
+                  - /url: "#keep-state-raw-format-prompts-on-demand"
+                  - img [ref=e291]
+                - generic [ref=e293] [cursor=pointer]: Keep state raw, format prompts on-demand
+              - generic [ref=e294]:
+                - img "Tip" [ref=e296]
+                - generic [ref=e299]: "A key principle: your state should store raw data, not formatted text. Format prompts inside nodes when you need them."
+              - generic [ref=e300]: "This separation means:"
+              - list [ref=e301]:
+                - listitem [ref=e302]: Different nodes can format the same data differently for their needs
+                - listitem [ref=e303]: You can change prompt templates without modifying your state schema
+                - listitem [ref=e304]: Debugging is clearer—you see exactly what data each node received
+                - listitem [ref=e305]: Your agent can evolve without breaking existing state
+              - generic [ref=e306]: "Let’s define our state:"
+              - generic [ref=e307]:
+                - button "Copy the contents from the code block" [ref=e310] [cursor=pointer]:
+                  - img [ref=e311]
+                - code [ref=e317]:
+                  - generic [ref=e318]: "import { StateSchema } from \"@langchain/langgraph\";"
+                  - generic [ref=e319]: import * as z from "zod";
+                  - generic [ref=e320]: // Define the structure for email classification
+                  - generic [ref=e321]: "const EmailClassificationSchema = z.object({"
+                  - generic [ref=e322]: "intent: z.enum([\"question\", \"bug\", \"billing\", \"feature\", \"complex\"]),"
+                  - generic [ref=e323]: "urgency: z.enum([\"low\", \"medium\", \"high\", \"critical\"]),"
+                  - generic [ref=e324]: "topic: z.string(),"
+                  - generic [ref=e325]: "summary: z.string(),"
+                  - generic [ref=e326]: "});"
+                  - generic [ref=e327]: "const EmailAgentState = new StateSchema({"
+                  - generic [ref=e328]: // Raw email data
+                  - generic [ref=e329]: "emailContent: z.string(),"
+                  - generic [ref=e330]: "senderEmail: z.string(),"
+                  - generic [ref=e331]: "emailId: z.string(),"
+                  - generic [ref=e332]: // Classification result
+                  - generic [ref=e333]: "classification: EmailClassificationSchema.optional(),"
+                  - generic [ref=e334]: // Raw search/API results
+                  - generic [ref=e335]: "searchResults: z.array(z.string()).optional(), // List of raw document chunks"
+                  - generic [ref=e336]: "customerHistory: z.record(z.string(), z.any()).optional(), // Raw customer data from CRM"
+                  - generic [ref=e337]: // Generated content
+                  - generic [ref=e338]: "responseText: z.string().optional(),"
+                  - generic [ref=e339]: "});"
+                  - generic [ref=e340]: type EmailClassificationType = z.infer<typeof EmailClassificationSchema>;
+              - generic [ref=e341]: Notice that the state contains only raw data—no prompt templates, no formatted strings, no instructions. The classification output is stored as a single dictionary, straight from the LLM.
+              - 'heading "Navigate to header Step 4: Build your nodes" [level=2] [ref=e342]':
+                - link "Navigate to header" [ref=e343] [cursor=pointer]:
+                  - /url: "#step-4-build-your-nodes"
+                  - img [ref=e345]
+                - generic [ref=e347] [cursor=pointer]: "Step 4: Build your nodes"
+              - generic [ref=e348]: Now we implement each step as a function. A node in LangGraph is just a JavaScript function that takes the current state and returns updates to it.
+              - heading "Navigate to header Handle errors appropriately" [level=3] [ref=e349]:
+                - link "Navigate to header" [ref=e350] [cursor=pointer]:
+                  - /url: "#handle-errors-appropriately"
+                  - img [ref=e352]
+                - generic [ref=e354] [cursor=pointer]: Handle errors appropriately
+              - generic [ref=e355]: "Different errors need different handling strategies:"
+              - table [ref=e358]:
+                - rowgroup [ref=e359]:
+                  - row "Error Type Who Fixes It Strategy When to Use" [ref=e360]:
+                    - columnheader "Error Type" [ref=e361]
+                    - columnheader "Who Fixes It" [ref=e362]
+                    - columnheader "Strategy" [ref=e363]
+                    - columnheader "When to Use" [ref=e364]
+                - rowgroup [ref=e365]:
+                  - row "Transient errors (network issues, rate limits) System (automatic) Retry policy Temporary failures that usually resolve on retry" [ref=e366]:
+                    - cell "Transient errors (network issues, rate limits)" [ref=e367]
+                    - cell "System (automatic)" [ref=e368]
+                    - cell "Retry policy" [ref=e369]
+                    - cell "Temporary failures that usually resolve on retry" [ref=e370]
+                  - row "LLM-recoverable errors (tool failures, parsing issues) LLM Store error in state and loop back LLM can see the error and adjust its approach" [ref=e371]:
+                    - cell "LLM-recoverable errors (tool failures, parsing issues)" [ref=e372]
+                    - cell "LLM" [ref=e373]
+                    - cell "Store error in state and loop back" [ref=e374]
+                    - cell "LLM can see the error and adjust its approach" [ref=e375]
+                  - row "User-fixable errors (missing information, unclear instructions) Human Pause with interrupt() Need user input to proceed" [ref=e376]:
+                    - cell "User-fixable errors (missing information, unclear instructions)" [ref=e377]
+                    - cell "Human" [ref=e378]
+                    - cell "Pause with interrupt()" [ref=e379]:
+                      - text: Pause with
+                      - code [ref=e380]: interrupt()
+                    - cell "Need user input to proceed" [ref=e381]
+                  - row "Recoverable failure after retries Developer (declarative) error_handler Run a compensation/recovery branch after retry exhaustion" [ref=e382]:
+                    - cell "Recoverable failure after retries" [ref=e383]
+                    - cell "Developer (declarative)" [ref=e384]
+                    - cell "error_handler" [ref=e385]:
+                      - code [ref=e386]: error_handler
+                    - cell "Run a compensation/recovery branch after retry exhaustion" [ref=e387]
+                  - row "Unexpected errors Developer Let them bubble up Unknown issues that need debugging" [ref=e388]:
+                    - cell "Unexpected errors" [ref=e389]
+                    - cell "Developer" [ref=e390]
+                    - cell "Let them bubble up" [ref=e391]
+                    - cell "Unknown issues that need debugging" [ref=e392]
+              - generic [ref=e393]:
+                - tablist [ref=e394]:
+                  - tab "Transient errors" [selected] [ref=e395] [cursor=pointer]:
+                    - generic [ref=e396]:
+                      - img [ref=e397]
+                      - text: Transient errors
+                  - tab "LLM-recoverable" [ref=e398] [cursor=pointer]:
+                    - generic [ref=e399]:
+                      - img [ref=e400]
+                      - text: LLM-recoverable
+                  - tab "User-fixable" [ref=e401] [cursor=pointer]:
+                    - generic [ref=e402]:
+                      - img [ref=e403]
+                      - text: User-fixable
+                  - tab "Unexpected" [ref=e404] [cursor=pointer]:
+                    - generic [ref=e405]:
+                      - img [ref=e406]
+                      - text: Unexpected
+                  - tab "Saga / compensation" [ref=e407] [cursor=pointer]:
+                    - generic [ref=e408]:
+                      - img [ref=e409]
+                      - text: Saga / compensation
+                - 'tabpanel "Transient errors LLM-recoverable User-fixable Unexpected Saga / compensation Add a retry policy to automatically retry network issues and rate limits. Copy the contents from the code block import type { RetryPolicy } from \"@langchain/langgraph\"; workflow.addNode( \"searchDocumentation\", searchDocumentation, { retryPolicy: { maxAttempts: 3, initialInterval: 1.0 }, }, );" [ref=e411]':
+                  - generic [ref=e412]: Add a retry policy to automatically retry network issues and rate limits.
+                  - generic [ref=e413]:
+                    - button "Copy the contents from the code block" [ref=e416] [cursor=pointer]:
+                      - img [ref=e417]
+                    - code [ref=e423]:
+                      - generic [ref=e424]: "import type { RetryPolicy } from \"@langchain/langgraph\";"
+                      - generic [ref=e425]: workflow.addNode(
+                      - generic [ref=e426]: "\"searchDocumentation\","
+                      - generic [ref=e427]: searchDocumentation,
+                      - generic [ref=e428]: "{"
+                      - generic [ref=e429]: "retryPolicy: { maxAttempts: 3, initialInterval: 1.0 },"
+                      - generic [ref=e430]: "},"
+                      - generic [ref=e431]: );
+              - heading "Navigate to header Implementing our email agent nodes" [level=3] [ref=e432]:
+                - link "Navigate to header" [ref=e433] [cursor=pointer]:
+                  - /url: "#implementing-our-email-agent-nodes"
+                  - img [ref=e435]
+                - generic [ref=e437] [cursor=pointer]: Implementing our email agent nodes
+              - generic [ref=e438]: "We’ll implement each node as a simple function. Remember: nodes take state, do work, and return updates."
+              - generic [ref=e439]:
+                - group [ref=e440]:
+                  - generic "Read and classify nodes" [ref=e441] [cursor=pointer]:
+                    - img [ref=e443]
+                    - img [ref=e445]
+                    - paragraph [ref=e447]: Read and classify nodes
+                - group [ref=e448]:
+                  - generic "Search and tracking nodes" [ref=e449] [cursor=pointer]:
+                    - img [ref=e451]
+                    - img [ref=e453]
+                    - paragraph [ref=e455]: Search and tracking nodes
+                - group [ref=e456]:
+                  - generic "Response nodes" [ref=e457] [cursor=pointer]:
+                    - img [ref=e459]
+                    - img [ref=e461]
+                    - paragraph [ref=e463]: Response nodes
+              - 'heading "Navigate to header Step 5: Wire it together" [level=2] [ref=e464]':
+                - link "Navigate to header" [ref=e465] [cursor=pointer]:
+                  - /url: "#step-5-wire-it-together"
+                  - img [ref=e467]
+                - generic [ref=e469] [cursor=pointer]: "Step 5: Wire it together"
+              - generic [ref=e470]: Now we connect our nodes into a working graph. Since our nodes handle their own routing decisions, we only need a few essential edges.
+              - generic [ref=e471]:
+                - text: To enable
+                - link "human-in-the-loop" [ref=e472] [cursor=pointer]:
+                  - /url: /oss/javascript/langgraph/interrupts
+                - text: with
+                - code [ref=e473]: interrupt()
+                - text: ", we need to compile with a"
+                - link "checkpointer" [ref=e474] [cursor=pointer]:
+                  - /url: /oss/javascript/langgraph/persistence
+                - text: "to save state between runs:"
+              - group [ref=e475]:
+                - generic "Graph compilation code" [ref=e476] [cursor=pointer]:
+                  - img [ref=e478]
+                  - img [ref=e480]
+                  - paragraph [ref=e482]: Graph compilation code
+                - region [ref=e483]:
+                  - generic [ref=e484]:
+                    - button "Copy the contents from the code block" [ref=e487] [cursor=pointer]:
+                      - img [ref=e488]
+                    - code [ref=e494]:
+                      - generic [ref=e495]: "import { MemorySaver, RetryPolicy } from \"@langchain/langgraph\";"
+                      - generic [ref=e496]: // Create the graph
+                      - generic [ref=e497]: const workflow = new StateGraph(EmailAgentState)
+                      - generic [ref=e498]: // Add nodes with appropriate error handling
+                      - generic [ref=e499]: .addNode("readEmail", readEmail)
+                      - generic [ref=e500]: .addNode("classifyIntent", classifyIntent)
+                      - generic [ref=e501]: // Add retry policy for nodes that might have transient failures
+                      - generic [ref=e502]: .addNode(
+                      - generic [ref=e503]: "\"searchDocumentation\","
+                      - generic [ref=e504]: searchDocumentation,
+                      - generic [ref=e505]: "{ retryPolicy: { maxAttempts: 3 } },"
+                      - generic [ref=e506]: )
+                      - generic [ref=e507]: .addNode("bugTracking", bugTracking)
+                      - generic [ref=e508]: .addNode("draftResponse", draftResponse)
+                      - generic [ref=e509]: .addNode("humanReview", humanReview)
+                      - generic [ref=e510]: .addNode("sendReply", sendReply)
+                      - generic [ref=e511]: // Add only the essential edges
+                      - generic [ref=e512]: .addEdge(START, "readEmail")
+                      - generic [ref=e513]: .addEdge("readEmail", "classifyIntent")
+                      - generic [ref=e514]: .addEdge("sendReply", END);
+                      - generic [ref=e515]: // Compile with checkpointer for persistence
+                      - generic [ref=e516]: const memory = new MemorySaver();
+                      - generic [ref=e517]: "const app = workflow.compile({ checkpointer: memory });"
+              - generic [ref=e518]:
+                - text: The graph structure is minimal because routing happens inside nodes through
+                - code [ref=e519]: Command
+                - text: objects. Each node declares where it can go, making the flow explicit and traceable.
+              - heading "Navigate to header Try out your agent" [level=3] [ref=e520]:
+                - link "Navigate to header" [ref=e521] [cursor=pointer]:
+                  - /url: "#try-out-your-agent"
+                  - img [ref=e523]
+                - generic [ref=e525] [cursor=pointer]: Try out your agent
+              - generic [ref=e526]: "Let’s run our agent with an urgent billing issue that needs human review:"
+              - group [ref=e527]:
+                - generic "Testing the agent" [ref=e528] [cursor=pointer]:
+                  - img [ref=e530]
+                  - img [ref=e532]
+                  - paragraph [ref=e534]: Testing the agent
+              - generic [ref=e535]:
+                - text: The graph pauses when it hits
+                - code [ref=e536]: interrupt()
+                - text: ", saves everything to the checkpointer, and waits. It can resume days later, picking up exactly where it left off. The"
+                - code [ref=e537]: thread_id
+                - text: ensures all state for this conversation is preserved together.
+              - heading "Navigate to header Summary and next steps" [level=2] [ref=e538]:
+                - link "Navigate to header" [ref=e539] [cursor=pointer]:
+                  - /url: "#summary-and-next-steps"
+                  - img [ref=e541]
+                - generic [ref=e543] [cursor=pointer]: Summary and next steps
+              - heading "Navigate to header Key Insights" [level=3] [ref=e544]:
+                - link "Navigate to header" [ref=e545] [cursor=pointer]:
+                  - /url: "#key-insights"
+                  - img [ref=e547]
+                - generic [ref=e549] [cursor=pointer]: Key Insights
+              - generic [ref=e550]: "Building this email agent has shown us the LangGraph way of thinking:"
+              - generic [ref=e551]:
+                - link "Break into discrete steps Each node does one thing well. This decomposition enables streaming progress updates, durable execution that can pause and resume, and clear debugging since you can inspect state between steps." [ref=e552] [cursor=pointer]:
+                  - generic [ref=e553]:
+                    - img [ref=e555]
+                    - generic [ref=e556]:
+                      - heading "Break into discrete steps" [level=2] [ref=e557]
+                      - generic [ref=e559]: Each node does one thing well. This decomposition enables streaming progress updates, durable execution that can pause and resume, and clear debugging since you can inspect state between steps.
+                - link "State is shared memory Store raw data, not formatted text. This lets different nodes use the same information in different ways." [ref=e560] [cursor=pointer]:
+                  - generic [ref=e561]:
+                    - img [ref=e563]
+                    - generic [ref=e564]:
+                      - heading "State is shared memory" [level=2] [ref=e565]
+                      - generic [ref=e567]: Store raw data, not formatted text. This lets different nodes use the same information in different ways.
+                - link "Nodes are functions They take state, do work, and return updates. When they need to make routing decisions, they specify both the state updates and the next destination." [ref=e568] [cursor=pointer]:
+                  - generic [ref=e569]:
+                    - img [ref=e571]
+                    - generic [ref=e572]:
+                      - heading "Nodes are functions" [level=2] [ref=e573]
+                      - generic [ref=e575]: They take state, do work, and return updates. When they need to make routing decisions, they specify both the state updates and the next destination.
+                - link "Errors are part of the flow Transient failures get retries, LLM-recoverable errors loop back with context, user-fixable problems pause for input, and unexpected errors bubble up for debugging." [ref=e576] [cursor=pointer]:
+                  - generic [ref=e577]:
+                    - img [ref=e579]
+                    - generic [ref=e580]:
+                      - heading "Errors are part of the flow" [level=2] [ref=e581]
+                      - generic [ref=e583]: Transient failures get retries, LLM-recoverable errors loop back with context, user-fixable problems pause for input, and unexpected errors bubble up for debugging.
+                - link "Human input is first-class The interrupt() function pauses execution indefinitely, saves all state, and resumes exactly where it left off when you provide input. When combined with other operations in a node, it must come first." [ref=e584] [cursor=pointer]:
+                  - generic [ref=e585]:
+                    - img [ref=e587]
+                    - generic [ref=e588]:
+                      - heading "Human input is first-class" [level=2] [ref=e589]
+                      - generic [ref=e591]:
+                        - text: The
+                        - code [ref=e592]: interrupt()
+                        - text: function pauses execution indefinitely, saves all state, and resumes exactly where it left off when you provide input. When combined with other operations in a node, it must come first.
+                - link "Graph structure emerges naturally You define the essential connections, and your nodes handle their own routing logic. This keeps control flow explicit and traceable - you can always understand what your agent will do next by looking at the current node." [ref=e593] [cursor=pointer]:
+                  - generic [ref=e594]:
+                    - img [ref=e596]
+                    - generic [ref=e597]:
+                      - heading "Graph structure emerges naturally" [level=2] [ref=e598]
+                      - generic [ref=e600]: You define the essential connections, and your nodes handle their own routing logic. This keeps control flow explicit and traceable - you can always understand what your agent will do next by looking at the current node.
+              - heading "Navigate to header Advanced considerations" [level=3] [ref=e601]:
+                - link "Navigate to header" [ref=e602] [cursor=pointer]:
+                  - /url: "#advanced-considerations"
+                  - img [ref=e604]
+                - generic [ref=e606] [cursor=pointer]: Advanced considerations
+              - group [ref=e607]:
+                - generic "Node granularity trade-offs" [ref=e608] [cursor=pointer]:
+                  - img [ref=e610]
+                  - img [ref=e612]
+                  - paragraph [ref=e614]: Node granularity trade-offs
+              - heading "Navigate to header Where to go from here" [level=3] [ref=e615]:
+                - link "Navigate to header" [ref=e616] [cursor=pointer]:
+                  - /url: "#where-to-go-from-here"
+                  - img [ref=e618]
+                - generic [ref=e620] [cursor=pointer]: Where to go from here
+              - generic [ref=e621]: "This was an introduction to thinking about building agents with LangGraph. You can extend this foundation with:"
+              - generic [ref=e622]:
+                - link "Human-in-the-loop patterns Learn how to add tool approval before execution, batch approval, and other patterns" [ref=e623] [cursor=pointer]:
+                  - generic [ref=e624]:
+                    - img [ref=e626]
+                    - generic [ref=e627]:
+                      - heading "Human-in-the-loop patterns" [level=2] [ref=e628]
+                      - generic [ref=e630]: Learn how to add tool approval before execution, batch approval, and other patterns
+                - link "Subgraphs Create subgraphs for complex multi-step operations" [ref=e631] [cursor=pointer]:
+                  - generic [ref=e632]:
+                    - img [ref=e634]
+                    - generic [ref=e635]:
+                      - heading "Subgraphs" [level=2] [ref=e636]
+                      - generic [ref=e638]: Create subgraphs for complex multi-step operations
+                - link "Streaming Add streaming to show real-time progress to users" [ref=e639] [cursor=pointer]:
+                  - generic [ref=e640]:
+                    - img [ref=e642]
+                    - generic [ref=e643]:
+                      - heading "Streaming" [level=2] [ref=e644]
+                      - generic [ref=e646]: Add streaming to show real-time progress to users
+                - link "Observability Add observability with LangSmith for debugging and monitoring" [ref=e647] [cursor=pointer]:
+                  - generic [ref=e648]:
+                    - img [ref=e650]
+                    - generic [ref=e651]:
+                      - heading "Observability" [level=2] [ref=e652]
+                      - generic [ref=e654]: Add observability with LangSmith for debugging and monitoring
+                - link "Tool Integration Integrate more tools for web search, database queries, and API calls" [ref=e655] [cursor=pointer]:
+                  - generic [ref=e656]:
+                    - img [ref=e658]
+                    - generic [ref=e659]:
+                      - heading "Tool Integration" [level=2] [ref=e660]
+                      - generic [ref=e662]: Integrate more tools for web search, database queries, and API calls
+                - link "Retry Logic Implement retry logic with exponential backoff for failed operations" [ref=e663] [cursor=pointer]:
+                  - generic [ref=e664]:
+                    - img [ref=e666]
+                    - generic [ref=e667]:
+                      - heading "Retry Logic" [level=2] [ref=e668]
+                      - generic [ref=e670]: Implement retry logic with exponential backoff for failed operations
+              - separator [ref=e671]
+              - generic [ref=e672]:
+                - generic [ref=e673]:
+                  - img [ref=e675]
+                  - generic [ref=e677]:
+                    - link "Connect these docs" [ref=e678] [cursor=pointer]:
+                      - /url: /use-these-docs
+                    - text: to Claude, VSCode, and more via MCP for real-time answers.
+                - generic [ref=e679]:
+                  - img [ref=e681]
+                  - generic [ref=e683]:
+                    - link "Edit this page on GitHub" [ref=e684] [cursor=pointer]:
+                      - /url: https://github.com/langchain-ai/docs/edit/main/src/oss/langgraph/thinking-in-langgraph.mdx
+                    - text: or
+                    - link "file an issue" [ref=e685] [cursor=pointer]:
+                      - /url: https://github.com/langchain-ai/docs/issues/new/choose
+                    - text: .
+            - generic [ref=e687]:
+              - paragraph [ref=e688]: Was this page helpful?
+              - generic [ref=e690]:
+                - button "Yes" [ref=e691] [cursor=pointer]:
+                  - img [ref=e692]
+                  - generic [ref=e694]: "Yes"
+                - button "No" [ref=e695] [cursor=pointer]:
+                  - img [ref=e696]
+                  - generic [ref=e698]: "No"
+        - contentinfo [ref=e699]:
+          - generic [ref=e701]:
+            - link "Docs by LangChain home page light logo" [ref=e703] [cursor=pointer]:
+              - /url: /
+              - generic [ref=e704]: Docs by LangChain home page
+              - img "light logo" [ref=e705]
+            - generic [ref=e706]:
+              - generic [ref=e708]:
+                - paragraph [ref=e709]: Resources
+                - link "Forum" [ref=e710] [cursor=pointer]:
+                  - /url: https://forum.langchain.com/
+                - link "Changelog" [ref=e711] [cursor=pointer]:
+                  - /url: https://changelog.langchain.com/
+                - link "LangChain Academy" [ref=e712] [cursor=pointer]:
+                  - /url: https://academy.langchain.com/
+                - link "Contact Sales" [ref=e713] [cursor=pointer]:
+                  - /url: https://www.langchain.com/contact-sales
+              - generic [ref=e715]:
+                - paragraph [ref=e716]: Company
+                - link "Home" [ref=e717] [cursor=pointer]:
+                  - /url: https://langchain.com/
+                - link "Trust Center" [ref=e718] [cursor=pointer]:
+                  - /url: https://trust.langchain.com/
+                - link "Careers" [ref=e719] [cursor=pointer]:
+                  - /url: https://langchain.com/careers
+                - link "Blog" [ref=e720] [cursor=pointer]:
+                  - /url: https://blog.langchain.com/
+            - generic [ref=e721]:
+              - link "github" [ref=e722] [cursor=pointer]:
+                - /url: https://github.com/langchain-ai
+                - generic [ref=e723]: github
+                - img [ref=e724]
+              - link "x" [ref=e725] [cursor=pointer]:
+                - /url: https://x.com/LangChain
+                - generic [ref=e726]: x
+                - img [ref=e727]
+              - link "linkedin" [ref=e728] [cursor=pointer]:
+                - /url: https://www.linkedin.com/company/langchain
+                - generic [ref=e729]: linkedin
+                - img [ref=e730]
+              - link "youtube" [ref=e731] [cursor=pointer]:
+                - /url: https://www.youtube.com/@LangChain
+                - generic [ref=e732]: youtube
+                - img [ref=e733]
