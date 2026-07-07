@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState, useRef } from 'react'
+import { useCallback, useEffect, useImperativeHandle, useMemo, useRef, useState, forwardRef } from 'react'
 import {
   ReactFlow,
   Controls,
@@ -17,9 +17,23 @@ import AgentNode, { type AgentNodeData, type NodeStatus } from './AgentNode'
 import { ipc } from '../lib/ipc'
 import type { WorkflowGraph, NodeConfig, EdgeConfig } from '../../../shared/types'
 
+export interface WorkflowCanvasHandle {
+  /** Applies a config patch to a node's data. */
+  updateNodeData: (nodeId: string, patch: Partial<NodeConfig>) => void
+  /** Adds a new agent node to the canvas at a random position. */
+  addNode: () => void
+  /** Saves the current workflow graph to disk. */
+  handleSave: () => Promise<void>
+  /** Saves and runs the current workflow graph. */
+  handleRun: () => Promise<void>
+}
+
 interface WorkflowCanvasProps {
+  prompt: string
+  running: boolean
   nodeStatuses: Map<string, NodeStatus>
-  onNodeClick: (nodeId: string) => void
+  nodeStreams: Map<string, string>
+  onNodeClick: (nodeId: string, config: NodeConfig) => void
   onRunStart: (runId: string) => void
 }
 
@@ -46,13 +60,16 @@ function graphToFlow(graph: WorkflowGraph): { nodes: Node<AgentNodeData>[]; edge
     data: { ...n, status: 'idle' as NodeStatus },
   }))
 
-  const edges: Edge[] = graph.edges.map((e) => ({
-    id: e.id,
-    source: e.source,
-    target: e.target,
-    label: e.condition ?? '',
-    animated: true,
-  }))
+  const nodeIds = new Set(nodes.map((n) => n.id))
+  const edges: Edge[] = graph.edges
+    .filter((e) => nodeIds.has(e.source) && nodeIds.has(e.target))
+    .map((e) => ({
+      id: e.id,
+      source: e.source,
+      target: e.target,
+      label: e.condition ?? '',
+      animated: true,
+    }))
 
   return { nodes, edges }
 }
@@ -75,12 +92,15 @@ function flowToGraph(
     maxRetries: n.data.maxRetries,
   }))
 
-  const edges: EdgeConfig[] = flowEdges.map((e) => ({
-    id: e.id,
-    source: e.source,
-    target: e.target,
-    condition: (e.label as EdgeConfig['condition']) || undefined,
-  }))
+  const nodeIds = new Set(nodes.map((n) => n.id))
+  const edges: EdgeConfig[] = flowEdges
+    .filter((e) => nodeIds.has(e.source) && nodeIds.has(e.target))
+    .map((e) => ({
+      id: e.id,
+      source: e.source,
+      target: e.target,
+      condition: (e.label as EdgeConfig['condition']) || undefined,
+    }))
 
   return {
     id: graphId,
@@ -91,73 +111,37 @@ function flowToGraph(
   }
 }
 
-export default function WorkflowCanvas({ nodeStatuses, onNodeClick, onRunStart }: WorkflowCanvasProps) {
-  const [graphId] = useState(() => 'graph-' + Date.now())
-  const [graphName] = useState('Untitled Workflow')
-  const [nodes, setNodes, onNodesChange] = useNodesState<AgentNodeData>([])
+const WorkflowCanvas = forwardRef<WorkflowCanvasHandle, WorkflowCanvasProps>(function WorkflowCanvas(
+  { prompt, running, nodeStatuses, nodeStreams, onNodeClick, onRunStart },
+  ref,
+) {
+  const [graphId, setGraphId] = useState(() => 'graph-' + Date.now())
+  const [graphName, setGraphName] = useState('Untitled Workflow')
+  const [nodes, setNodes, onNodesChange] = useNodesState<Node<AgentNodeData>>([])
   const [edges, setEdges, onEdgesChange] = useEdgesState<Edge>([])
-  const [prompt, setPrompt] = useState('')
-  const [running, setRunning] = useState(false)
   const initialLoadRef = useRef(false)
 
-  // Apply statuses from RunMonitor
-  useEffect(() => {
-    setNodes((nds) =>
-      nds.map((n) => {
-        const status = nodeStatuses.get(n.id)
-        return status ? { ...n, data: { ...n.data, status } } : n
-      }),
-    )
-  }, [nodeStatuses, setNodes])
-
-  // Load first saved graph on mount
-  useEffect(() => {
-    if (initialLoadRef.current) return
-    initialLoadRef.current = true
-    ipc.workflow.list().then((records) => {
-      if (!records || records.length === 0) {
-        // No saved graphs — start empty
-        return
-      }
-      // Load the most recent graph (records are sorted by startedAt desc)
-      // Actually, we need the graph, not the run. Load by graphId from the most recent run.
-      const latestRun = records[0]
-      try {
-        // Try loading the graph directly by its id
-        const json = JSON.stringify({ id: latestRun.graphId, name: '', globalDefaults: { provider: 'deepseek', model: 'deepseek-v4-flash' }, nodes: [], edges: [] })
-        // We can't load the graph via ipc.workflow.load since it needs graphJson
-        // For now, start empty
-      } catch {
-        // ignore
-      }
-    })
-  }, [])
-
-  const onConnect = useCallback(
-    (connection: Connection) => {
-      const edge: Edge = {
-        id: `e-${connection.source}-${connection.target}`,
-        source: connection.source!,
-        target: connection.target!,
-      }
-      setEdges((eds) => addEdge(edge, eds))
-    },
-    [setEdges],
-  )
+  // ── Imperative handle (exposed to parent) ──────────────────────────────
 
   const addNode = useCallback(() => {
     const newNode: Node<AgentNodeData> = {
       id: crypto.randomUUID(),
       type: 'agent',
       position: { x: 100 + Math.random() * 300, y: 100 + Math.random() * 300 },
-      data: createDefaultNode(),
+      data: { ...createDefaultNode(), status: 'idle' as NodeStatus },
     }
     setNodes((nds) => [...nds, newNode])
   }, [setNodes])
 
   const deleteSelected = useCallback(() => {
-    setNodes((nds) => nds.filter((n) => !n.selected))
-    setEdges((eds) => eds.filter((e) => !e.selected))
+    let deletedNodeIds: Set<string> = new Set()
+    setNodes((nds) => {
+      deletedNodeIds = new Set(nds.filter((n) => n.selected).map((n) => n.id))
+      return nds.filter((n) => !n.selected)
+    })
+    setEdges((eds) =>
+      eds.filter((e) => !e.selected && !deletedNodeIds.has(e.source) && !deletedNodeIds.has(e.target)),
+    )
   }, [setNodes, setEdges])
 
   const handleSave = useCallback(async () => {
@@ -172,26 +156,99 @@ export default function WorkflowCanvas({ nodeStatuses, onNodeClick, onRunStart }
       alert('Add at least one node to the canvas.')
       return
     }
-    setRunning(true)
     // Save first, then run
     const graph = flowToGraph(graphId, graphName, nodes, edges)
     await ipc.workflow.save(graph)
     const runId = await ipc.workflow.run(graphId, prompt || undefined)
     onRunStart(runId)
-    // Reset running when workflow completes (workflow:done/error event in RunMonitor)
-    setTimeout(() => setRunning(false), 500)
   }, [graphId, graphName, nodes, edges, prompt, onRunStart])
 
+  useImperativeHandle(
+    ref,
+    () => ({
+      updateNodeData: (nodeId, patch) => {
+        setNodes((nds) =>
+          nds.map((n) => (n.id === nodeId ? { ...n, data: { ...n.data, ...patch } } : n)),
+        )
+      },
+      addNode,
+      handleSave,
+      handleRun,
+    }),
+    [setNodes, addNode, handleSave, handleRun],
+  )
+
+  // ── Apply statuses + stream text from RunMonitor ───────────────────────
+
+  useEffect(() => {
+    setNodes((nds) =>
+      nds.map((n) => {
+        const status = nodeStatuses.get(n.id)
+        const streamText = nodeStreams.get(n.id)
+        if (status === undefined && streamText === undefined) return n
+        return {
+          ...n,
+          data: {
+            ...n.data,
+            ...(status !== undefined ? { status } : {}),
+            ...(streamText !== undefined ? { streamText } : {}),
+          },
+        }
+      }),
+    )
+  }, [nodeStatuses, nodeStreams, setNodes])
+
+  // ── Load the most recently saved graph on mount ────────────────────────
+
+  useEffect(() => {
+    if (initialLoadRef.current) return
+    initialLoadRef.current = true
+    ipc.workflow
+      .listGraphs()
+      .then((graphs) => {
+        if (!graphs || graphs.length === 0) return
+        const latest = [...graphs].sort(
+          (a, b) =>
+            new Date(b.updatedAt ?? 0).getTime() - new Date(a.updatedAt ?? 0).getTime(),
+        )[0]
+        setGraphId(latest.id)
+        setGraphName(latest.name)
+        const { nodes: flowNodes, edges: flowEdges } = graphToFlow(latest)
+        setNodes(flowNodes)
+        setEdges(flowEdges)
+        console.log('[WorkflowCanvas] Loaded saved graph:', latest.id, 'nodes:', flowNodes.length)
+      })
+      .catch((e) => console.error('[WorkflowCanvas] Failed to load saved graphs:', e))
+  }, [setNodes, setEdges])
+
+  // ── Edge connection handler ────────────────────────────────────────────
+
+  const onConnect = useCallback(
+    (connection: Connection) => {
+      const edge: Edge = {
+        id: `e-${connection.source}-${connection.target}`,
+        source: connection.source!,
+        target: connection.target!,
+      }
+      setEdges((eds) => addEdge(edge, eds))
+    },
+    [setEdges],
+  )
+
+  // ── Node click handler ─────────────────────────────────────────────────
+
   const handleNodeClick = useCallback(
-    (_e: React.MouseEvent, node: Node) => {
-      onNodeClick(node.id)
+    (_e: React.MouseEvent, node: Node<AgentNodeData>) => {
+      const { status: _status, streamText: _streamText, ...config } = node.data
+      onNodeClick(node.id, config)
     },
     [onNodeClick],
   )
 
   const nodeTypes = useMemo(() => ({ agent: AgentNode }), [])
 
-  // Listen for Delete key
+  // ── Keyboard handler (Delete / Backspace) ──────────────────────────────
+
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
       if (e.key === 'Delete' || e.key === 'Backspace') {
@@ -205,78 +262,43 @@ export default function WorkflowCanvas({ nodeStatuses, onNodeClick, onRunStart }
     return () => window.removeEventListener('keydown', handler)
   }, [deleteSelected])
 
+  // ── Render ─────────────────────────────────────────────────────────────
+
   return (
-    <div style={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
-      {/* Toolbar */}
-      <div
-        style={{
-          display: 'flex',
-          gap: 8,
-          padding: '8px 16px',
-          borderBottom: '1px solid #e5e7eb',
-          backgroundColor: '#f9fafb',
-          alignItems: 'center',
-        }}
+    <div className="relative flex-1 overflow-hidden bg-[#0f172a]">
+      <ReactFlow
+        nodes={nodes}
+        edges={edges}
+        onNodesChange={onNodesChange}
+        onEdgesChange={onEdgesChange}
+        onConnect={onConnect}
+        onNodeClick={handleNodeClick}
+        nodeTypes={nodeTypes}
+        fitView
+        deleteKeyCode={['Backspace', 'Delete']}
       >
-        <button onClick={addNode} style={toolbarBtnStyle}>+ Add Node</button>
-        <button onClick={deleteSelected} style={toolbarBtnStyle}>🗑 Delete</button>
-
-        {/* Prompt input */}
-        <input
-          type="text"
-          placeholder="Type your task / prompt here..."
-          value={prompt}
-          onChange={(e) => setPrompt(e.target.value)}
-          onKeyDown={(e) => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); handleRun() } }}
-          style={{
-            flex: 1,
-            padding: '6px 10px',
-            border: '1px solid #d1d5db',
-            borderRadius: 6,
-            fontSize: 13,
-            fontFamily: 'sans-serif',
-            outline: 'none',
+        <Controls className="[&>button]:!bg-slate-800 [&>button]:!border-slate-600 [&>button]:!text-slate-300 [&>button:hover]:!bg-slate-700 [&>svg]:!fill-slate-400" />
+        <MiniMap
+          className="!bg-slate-900 !border-slate-700"
+          nodeColor={(n) => {
+            const status = (n.data as AgentNodeData)?.status
+            if (status === 'running') return '#3b82f6'
+            if (status === 'success') return '#22c55e'
+            if (status === 'error') return '#ef4444'
+            if (status === 'streaming') return '#a855f7'
+            return '#475569'
           }}
+          maskColor="rgba(15,23,42,0.7)"
         />
-
-        <button onClick={handleSave} style={toolbarBtnStyle}>💾 Save</button>
-        <button
-          onClick={handleRun}
-          disabled={running}
-          style={{ ...toolbarBtnStyle, backgroundColor: running ? '#93c5fd' : '#3b82f6', color: '#fff' }}
-        >
-          {running ? '⏳' : '▶'} Run
-        </button>
-      </div>
-
-      {/* Canvas */}
-      <div style={{ flex: 1 }}>
-        <ReactFlow
-          nodes={nodes}
-          edges={edges}
-          onNodesChange={onNodesChange}
-          onEdgesChange={onEdgesChange}
-          onConnect={onConnect}
-          onNodeClick={handleNodeClick}
-          nodeTypes={nodeTypes}
-          fitView
-          deleteKeyCode={['Backspace', 'Delete']}
-        >
-          <Controls />
-          <MiniMap />
-          <Background variant={BackgroundVariant.Dots} gap={12} size={1} />
-        </ReactFlow>
-      </div>
+        <Background
+          variant={BackgroundVariant.Dots}
+          gap={22}
+          size={1}
+          color="rgba(148,163,184,0.12)"
+        />
+      </ReactFlow>
     </div>
   )
-}
+})
 
-const toolbarBtnStyle: React.CSSProperties = {
-  padding: '6px 14px',
-  border: '1px solid #d1d5db',
-  borderRadius: 6,
-  backgroundColor: '#fff',
-  cursor: 'pointer',
-  fontSize: 13,
-  fontFamily: 'sans-serif',
-}
+export default WorkflowCanvas

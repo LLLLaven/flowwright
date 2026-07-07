@@ -11,6 +11,7 @@ export const IPC = {
   WORKFLOW_RESUME: 'workflow:resume',
   WORKFLOW_ABORT:  'workflow:abort',
   WORKFLOW_LIST:   'workflow:list',
+  WORKFLOW_LIST_GRAPHS: 'workflow:listGraphs',
   // Node hot-update
   NODE_UPDATE:     'node:update',
   // Queries
@@ -33,6 +34,7 @@ export type IPCCommands = {
   [IPC.WORKFLOW_RESUME]: (runId: string, humanInput?: HumanInput)               => void
   [IPC.WORKFLOW_ABORT]:  (runId: string)                                        => void
   [IPC.WORKFLOW_LIST]:   ()                                                     => RunRecord[]
+  [IPC.WORKFLOW_LIST_GRAPHS]: ()                                                => WorkflowGraph[]
   [IPC.NODE_UPDATE]:     (runId: string, nodeId: string, config: Partial<NodeConfig>) => void
   [IPC.SKILLS_LIST]:     ()                                                     => SkillDefinition[]
   [IPC.MCP_LIST]:        ()                                                     => MCPToolDefinition[]

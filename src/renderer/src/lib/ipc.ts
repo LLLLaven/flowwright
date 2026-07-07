@@ -6,6 +6,7 @@ const invoke = window.electron.ipcRenderer.invoke.bind(window.electron.ipcRender
 export const ipc = {
   workflow: {
     list:   (): Promise<RunRecord[]>                        => invoke(IPC.WORKFLOW_LIST),
+    listGraphs: (): Promise<WorkflowGraph[]>                => invoke(IPC.WORKFLOW_LIST_GRAPHS),
     load:   (graphId: string)                               => invoke(IPC.WORKFLOW_LOAD, graphId),
     save:   (graph: WorkflowGraph)                         => invoke(IPC.WORKFLOW_SAVE, graph),
     run:    (graphId: string, initialPrompt?: string)       => invoke(IPC.WORKFLOW_RUN, graphId, initialPrompt),

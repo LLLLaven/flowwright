@@ -27,6 +27,7 @@ export interface WorkflowGraph {
   globalDefaults: { provider: string; model: string }
   nodes: NodeConfig[]
   edges: EdgeConfig[]
+  updatedAt?: string // ISO 8601, stamped by WorkflowStore.save()
 }
 
 export interface WorkflowState {

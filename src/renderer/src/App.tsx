@@ -1,54 +1,103 @@
-import { useState, useCallback } from 'react'
-import WorkflowCanvas from './components/WorkflowCanvas'
+import { useState, useCallback, useRef } from 'react'
+import TitleBar from './components/TitleBar'
+import TopBar from './components/TopBar'
+import LeftBar, { type LeftView } from './components/LeftBar'
+import LeftPanel from './components/LeftPanel'
+import WorkflowCanvas, { type WorkflowCanvasHandle } from './components/WorkflowCanvas'
 import NodeConfigPanel from './components/NodeConfigPanel'
+import StatusBar from './components/StatusBar'
 import { RunMonitorProvider, useRunMonitor } from './components/RunMonitor'
 import HumanReviewPanel from './components/HumanReviewPanel'
-import HistoryPanel from './components/HistoryPanel'
 import type { NodeConfig } from '../../shared/types'
+import type { NodeStatus } from './components/AgentNode'
 
-type Tab = 'canvas' | 'history'
+type RunState = 'ready' | 'running' | 'paused'
 
 function AppInner(): JSX.Element {
-  const [tab, setTab] = useState<Tab>('canvas')
+  // ── Layout state ──────────────────────────────────────────────
+  const [leftView, setLeftView] = useState<LeftView | null>(null)
   const [selectedNodeId, setSelectedNodeId] = useState<string | null>(null)
   const [editingNode, setEditingNode] = useState<NodeConfig | null>(null)
-  const [canvasNodeConfigs, setCanvasNodeConfigs] = useState<Map<string, NodeConfig>>(new Map())
+  const [rightOpen, setRightOpen] = useState(false)
 
-  const { nodeStatuses, pendingReview, startRun, clearReview } = useRunMonitor()
+  // ── Workflow meta ─────────────────────────────────────────────
+  const [graphName, setGraphName] = useState('Untitled Workflow')
+  const [unsaved, setUnsaved] = useState(false)
+  const [dark, setDark] = useState(true)
 
-  const tabs: { key: Tab; label: string }[] = [
-    { key: 'canvas', label: 'Canvas' },
-    { key: 'history', label: 'History' },
-  ]
+  // ── Run / prompt state ────────────────────────────────────────
+  const [runState, setRunState] = useState<RunState>('ready')
+  const [prompt, setPrompt] = useState('')
 
-  // When a node is clicked on the canvas, open the config panel
-  const handleNodeClick = useCallback(
-    (nodeId: string) => {
-      setSelectedNodeId(nodeId)
-      const config = canvasNodeConfigs.get(nodeId)
-      if (config) {
-        setEditingNode(config)
-      }
-    },
-    [canvasNodeConfigs],
-  )
+  // ── Graph stats (updated from WorkflowCanvas) ─────────────────
+  // TODO: derive from canvasRef (expose getNodeCount/getEdgeCount on WorkflowCanvasHandle)
+  const [nodeCount, setNodeCount] = useState(0)
+  const [edgeCount, setEdgeCount] = useState(0)
 
-  // Update node config (from config panel)
+  // ── Refs ──────────────────────────────────────────────────────
+  const canvasRef = useRef<WorkflowCanvasHandle>(null)
+
+  // ── Run monitor context ───────────────────────────────────────
+  const { nodeStatuses, nodeStreams, pendingReview, startRun, clearReview } =
+    useRunMonitor()
+
+  // ── Callbacks ─────────────────────────────────────────────────
+
+  const handleToggleTheme = useCallback(() => {
+    setDark((prev) => !prev)
+  }, [])
+
+  const handleSave = useCallback(async () => {
+    await canvasRef.current?.handleSave()
+    setUnsaved(false)
+  }, [])
+
+  const handleAddNode = useCallback(() => {
+    canvasRef.current?.addNode()
+    setUnsaved(true)
+  }, [])
+
+  const handleToggleRun = useCallback(() => {
+    switch (runState) {
+      case 'ready':
+        canvasRef.current?.handleRun()
+        setRunState('running')
+        break
+      case 'running':
+        setRunState('paused')
+        break
+      case 'paused':
+        setRunState('running')
+        break
+    }
+  }, [runState])
+
+  const handleStop = useCallback(() => {
+    setRunState('ready')
+  }, [])
+
+  const handlePromptChange = useCallback((v: string) => {
+    setPrompt(v)
+  }, [])
+
+  const handleNodeClick = useCallback((nodeId: string, config: NodeConfig) => {
+    setSelectedNodeId(nodeId)
+    setEditingNode(config)
+    setRightOpen(true)
+  }, [])
+
   const handleNodeUpdate = useCallback(
     (patch: Partial<NodeConfig>) => {
       if (!editingNode) return
       const updated = { ...editingNode, ...patch }
       setEditingNode(updated)
-      setCanvasNodeConfigs((prev) => {
-        const next = new Map(prev)
-        next.set(updated.id, updated)
-        return next
-      })
+      canvasRef.current?.updateNodeData(updated.id, patch)
     },
     [editingNode],
   )
 
   const handleClosePanel = useCallback(() => {
+    setRightOpen(false)
     setSelectedNodeId(null)
     setEditingNode(null)
   }, [])
@@ -56,73 +105,80 @@ function AppInner(): JSX.Element {
   const handleRunStart = useCallback(
     (runId: string) => {
       startRun(runId)
+      setRunState('running')
     },
     [startRun],
   )
 
+  const handleLeftSelect = useCallback((view: LeftView) => {
+    setLeftView((prev) => (prev === view ? null : view))
+  }, [])
+
+  const handleLeftClose = useCallback(() => {
+    setLeftView(null)
+  }, [])
+
+  // ── Derived ───────────────────────────────────────────────────
+  const running = runState !== 'ready'
+
+  // ── Render: 6-zone layout ─────────────────────────────────────
   return (
-    <div style={{ height: '100vh', display: 'flex', flexDirection: 'column', fontFamily: 'sans-serif' }}>
-      {/* Tab bar */}
-      <div
-        style={{
-          display: 'flex',
-          gap: 0,
-          borderBottom: '1px solid #e5e7eb',
-          padding: '0 16px',
-          backgroundColor: '#f9fafb',
-        }}
-      >
-        {tabs.map(({ key, label }) => (
-          <button
-            key={key}
-            type="button"
-            onClick={() => setTab(key)}
-            style={{
-              padding: '10px 20px',
-              border: 'none',
-              borderBottom: tab === key ? '2px solid #3b82f6' : '2px solid transparent',
-              backgroundColor: 'transparent',
-              cursor: 'pointer',
-              fontSize: 13,
-              fontWeight: tab === key ? 600 : 400,
-              color: tab === key ? '#3b82f6' : '#6b7280',
-            }}
-          >
-            {label}
-          </button>
-        ))}
-      </div>
+    <div className="flex size-full flex-col overflow-hidden bg-[#0f172a] text-slate-200">
+      {/* Zone 1: TitleBar */}
+      <TitleBar
+        workflowName={graphName}
+        unsaved={unsaved}
+        dark={dark}
+        onToggleTheme={handleToggleTheme}
+      />
 
-      {/* Main content */}
-      <div style={{ flex: 1, display: 'flex', overflow: 'hidden' }}>
-        {tab === 'canvas' ? (
-          <>
-            {/* Canvas area */}
-            <div style={{ flex: 1, minWidth: 0 }}>
-              <WorkflowCanvas
-                nodeStatuses={nodeStatuses}
-                onNodeClick={handleNodeClick}
-                onRunStart={handleRunStart}
-              />
-            </div>
+      {/* Zone 2: TopBar */}
+      <TopBar
+        runState={runState}
+        onToggleRun={handleToggleRun}
+        onStop={handleStop}
+        prompt={prompt}
+        onPromptChange={handlePromptChange}
+        onSave={handleSave}
+        onAddNode={handleAddNode}
+        running={running}
+      />
 
-            {/* Config sidebar */}
-            {selectedNodeId && editingNode && (
-              <NodeConfigPanel
-                node={editingNode}
-                onUpdate={handleNodeUpdate}
-                onClose={handleClosePanel}
-              />
-            )}
-          </>
-        ) : (
-          <div style={{ flex: 1, overflow: 'auto' }}>
-            <HistoryPanel />
-          </div>
+      {/* Zone 3-6: Main content */}
+      <div className="flex min-h-0 flex-1">
+        {/* Zone 3: LeftBar */}
+        <LeftBar active={leftView} onSelect={handleLeftSelect} />
+
+        {/* Zone 4: LeftPanel (conditional) */}
+        {leftView && <LeftPanel view={leftView} onClose={handleLeftClose} />}
+
+        {/* Zone 5: Canvas */}
+        <div style={{ flex: 1, minWidth: 0, display: 'flex', flexDirection: 'column' }}>
+          <WorkflowCanvas
+            ref={canvasRef}
+            prompt={prompt}
+            running={running}
+            nodeStatuses={nodeStatuses}
+            nodeStreams={nodeStreams}
+            onNodeClick={handleNodeClick}
+            onRunStart={handleRunStart}
+          />
+        </div>
+
+        {/* Zone 6: NodeConfigPanel / RightPanel (conditional) */}
+        {rightOpen && selectedNodeId && editingNode && (
+          <NodeConfigPanel
+            node={editingNode}
+            onUpdate={handleNodeUpdate}
+            onClose={handleClosePanel}
+          />
         )}
       </div>
 
-      {/* Human Review modal */}
+      {/* StatusBar */}
+      <StatusBar state={runState} nodeCount={nodeCount} edgeCount={edgeCount} />
+
+      {/* Human Review modal (overlay) */}
       {pendingReview && (
         <HumanReviewPanel review={pendingReview} onClose={clearReview} />
       )}

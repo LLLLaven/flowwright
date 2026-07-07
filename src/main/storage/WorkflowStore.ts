@@ -7,8 +7,9 @@ export class WorkflowStore {
 
   async save(graph: WorkflowGraph): Promise<void> {
     const filePath = join(this.dir, `${graph.id}.json`)
-    await writeFile(filePath, JSON.stringify(graph, null, 2), 'utf-8')
-    console.log('[WorkflowStore] Saved:', filePath)
+    const stamped: WorkflowGraph = { ...graph, updatedAt: new Date().toISOString() }
+    await writeFile(filePath, JSON.stringify(stamped, null, 2), 'utf-8')
+    console.log('[WorkflowStore] Saved:', filePath, 'nodes:', graph.nodes.length, 'edges:', graph.edges.length)
   }
 
   async load(graphId: string): Promise<WorkflowGraph> {

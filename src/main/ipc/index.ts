@@ -17,6 +17,10 @@ export function registerIpcHandlers(
     return registry.list()
   })
 
+  ipcMain.handle(IPC.WORKFLOW_LIST_GRAPHS, async () => {
+    return store.list()
+  })
+
   ipcMain.handle(IPC.WORKFLOW_LOAD, async (_e, graphId: string) => {
     return store.load(graphId)
   })
@@ -41,6 +45,7 @@ export function registerIpcHandlers(
         .then(() => registry.updateStatus(runId, 'completed'))
         .catch(async (e) => {
           const msg = String(e)
+          console.error('[IPC] runGraph FAILED:', runId, msg)
           if (msg.includes('GraphInterrupt') || msg.includes('__interrupt__')) {
             await registry.updateStatus(runId, 'paused')
           } else {
@@ -99,6 +104,38 @@ export function registerIpcHandlers(
   ipcMain.handle(IPC.RAG_DELETE,     async (_e, _docId) => {})
 }
 
-export function emitRunEvent(win: BrowserWindow, runId: string, event: unknown): void {
+export function emitRunEvent(win: BrowserWindow, runId: string, event: WorkflowEvent): void {
+  logRunEvent(runId, event)
   win.webContents.send(IPC.RUN_EVENT, runId, event)
+}
+
+function previewValue(value: unknown): string {
+  const s = typeof value === 'string' ? value : JSON.stringify(value)
+  return s.length > 120 ? s.slice(0, 120) + '…' : s
+}
+
+function logRunEvent(runId: string, event: WorkflowEvent): void {
+  switch (event.type) {
+    case 'node:stream':
+      // Per-chunk noise skipped here — NodeExecutor logs a start/end summary instead.
+      return
+    case 'node:started':
+      console.log(`[RunEvent] ${runId} ${event.nodeId} started`)
+      return
+    case 'node:completed':
+      console.log(`[RunEvent] ${runId} ${event.nodeId} completed output=${previewValue(event.output)}`)
+      return
+    case 'node:rejected':
+      console.log(`[RunEvent] ${runId} ${event.nodeId} REJECTED reason=${previewValue(event.reason)}`)
+      return
+    case 'node:awaiting_human':
+      console.log(`[RunEvent] ${runId} ${event.nodeId} awaiting_human deliverable=${previewValue(event.deliverable)}`)
+      return
+    case 'workflow:done':
+      console.log(`[RunEvent] ${runId} workflow DONE`)
+      return
+    case 'workflow:error':
+      console.error(`[RunEvent] ${runId} workflow ERROR: ${event.error}`)
+      return
+  }
 }

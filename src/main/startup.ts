@@ -9,6 +9,7 @@ const DEFAULT_CONFIG = {
   providers: {},
   defaultProvider: 'deepseek',
   defaultModel: 'deepseek-v4-flash',
+  apiKey: '',
 }
 
 export async function initDataDir(): Promise<void> {

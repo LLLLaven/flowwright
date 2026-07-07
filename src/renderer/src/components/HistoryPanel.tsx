@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react'
 import { ipc } from '../lib/ipc'
-import type { RunRecord, RunStatus } from '../../../../shared/types'
+import type { RunRecord, RunStatus } from '../../../shared/types'
 
 const STATUS_COLORS: Record<RunStatus, string> = {
-  running: '#3b82f6',
-  paused: '#f97316',
-  completed: '#22c55e',
-  error: '#ef4444',
-  aborted: '#9ca3af',
+  running: 'bg-blue-500',
+  paused: 'bg-orange-500',
+  completed: 'bg-emerald-500',
+  error: 'bg-red-500',
+  aborted: 'bg-slate-400',
 }
 
 export default function HistoryPanel(): JSX.Element {
@@ -37,60 +37,40 @@ export default function HistoryPanel(): JSX.Element {
   }
 
   return (
-    <div style={{ padding: 16, fontFamily: 'sans-serif' }}>
-      <h2 style={{ marginTop: 0 }}>Run History</h2>
+    <div className="p-4 overflow-auto">
+      <h2 className="text-lg font-semibold text-slate-200 mt-0">Run History</h2>
       {records.length === 0 ? (
-        <p style={{ color: '#888' }}>No runs yet.</p>
+        <p className="text-slate-500">No runs yet.</p>
       ) : (
-        <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+        <table className="w-full border-collapse text-[13px]">
           <thead>
-            <tr style={{ borderBottom: '2px solid #e5e7eb' }}>
-              <th style={{ textAlign: 'left', padding: '8px 12px' }}>Run ID</th>
-              <th style={{ textAlign: 'left', padding: '8px 12px' }}>Graph</th>
-              <th style={{ textAlign: 'left', padding: '8px 12px' }}>Status</th>
-              <th style={{ textAlign: 'left', padding: '8px 12px' }}>Started</th>
-              <th style={{ textAlign: 'left', padding: '8px 12px' }}>Actions</th>
+            <tr className="border-b-2 border-slate-600">
+              <th className="px-3 py-2 text-left text-slate-400 font-medium">Run ID</th>
+              <th className="px-3 py-2 text-left text-slate-400 font-medium">Graph</th>
+              <th className="px-3 py-2 text-left text-slate-400 font-medium">Status</th>
+              <th className="px-3 py-2 text-left text-slate-400 font-medium">Started</th>
+              <th className="px-3 py-2 text-left text-slate-400 font-medium">Actions</th>
             </tr>
           </thead>
           <tbody>
             {records.map((r) => (
-              <tr key={r.runId} style={{ borderBottom: '1px solid #e5e7eb' }}>
-                <td style={{ padding: '8px 12px', fontFamily: 'monospace' }}>
-                  {shortId(r.runId)}
-                </td>
-                <td style={{ padding: '8px 12px', fontFamily: 'monospace' }}>
-                  {r.graphId}
-                </td>
-                <td style={{ padding: '8px 12px' }}>
+              <tr key={r.runId} className="border-b border-slate-700">
+                <td className="px-3 py-2 font-mono">{shortId(r.runId)}</td>
+                <td className="px-3 py-2 font-mono">{r.graphId}</td>
+                <td className="px-3 py-2">
                   <span
-                    style={{
-                      display: 'inline-block',
-                      padding: '2px 8px',
-                      borderRadius: 9999,
-                      backgroundColor: STATUS_COLORS[r.status],
-                      color: '#fff',
-                      fontSize: 12,
-                      fontWeight: 600,
-                    }}
+                    className={`inline-block px-2 py-0.5 rounded-full text-white text-xs font-semibold ${STATUS_COLORS[r.status]}`}
                   >
                     {r.status}
                   </span>
                 </td>
-                <td style={{ padding: '8px 12px' }}>{formatDate(r.startedAt)}</td>
-                <td style={{ padding: '8px 12px' }}>
+                <td className="px-3 py-2">{formatDate(r.startedAt)}</td>
+                <td className="px-3 py-2">
                   {r.status === 'paused' && (
                     <button
                       type="button"
                       onClick={() => handleResume(r.runId)}
-                      style={{
-                        padding: '4px 12px',
-                        backgroundColor: '#f97316',
-                        color: '#fff',
-                        border: 'none',
-                        borderRadius: 4,
-                        cursor: 'pointer',
-                        fontSize: 12,
-                      }}
+                      className="px-3 py-1 bg-orange-500 text-white border-none rounded text-xs cursor-pointer"
                     >
                       Resume
                     </button>

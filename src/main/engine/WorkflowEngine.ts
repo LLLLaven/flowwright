@@ -68,9 +68,22 @@ export class WorkflowEngine {
     emit: (event: WorkflowEvent) => void,
     initialPrompt?: string,
   ): Promise<void> {
-    console.log('[WorkflowEngine] runGraph:', graph.id, 'runId:', runId, 'prompt:', initialPrompt?.slice(0, 50))
+    const startedAt = Date.now()
+    console.log(
+      '[WorkflowEngine] runGraph:', graph.id, 'runId:', runId,
+      'nodes:', graph.nodes.length, 'edges:', graph.edges.length,
+      'prompt:', initialPrompt?.slice(0, 50),
+    )
 
-    const compiled = buildGraph(graph, this.executor, emit, this.checkpointer, runId, initialPrompt)
+    let compiled: ReturnType<typeof buildGraph>
+    try {
+      compiled = buildGraph(graph, this.executor, emit, this.checkpointer, runId, initialPrompt)
+    } catch (e) {
+      const errMsg = String(e)
+      console.error('[WorkflowEngine] buildGraph error:', runId, errMsg)
+      emit({ type: 'workflow:error', runId, error: errMsg })
+      return
+    }
     this.activeRuns.set(runId, compiled)
 
     try {
@@ -89,15 +102,16 @@ export class WorkflowEngine {
         { configurable: { thread_id: runId } },
       )
       emit({ type: 'workflow:done', runId })
+      console.log('[WorkflowEngine] runGraph done:', runId, 'elapsed:', Date.now() - startedAt, 'ms')
     } catch (e) {
       const errMsg = String(e)
       // Check if this is a LangGraph interrupt (human review pause)
       if (errMsg.includes('GraphInterrupt') || errMsg.includes('__interrupt__')) {
-        console.log('[WorkflowEngine] Graph interrupted (human review):', runId)
+        console.log('[WorkflowEngine] Graph interrupted (human review):', runId, 'elapsed:', Date.now() - startedAt, 'ms')
         // Don't emit error — the awaiting_human event was already sent
         return
       }
-      console.error('[WorkflowEngine] Graph error:', errMsg)
+      console.error('[WorkflowEngine] Graph error:', runId, 'elapsed:', Date.now() - startedAt, 'ms', errMsg)
       emit({ type: 'workflow:error', runId, error: errMsg })
     } finally {
       // Don't remove from activeRuns if paused (human review)
